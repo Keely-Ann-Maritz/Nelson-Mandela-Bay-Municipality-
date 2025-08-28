@@ -14,7 +14,7 @@
 
 ## Instructions for running the application
 1. Install Visual Studio 2022.
- -  Download link: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+    - Download link: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
 2. Open Visual Studio 2022.
 3. Download the GitHub repository or clone the repository.
 
@@ -23,6 +23,8 @@
 ## Testing 
 - Usability Testing (Surveys)
 - Performance Testing 
+
+<br>
 
 ## Application Interface 
 
