@@ -1,4 +1,4 @@
-<p align="center">MUNICIPALITY WEB APPLICATION</p>
+<h1 align="center">MUNICIPALITY WEB APPLICATION</h1>
 
 <br>
 
