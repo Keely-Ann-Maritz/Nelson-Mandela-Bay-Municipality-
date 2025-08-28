@@ -1,0 +1,120 @@
+﻿@model IEnumerable<PROG7312_POE_PART1.Models.TeamMembers>
+
+@{
+    ViewData["Title"] = "ContactUs";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .card {
+        background-color: #f0faff;
+        transition: transform 0.2s ease-in-out;
+    }
+    .card:hover {
+        transform: translate(-5px);
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+    }
+    a.fa-envelope {
+        color: orange;
+        border-color: orange;
+    }
+    a.btn{
+        color: white;
+        background-color: orange;
+        border-color: orange;
+        text-decoration: none;
+    }
+    a.fa-envelope:hover{
+        background-color: transparent;
+        color: orange;
+        border-color: orange;
+        text-decoration: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .contact-container{
+        color: black;
+        text-decoration: none;
+    }
+
+    .contact-container:hover {
+        color: orange;
+        text-decoration: none;
+    }
+    .team-img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <br />
+    <div class="container mt-5">
+        <div class="p-4 rounded shadow-sm" style="background-color: #f0faff;">
+        <div class="row justify-content-center align-text-center">
+            <div class="col-md-5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6633.696456512316!2d25.384047293579112!3d-33.76458759999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad2f4621339b3%3A0x7460ced7d17c7738!2sNelson%20Mandela%20Metropolitan%20Municipality!5e0!3m2!1sen!2sza!4v1756306890083!5m2!1sen!2sza" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-md-5 d-flex flex-column justify-content-center ps-5">
+                    <h3>General Enquiries</h3>
+                    <br />
+                    <p><b>Postal Address:</b> PO Box 116, Port Elizabeth, 6000</p>
+                    <p><b>Physical Address:</b> 21 Cuyler St, Uitenhage, Kariega, 6229</p>
+                    <p><b>Customer Care Accounts Call Centre:</b> <a href="tel:+27415065555" class="contact-container"> 041 506 5555</a></p>
+                    <p><b>Telephone:</b> <a href="tel:+274150619111" class="contact-container"> 041 506 19111</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Emergency Numbers</h3>
+        <div class="p-4 rounded shadow-sm" style="background-color: #f0faff;">
+            <div class="row ps-5">
+                <div class="col-md-4 text-center">
+                    <p><b>Electricity:</b><a href="tel:+27415065595" class="contact-container"> 041 506 5595</a></p>
+                    <p><b>Fire and Emergency:</b><a href="tel:+27415851555" class="contact-container"> 041 585 1555</a></p>
+                    <p><b>Medical Emergency:</b><a href="tel:+27112" class="contact-container"> 112</a></p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p><b>Service Delivery:</b><a href="tel:+270800205050" class="contact-container"> 0800 20 5050</a></p>
+                    <p><b>Metro Police:</b><a href="tel:+27415851555" class="contact-container"> 041 585 1555</a></p>
+                    <p><b>SA Police:</b><a href="tel:+2710111" class="contact-container"> 10111</a></p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p><b>Traffic:</b><a href="tel:+27414021001" class="contact-container"> 041 402 1001</a></p>
+                    <p><b>Ethics Hotline:</b><a href="tel:+27415065522" class="contact-container"> 041 506 5522</a></p>
+                    <p><b>Disaster:</b><a href="tel:+27415017900" class="contact-container"> 041 501 7900</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Our Team</h3>
+        <div class="row g-4">
+                @foreach (var member in Model)
+                {
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card shadow-sm border-0 rounded-lg text-center p-3">
+                        <img src="~/Images/@member.Image" alt="@member.Image" style="height:100%; width:auto;" class="team-img" />
+                            <h5>@member.Name</h5>
+                            <p class="text-muted"> @member.Position</p>
+                            <a href="mailto:@member.Email" class="fa fa-envelope btn btn-sm"> @member.Email</a>
+                        </div>
+                    </div>
+                }
+        </div>
+    </div>
+</body>
+</html>
