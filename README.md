@@ -4,13 +4,13 @@
 
 <br><br>
 
-## GitHub Student Profile <img width="128" height="128" alt="image" src="https://github.com/user-attachments/assets/5d2a6fb3-3a82-4acb-948b-9a6676fb4dd1" />
+## GitHub Student Profile <img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/5d2a6fb3-3a82-4acb-948b-9a6676fb4dd1" />
 
 * [Keely-Ann Maritz](https://github.com/Keely-Ann/)
 
 <br>
 
-## YouTube Video <img width="128" height="128" alt="image" src="https://github.com/user-attachments/assets/ebda9f48-240c-4bf1-af7b-0c79c3d26084" />
+## YouTube Video <img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/ebda9f48-240c-4bf1-af7b-0c79c3d26084" />
 
 * [POE PART 1: Task 2]()
 
