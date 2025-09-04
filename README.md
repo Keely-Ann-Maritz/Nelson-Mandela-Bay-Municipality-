@@ -4,7 +4,7 @@
 
 <br><br>
 
-## <img width="128" height="128" alt="image" src="https://github.com/user-attachments/assets/7d2e34d5-9317-4e2d-814d-b4f8262c19a9" />
+## <img width="10" height="15" alt="image" src="https://github.com/user-attachments/assets/7d2e34d5-9317-4e2d-814d-b4f8262c19a9" />
 GitHub Student Profile
 * [Keely-Ann Maritz](https://github.com/Keely-Ann/)
 
