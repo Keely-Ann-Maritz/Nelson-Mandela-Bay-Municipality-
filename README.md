@@ -1,3 +1,5 @@
+<img width="1192" height="316" alt="LogoNMB" src="https://github.com/user-attachments/assets/4790b9fa-788b-4d79-a7f2-533176de84c8" />
+
 <h1 align="center">MUNICIPALITY WEB APPLICATION</h1>
 
 <br>
