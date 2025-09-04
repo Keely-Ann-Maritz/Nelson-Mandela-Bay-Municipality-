@@ -20,6 +20,10 @@
 
 <br>
 
+## User Engagement Strategy 
+
+<br>
+
 ## Testing 
 - Usability Testing (Surveys)
 - Performance Testing 
