@@ -20,3 +20,60 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*Footer Styling*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    color: black;
+}/*(W3Schools,2025)*/
+
+/*Body styling*/
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: auto;
+}/*(W3Schools,2025)*/
+
+ /*Top Navigation Bar styling*/
+.navbar-custom {
+    background-color: #0e7597;
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+/*(W3Schools, 2025)*/
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+}
+/*(W3Schools, 2025)*/
+
+.navbar-link {
+    text-decoration: none;
+    color: white;
+}/*(W3Schools, 2025)*/
+ 
+.navbar-link:hover {
+        color: orange;
+}/*(W3Schools, 2025)*/
+
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+}
+/*(W3Schools, 2025)*/
+
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}/*(W3Schools, 2025)*/

@@ -2,7 +2,94 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+   .btn-back{
+        background-color: orange;
+        color: white;
+        padding: 25px 40px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid orange;
+        display:inline-block;
+        outline: none !important;
+        box-shadow: none !important;
+    }/*(W3Schools, 2025)*/
+
+    .btn-back:hover{
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }/*(W3Schools, 2025)*/
+
+    .indexButtons{
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+    }/*(W3Schools, 2025)*/
+</style>
+        <body>
+            <br />
+            <div class="indexButtons">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                <a asp-controller="Report" asp-action="ReportIssueView" class="btn btn-secondary btn-back">View Reported Issues</a>
+                </div>
+                 <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a asp-controller="Home" asp-action="Events" class="btn btn-secondary btn-back">Events and Announcements</a>
+                </div>
+                 <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a asp-controller="Home" asp-action="RequestStatus" class="btn btn-secondary btn-back">Service Request Status</a>
+                </div>
+            </div>
+            
+         @* <div class="container mt-5">
+                <div class="containerText">
+                    <h3 class="justify-content-center"> 9 Easy Ways to Pay Your Municipal Account </h3>
+                    <br>
+                    <ol>
+                        <li><b>Unipay Outlets</b></li>
+                            <ul>
+                                <li>Pick & Pay</li>
+                                <li>Checkers</li>
+                                <li>Shoprite</li>
+                                <li>Boxer</li>
+                                <li>Woolworths</li>
+                                <li>Selected Spar</li>
+                                <li>Ackermans</li>
+                                <li>Pep Stores</li>
+                            </ul>
+                        <li><b>ABSA Bank Branches</b></li>
+                            <ul>
+                                <li>Use your NMBM account number as a referance number, when paying your account.</li>
+                            </ul>
+                        <li><b>Pay-by-Phone (IVR)</b></li>
+                        <li><b>Internet (EFT)</b></li>
+                            <ul>
+                                <li>Use your NMBM account number as a referance number, when paying your account.</li>
+                            </ul>
+                        <li><b>ATM Beneficiary</b></li>
+                            <ul>
+                                <li>Use your NMBM account number as a referance number, when paying your account.</li>
+                            </ul>
+                        <li><b>Debit Order</b></li>
+                        <li><b>Electricity Department</b></li>
+                        <li><b>Traffic Department</b></li>
+                        <li><b>Municipal Customer Care Offices</b></li>
+                    </ol>
+                    <br>
+                    <p style="text-align:center; color:red;"><b>Please Note : Payments take 4 days to be allocated to the municipal account. The payments should be made 4 days before the account is due. An interest amount will be charged to the individual for late payments.</b></p>
+                </div>
+            </div> *@
+
+    </body>
+</html>
+

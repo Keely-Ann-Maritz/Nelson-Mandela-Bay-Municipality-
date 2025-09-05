@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewData["Title"] = "BasicServices";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        width: 100%;
+        overflow: auto;
+    }/*(W3Schools,2025)*/
+
+    footer {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        color: black;
+    }/*(W3Schools,2025)*/
+
+    h1 {
+        text-shadow: 2px 2px 8px white;
+        padding-left: 20px;
+        margin: 0;
+    }/*(W3Schools,2025)*/
+
+    .electricityContainer, .waterContainer, .sanitationContainer, .wasteContainer, .recyclingContainer {
+        background-color: #f0faff;
+        border-radius: 12px;
+        padding: 20px;
+        padding-left: 40px;
+        margin: 20px;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+    }/*(W3Schools,2025)*/
+
+    .recyclingContainerList{
+        column-count: 4;
+        column-gap: 20px;
+        list-style-position: inside;
+        padding-left: 20px;
+        margin:0;
+    }/*(W3Schools,2025)*/
+</style>
+    <body>
+
+        <br />
+
+        <h1>Services</h1>
+       
+        <br />
+
+        <div class="electricityContainer">
+            <h3><b>Electricity</b></h3>
+            <p>
+                We provide elecricity to multiple locations across the city, where a team manages the power lines and substations to ensure there is a smooth process and resolves any power outages.
+                Examples of the locations to where the electricity is distributed to are : companies, households and public facilities.
+            </p>
+            <p>If you have any queries relating to the electricity service :  <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
+        </div>
+
+        <div class="waterContainer">
+            <h3><b>Water</b></h3>
+            <p>We provide water to all residents and companies, which is clean and safe to drink.The water is managed and treated before it is distributed to the public. </p>
+            
+            <p>If you have any queries relating to the water service : <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
+        </div>
+
+        <div class="sanitationContainer">
+            <h3><b>Sanitation</b></h3>
+            <p></p>
+            <p>If you have any queries relating to the sanitation service : <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
+        </div>
+
+        <div class="wasteContainer">
+            <h3><b>Waste Collection</b></h3>
+            <p>We provide a waste collection service collecting and transporting the waste from the neighbourhoods to a designated disposal facility, where we will manage the waste.</p>
+
+            <p><b>Schedule:</b></p>
+            <ul>
+                <li><b>Monday:</b> Harrower Depot</li>
+                <li><b>Tuesday:</b> Cuyler Depot</li>
+                <li><b>Wednesday:</b> Addo Depot</li>
+                <li><b>Thursday:</b> Gail RD Depot</li>
+                <li><b>Friday:</b> Struanway Depot</li>
+            </ul>
+            <p>If you have any queries relating to the waste collections :  <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
+        </div>
+        
+        <div class="recyclingContainer">
+            <h3 style="text-align:center"><b>Recycling</b></h3>
+            <p style="text-align:center">We accept the following recycling materials</p>
+            <br />
+            <div class="recyclingContainerList">
+                <ul>
+                    <li>Glass bottles</li>
+                    <li>Jam jars</li>
+                    <li>Sauce and spice bottles</li>
+                    <li>Plain drinking glasses</li>
+                    <li>Clean beverage cans</li>
+                    <li>Clean food cans</li>
+                    <li>Paint cans</li>
+                    <li>Aerosol cans</li>
+                    <li>Newspapers</li>
+                    <li>Cardboard</li>
+                    <li>Office Paper</li>
+                    <li>Plastic containers</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
