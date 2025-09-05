@@ -25,7 +25,7 @@
 <br>
 
 ## User Engagement Strategy 
-- Customer Feedback 
+- Customer Feedback and Rating
 
 <br>
 
