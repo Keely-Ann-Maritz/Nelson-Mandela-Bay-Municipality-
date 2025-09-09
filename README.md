@@ -32,6 +32,13 @@
 
 <br>
 
+## Testing 
+- Usability Testing
+-     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
+- Performance Testing
+
+<br>
+
 ## User Engagement Strategy 
 - Customer Feedback and Rating
 
@@ -40,13 +47,6 @@
 <img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
 
 <img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/d37214b8-6a70-41f0-880c-08b67809fb4a" />
-
-<br>
-
-## Testing 
-- Usability Testing
--     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
-- Performance Testing
 
 <br>
 
