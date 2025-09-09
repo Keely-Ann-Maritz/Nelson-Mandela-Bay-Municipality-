@@ -35,6 +35,10 @@
 ## User Engagement Strategy 
 - Customer Feedback and Rating
 
+<img width="940" height="568" alt="image" src="https://github.com/user-attachments/assets/f22a3740-190a-4353-b26e-021b246562a0" />
+
+<img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
+
 <br>
 
 ## Testing 
@@ -45,4 +49,32 @@
 <br>
 
 ## Application Interface 
+<img width="940" height="1060" alt="image" src="https://github.com/user-attachments/assets/ea9baaa2-2bec-4f4b-ab3b-af582f90ab72" />
+
+<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/c0bcd820-8902-4cf0-bc51-1c8f5bf3ff75" />
+
+<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/a3e7bf1d-d704-468a-9ae3-10e4a785535e" />
+
+<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/bb2f972c-cd5c-43da-84ff-0fabb07b5ece" />
+
+<img width="940" height="495" alt="image" src="https://github.com/user-attachments/assets/a3b268e1-7e94-4b69-a886-00db04bcf2de" />
+
+<img width="938" height="460" alt="image" src="https://github.com/user-attachments/assets/fc13c9a5-3ebc-4e29-96e6-f2a2d41ec347" />
+
+<img width="938" height="453" alt="image" src="https://github.com/user-attachments/assets/38a5c731-935c-4baa-af37-e6d9a58d14ef" />
+
+<img width="940" height="638" alt="image" src="https://github.com/user-attachments/assets/c3b639a1-cb12-4d5b-89f2-54db3652a815" />
+
+<img width="940" height="1003" alt="image" src="https://github.com/user-attachments/assets/691832c3-24af-49d3-be36-aa407cada5af" />
+
+<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/88ce201e-ba4d-4728-96e3-32963d05e368" />
+
+
+
+
+
+
+
+
+
 
