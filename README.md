@@ -18,7 +18,7 @@
 
 ## Instructions for running the application
 1. Install Visual Studio 2022.
-    - Download link: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+       - Download link: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
 2. Open Visual Studio 2022.
 3. Download the GitHub repository or clone the repository.
 4. Select the run button in the top navigation bar of Visual Studio 2022.
@@ -38,8 +38,8 @@
 <br>
 
 ## Testing 
-- Usability Testing (Surveys)
-    - Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
+- Usability Testing
+-     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
 - Performance Testing
 
 <br>
