@@ -16,14 +16,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcxBD9JkNLa8DFBSZx-QQ5u-LLclpsh_E&libraries=places" type="text/javascript"></script>
 </head>
 <style>
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        z-index: 1;
-        color: black;
-    }/*(W3Schools,2025)*/
 
     .btn-report{
         background-color: orange;
@@ -206,21 +198,24 @@
 
     <br />
 
+    <!--Heading-->
     <h1 style="text-align: center">Report Any Issues</h1>
 
     <hr />
 
     <br />
 
+    <!--Form to report any issues-->
     <div class="container mt-3">
         <form asp-action="ReportIssues" enctype="multipart/form-data" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!--errpr message informaing the user they have not filled in all the required fields-->
             @if (ViewBag.Status != null)
             {
                 @if (ViewBag.Message != null)
                 {
                     <div class="alert @(ViewBag.Status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
-                        <strong>@(ViewBag.Status == "Success" ? "Success!" : "Error!")</strong> @ViewBag.Message
+                        <b>@(ViewBag.Status == "Success" ? "Success!" : "Error!")</b> @ViewBag.Message
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div><!--(W3School,2025)-->
                 }
@@ -242,6 +237,7 @@
                 <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+            <!--Adding a media file which allows jpg, jpeg, png, pdf, doc and docx-->
             <div class="form-input-group mb-3 mt-3">
                 <label class="control-label fw-bold">Media Attachment:</label>
                 <input type="file" name="mediaFile" class="form-control"
@@ -251,11 +247,14 @@
             <br>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn-report" />
-                <a asp-controller="Home" asp-action="Index" class="btn-back">Back Main Menu</a>
+                <a asp-controller="Home" asp-action="Index" class="btn-back">Back</a>
             </div>
+
+            <br />
         </form>
     </div>
 
+    <!--Logic for the selection of the selection of a location and error message if the location was not valid ()-->
     <script>
         function initAutocomplete() {
             const input = document.getElementById('Location');

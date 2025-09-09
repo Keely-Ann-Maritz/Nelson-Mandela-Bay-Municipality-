@@ -80,11 +80,13 @@
         <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-back"> Back </a>
     </div>
 
-    <h1 style="text-align: center">Report Issues</h1>
+    <h1 style="text-align: center">Reported Issues</h1>
 
     <hr />
 
     <br />
+
+    <!--success message informing the user they have successfully reported an issue-->
     @if(TempData["Status"] != null)
     {
         @if(TempData["Message"] != null)
@@ -96,6 +98,8 @@
             </div> /*(W3Schools, 2025)*/
         }
     }
+
+    <!--Table displaying the reported issues information (W3Schools,2025)-->
     <table class="table">
         <thead>
             <tr>

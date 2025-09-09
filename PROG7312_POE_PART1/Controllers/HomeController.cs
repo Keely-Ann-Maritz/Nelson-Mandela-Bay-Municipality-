@@ -15,7 +15,9 @@ namespace PROG7312_POE_PART1.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            // Getting the feedback and displaying the feedback on the Index page
+            var latest = ReportController.GetFeedbacks(4);
+            return View(latest);
         }
 
         public IActionResult AboutUs()
@@ -50,6 +52,7 @@ namespace PROG7312_POE_PART1.Controllers
                 new TeamMembers { Name = "MRS. Phumeza Marotya",Position = "Manager: Animal & Pest Control", Email="pmarotya@mandelametro.gov.za",Image="teammember5.jpg"},
                 new TeamMembers { Name = "MS. Rebecca Abioye",Position = "Emergency Medical Services (EMS) Co-ordinator", Email="rabioye@mandelametro.gov.za",Image="teammember6.jpg"}
             };
+            // returning the list of teamMembers
             return View(teamMembers);
         }
 

@@ -50,15 +50,23 @@
         padding-left: 20px;
         margin:0;
     }/*(W3Schools,2025)*/
+
+    p{
+        text-align: justify;
+    }/*(W3Schools, 2025)*/
 </style>
     <body>
 
         <br />
 
-        <h1>Services</h1>
+        <!--Heading-->
+        <h1 style="text-align: center">Services</h1>
        
+        <hr />
+
         <br />
 
+        <!--Electricity (W3Schools,2025)-->
         <div class="electricityContainer">
             <h3><b>Electricity</b></h3>
             <p>
@@ -68,19 +76,28 @@
             <p>If you have any queries relating to the electricity service :  <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
         </div>
 
+        <!--Water (W3Schools,2025)-->
         <div class="waterContainer">
             <h3><b>Water</b></h3>
-            <p>We provide water to all residents and companies, which is clean and safe to drink.The water is managed and treated before it is distributed to the public. </p>
+            <p> We provide water to all residents and companies, which is clean and safe to drink.The water is managed and treated before it is distributed to the public. 
+                If residents experience no water due to a damaged pipe in their area, the neighbourhood will be provided with water from a water truck at an allocated location.
+                Contact your local neighbourhood watch group for the location of the water truck.
+            </p>
             
             <p>If you have any queries relating to the water service : <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
         </div>
 
+        <!--Sanitation (W3Schools,2025)-->
         <div class="sanitationContainer">
             <h3><b>Sanitation</b></h3>
-            <p></p>
+            <p>
+                We ensure residents are provided with clean drinking water. It is our responsibility to dispose of human sewage and excreta to prevent the community from coming into contact with the feces. 
+                The municipality sanitation system provides the community to live in a clean and healthy environment.The community is educated to be hygenic and encourages individuals to wash their hands with soap. 
+            </p>
             <p>If you have any queries relating to the sanitation service : <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
         </div>
 
+        <!--Waste Collection (W3Schools,2025)-->
         <div class="wasteContainer">
             <h3><b>Waste Collection</b></h3>
             <p>We provide a waste collection service collecting and transporting the waste from the neighbourhoods to a designated disposal facility, where we will manage the waste.</p>
@@ -96,6 +113,7 @@
             <p>If you have any queries relating to the waste collections :  <a href="@Url.Action("ReportIssues", "Report")" style="color:orange"><b>Report an Issue</b></a></p><!--(Stackoverflow,)-->
         </div>
         
+        <!--Recycling (W3Schools,2025)-->
         <div class="recyclingContainer">
             <h3 style="text-align:center"><b>Recycling</b></h3>
             <p style="text-align:center">We accept the following recycling materials</p>

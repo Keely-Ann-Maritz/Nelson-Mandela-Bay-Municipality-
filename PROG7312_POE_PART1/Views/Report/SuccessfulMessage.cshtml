@@ -1,7 +1,215 @@
 ﻿
 @{
     ViewData["Title"] = "SuccessfulMessage";
+    var reportId = ViewBag.ReportId as int? ?? 0;
 }
 
-<h1>Successful Message</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Successful Message</title>
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+    .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+    }
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
 
+    .rate:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+    }
+
+    .rate:not(:checked) > label:before {
+        content: '★ ';
+    }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;    
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;  
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+
+    .btn-submitFeedback {
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid orange;
+        display: inline-block;
+    }/*(W3Schools,2025)*/
+    
+    .btn-submitFeedback:hover{
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }/*(W3Schools,2025)*/
+
+    .btn-back{
+        background-color: grey;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid grey;
+        display:inline-block;
+    }/*(W3Schools,2025)*/
+
+    .btn-back:hover{
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }/*(W3Schools,2025)*/
+
+    .form-control {
+        width: 100%;
+        box-sizing: border-box;
+    }/*(W3Schools,2025)*/
+
+    /*Styling the form*/
+    .form-control:focus {
+        border-color: orange;
+        box-shadow: 0 0 0 0.25rem orange;
+    }/*(W3Schools,2025)*/
+
+    .form-input-group {
+        display: block;
+        max-width: 700px;
+        gap: 10px;
+        margin: 10px auto;
+    }/*(W3Schools,2025)*/
+
+    .form-input-group label{
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }/*(W3Schools,2025)*/
+
+    .form-input-group input[type="file"], .form-input-group select, .form-input-group textarea, .form-control{
+       width: 100%;
+       box-sizing: border-box;
+       margin-bottom: 15px;
+    }/*(W3Schools,2025)*/
+
+    .form-group{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        max-width: 700px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }/*(W3Schools,2025)*/
+
+    .btn-back, .btn-submitFeedback{
+        flex:1;
+        text-align: center;
+        box-sizing: border-box;
+    }/*(W3Schools,2025)*/
+
+    .referenceContainer{
+        background-color: #f0faff;
+        border-radius: 12px;
+        padding: 20px;
+        padding-left: 40px;
+        margin: 20px;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+    }/*(W3Schools,2025)*/
+</style><!--https://codepen.io/hesguru/pen/BaybqXv-->
+<body>
+
+    <br />
+
+    <!--success message informing the user they have successfully reported an issue-->
+    @if (TempData["Status"] != null && TempData["Message"] != null)
+    {
+        <div class="alert @(TempData["Status"]?.ToString() == "Success" ? "alert-success" : "alert-danger") d-flex justify-content-between align-items-center" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    
+    <!--Heading Container-->
+    <div class="referencecContainer mt-4">
+        <div class="form-input-group">
+            <h2>Citizen Feedback</h2>
+            <hr />
+            <p><b>Reference Number : @reportId</b></p>
+        </div>
+        
+        <br />
+
+        <!--Feedback form-->
+        <form asp-action="FeedbackSubmission" asp-controller="Report" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="ReportId" value="@reportId"/>
+           
+            <!--Star rating ()-->
+            <div class="form-input-group">
+                <h4>Provide us with some feedback by rating your experience:</h4>
+                <p>1 star = very poor ; 2 stars = poor ; 3 stars = neutral ; 4 stars = good ; 5 stars = excellent</p>
+                <div class="rate" aria-label="Rating from 1 to 5 stars">
+                    <input type="radio" id="rating5" name="Rating" value="5" />
+                    <label for="rating5" title="5 star"></label>
+                    <input type="radio" id="rating4" name="Rating" value="4" />
+                    <label for="rating4" title="4 star"></label>
+                    <input type="radio" id="rating3" name="Rating" value="3" />
+                    <label for="rating3" title="3 star"></label>
+                    <input type="radio" id="rating2" name="Rating" value="2" />
+                    <label for="rating2" title="2 star"></label>
+                    <input type="radio" id="rating1" name="Rating" value="1" />
+                    <label for="rating1" title="1 star"></label>
+                </div>
+            </div>
+
+            <br /><br /><br />
+
+            <!--Form Name Input (W3Schools,2025)-->
+            <div class="form-input-group">
+                <label for="Name" class="form-label">Name (Optional)</label>
+                <input type="text" class="form-control" id="Name" name="Name" maxlength="100" />
+            </div>
+
+            <!--Form Comment Input (W3Schools,2025)-->
+            <div class="form-input-group">
+                <label for="Name" class="form-label">Comments (Optional)</label>
+                <textarea class="form-control" id="Comment" name="Comment" rows="3" maxlength="100"></textarea>
+            </div>
+
+            <br />
+
+            <!--Submit Button (W3Schools,2025)-->
+            <div class="form-group">
+                <button type="submit" class=" btn-submitFeedback">Submit Feedback</button>
+                <a asp-controller="Report" asp-action="FeedbackView" class="btn-back">Skip and view reports</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

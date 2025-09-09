@@ -1,0 +1,140 @@
+﻿@model IEnumerable<PROG7312_POE_PART1.Models.Feedback>
+
+@{
+    ViewData["Title"] = "FeedbackView";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+    h1 {
+        text-align: center;
+        align-content: center;
+    }/*(W3Schools, 2025)*/
+
+    .btn-back {
+        background-color: grey;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid grey;
+        display: inline-block;
+        outline: none !important;
+        box-shadow: none !important;
+    }/*(W3Schools, 2025)*/
+
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }/*(W3Schools, 2025)*/
+
+    .table th {
+        background-color: black;
+        color: white;
+    }/*(W3Schools, 2025)*/
+
+    .btn-view:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }/*(W3Schools, 2025)*/
+
+    .btn-view {
+        background-color: orange;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+    }/*(W3Schools, 2025)*/
+
+    .table th, .table td {
+        padding: 12px 15px;
+    }/*(W3Schools, 2025)*/
+
+    .form-control:focus {
+        border-color: orange;
+        box-shadow: 0 0 0 0.25rem orange;
+    }/*(W3Schools, 2025)*/
+
+    footer {
+        position: fixed;
+    }/*(W3Schools,2025)*/
+</style>
+<body>
+
+    <br />
+
+    <!--Back button for redirecting the user back to the home page-->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-back"> Back </a>
+    </div>
+
+    <!--Heading-->
+    <h1 style="text-align: center">Feedback</h1>
+
+    <hr />
+
+    <br />
+
+    <!--Success message to inform the user they have submitted their feedback successfully-->
+    @if (TempData["Status"] != null)
+    {
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert @(TempData["Status"]?.ToString() == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+                <b>@(TempData["Status"]?.ToString() == "Success" ? "Success!" : "Error!")</b>
+                @TempData["Message"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+    }
+
+    <!--Table displaying the feedback information (W3Schools,2025)-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Feedback ID</th>
+                <th>Report ID</th>
+                <th>Rating</th>
+                <th>Name</th>
+                <th>Comment</th>
+                <th>Submitted</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var f in Model)
+                {
+                    <tr>
+                        <td>@f.FeedbackId</td>
+                        <td>@f.ReportId</td>
+                        <td>@f.Rating</td>
+                        <td>@(string.IsNullOrWhiteSpace(f.Name) ? "Anonymous" : f.Name)</td>
+                        <td>@f.Comment</td>
+                        <td>@f.CreatedAt.ToLocalTime().ToString("g")</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center">No feedback was submitted yet.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+

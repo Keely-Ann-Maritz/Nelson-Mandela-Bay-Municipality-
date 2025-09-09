@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<PROG7312_POE_PART1.Models.Feedback>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -9,7 +11,12 @@
     <link rel="stylesheet" href="/html/site.css">
 </head>
 <style>
-   .btn-back{
+    body,html{
+        padding: 0;
+        margin: 0;
+    }/*(W3Schools, 2025)*/
+
+    .btn-back{
         background-color: orange;
         color: white;
         padding: 25px 40px;
@@ -36,60 +43,226 @@
         justify-content: center;
         align-items: center;
     }/*(W3Schools, 2025)*/
+
+    .indexImage{
+        position: relative;
+        width: 100%;
+        max-width: auto;
+        padding: 0;
+        overflow: hidden;
+    }/*(W3Schools, 2025)*/
+
+    .indexImage img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }/*(W3Schools, 2025)*/
+
+    .navbar{
+        margin-bottom:0;
+    }/*(W3Schools, 2025)*/
+
+    p{
+        text-align: justify;
+    }/*(W3Schools, 2025)*/
+
+    .municipalityInfo{
+        display: grid;
+        gap: 20px;
+    }/*(W3Schools,2025)*/
+
+    .paymentContainerList{
+        list-style-position: outside;
+        padding-left: 20px;
+        margin: 0;
+    }/*(W3Schools,2025)*/
+
+    .paymentContainer {
+        background-color: #f0faff;
+        border-radius: 12px;
+        padding: 20px 40px;
+        margin: 20px 0;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+        width: 100%;
+    }/*(W3Schools,2025)*/
+
+    .payment-item{
+        text-align: left;
+        margin-left: 50px;
+    }/*(W3Schools,2025)*/
+
+    li{
+        position: relative;
+    }/*(W3Schools,2025)*/
+
+    ul{
+        accent-colordisplay: block;
+        list-style-type: disc;
+        margin-top: 1em;
+        margin-bottom: 1 em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 40px;
+    }/*(W3Schools,2025)*/
 </style>
-        <body>
-            <br />
-            <div class="indexButtons">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                <a asp-controller="Report" asp-action="ReportIssueView" class="btn btn-secondary btn-back">View Reported Issues</a>
+<body>
+    <br />
+
+    <!--Large Home Page Image ()-->
+    <div class="indexImage">
+        <img src="~/Images/Index.jpg" alt="Logo"/>
+    </div>
+
+    <br />
+
+    <!--Displaying a success message when a user has submitted their feedback survey response, with a closing button option-->
+    @if (TempData["Status"] != null && TempData["Message"] != null)
+    {
+        <div class="alert @(TempData["Status"]?.ToString() == "Success" ? "alert-success" : "alert-danger") alert-dismissible" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="var a=this.closest('.alert'); if(a){a.remove();}"></button>
+        </div>
+    }
+
+    <br />
+
+    <!--Buttons to redirect the user to view pages-->
+    <div class="indexButtons">
+        <!--View Reported Issues button (W3Schools,2025)-->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a asp-controller="Report" asp-action="ReportIssueView" class="btn btn-secondary btn-back">View Reported Issues</a>
+        </div>
+
+        <!--View Feedback button (W3Schools,2025)-->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a asp-controller="Report" asp-action="FeedbackView" class="btn btn-secondary btn-back">View Feedback</a>
+        </div>
+
+        <!--Service Request Status button (W3Schools,2025)-->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a asp-controller="Home" asp-action="RequestStatus" class="btn btn-secondary btn-back">View Service Request Status</a>
+        </div>
+    </div>
+
+    <br />
+
+    <!--Information about the Municipality (W3Schools, 2025)-->
+    <div class="municipalityInfo mt-4">
+        <div class="row">
+            <!--About Us Information ()-->
+            <div class="col-md-4 mb-3">
+                <h3><b>About Us</b></h3>
+                <p>
+                    The first municipality in Nelson Mandela Bay was established in the 2000s. It is the first city named after Nelson Mandela, who was born and spent his life growing up in the Eastern Cape.
+                    The municipality wants its residents to access local services, events, and information in one location and with ease. The goal is to connect with the community, building a bridge between the authorities making management decisions and the community.
+                    Therefore, the municipality has made it easier for residents to report issues, allowing the municipality to take action on resolving the reported issues.
+                </p>
+            </div>
+
+            <!--Mission and Vision Information ()-->
+            <div class="col-md-4 mb-3">
+                <h3><b>Mission and Vision</b></h3>
+                <p>
+                    Nelson Mandela Bay Municipality is governed by administrators, who have ensured service delivery is a priority. The municipality strives to improve the lives of their residents and reduce corruption and to collectivly work with people. 
+                    Therefore, our mission is to achieve outcomes for the municipality to make an impact! To improve the economic growth, social wellbeing of the community and our team members ensuring the improvements are being executed.
+                    The platform allows the community to interact and provide their feedback to improve the environment around us and to improve the quality of life.
+                </p>
+            </div>
+
+            <!--Roles and Responsibilities Information ()-->
+            <div class="col-md-4 mb-3">
+                <h3><b>Roles and Responsibilities</b></h3>
+                <p>
+                    As a municipality, we cover a wide range of services such as water and sewage services, management of facilities, health services, recreational facilities and community services.
+                    The management of facilities include airports, cemeteries, parking lots, ports and marinas. The healthcare services provided include : toilet facilites, noise control, animal control and water and food inspection.
+                    Reacteational facility services include : swimming pools, sport centres, camping grounds and parks. Community services include childcare for parents, elderly caregivers and welfase services.
+                </p>
+            </div>
+        </div>
+    </div><!--(W3Schools,2025)-->
+
+    <br />
+
+    <!--Several methods on how individuals can pay their accounts ()-->
+    <div class="paymentContainer">
+        <h3 class="text-center"><b>9 Easy Ways to Pay Your Municipal Account</b></h3>
+        <p class="text-center">Use your NMBM account number as a reference number, when paying your account.</p>
+        <br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3 mb-2">
+                    <ul class="paymentContainerList">
+                        <li>Unipay Outlets</li>
+                        <li>ABSA Bank Branches</li>
+                        <li>Pay-by-Phone (IVR)</li>
+                    </ul>
                 </div>
-                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <a asp-controller="Home" asp-action="Events" class="btn btn-secondary btn-back">Events and Announcements</a>
+                <div class="col-md-3 mb-2">
+                    <ul class="paymentContainerList">
+                        <li>Internet (EFT)</li>
+                        <li>ATM Beneficiary</li>
+                        <li>Debit Order</li>
+                    </ul>
                 </div>
-                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <a asp-controller="Home" asp-action="RequestStatus" class="btn btn-secondary btn-back">Service Request Status</a>
+                <div class="col-md-3 mb-2">
+                    <ul class="paymentContainerList">
+                        <li>Electricity Department</li>
+                        <li>Traffic Department</li>
+                        <li>Municipal Customer Care Offices</li>
+                    </ul>
                 </div>
             </div>
-            
-         @* <div class="container mt-5">
-                <div class="containerText">
-                    <h3 class="justify-content-center"> 9 Easy Ways to Pay Your Municipal Account </h3>
-                    <br>
-                    <ol>
-                        <li><b>Unipay Outlets</b></li>
-                            <ul>
-                                <li>Pick & Pay</li>
-                                <li>Checkers</li>
-                                <li>Shoprite</li>
-                                <li>Boxer</li>
-                                <li>Woolworths</li>
-                                <li>Selected Spar</li>
-                                <li>Ackermans</li>
-                                <li>Pep Stores</li>
-                            </ul>
-                        <li><b>ABSA Bank Branches</b></li>
-                            <ul>
-                                <li>Use your NMBM account number as a referance number, when paying your account.</li>
-                            </ul>
-                        <li><b>Pay-by-Phone (IVR)</b></li>
-                        <li><b>Internet (EFT)</b></li>
-                            <ul>
-                                <li>Use your NMBM account number as a referance number, when paying your account.</li>
-                            </ul>
-                        <li><b>ATM Beneficiary</b></li>
-                            <ul>
-                                <li>Use your NMBM account number as a referance number, when paying your account.</li>
-                            </ul>
-                        <li><b>Debit Order</b></li>
-                        <li><b>Electricity Department</b></li>
-                        <li><b>Traffic Department</b></li>
-                        <li><b>Municipal Customer Care Offices</b></li>
-                    </ol>
-                    <br>
-                    <p style="text-align:center; color:red;"><b>Please Note : Payments take 4 days to be allocated to the municipal account. The payments should be made 4 days before the account is due. An interest amount will be charged to the individual for late payments.</b></p>
-                </div>
-            </div> *@
+        </div>
+        <br /><br />
+        <p class="text-center text-danger fw-bold">
+            <b>
+                Please Note : Payments should be made 4 days before the account is due. An interest amount will be charged to the individual for late payments.
+            </b>
+        </p>
+    </div><!--(W3Schools,2025)-->
 
+    <br />
+
+   
+    <!--User Engagement Strategy : User Feedback Display ()-->
+    <div class="container mt-4">
+        <h3><b>Community Feedback</b></h3>
+        <br />
+        <div class="row">
+            @if (Model != null && Model.Any())
+            {
+                foreach (var f in Model)
+                {
+                    <div class="col-md col-sm-6 mb-3">
+                        <div class="card h-100 p-3">
+                            <div>
+                                <div class="rate" aria-label="Rating @f.Rating of 5">
+                                    @for (var s = 1; s <= 5; s++)
+                                    {
+                                        var filled = s <= f.Rating;
+                                        <span title="@s star" style="font-size:24px; color: @(filled ? "#ffc700" : "#ccc")">★</span>
+                                    }
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <div><b>@(string.IsNullOrWhiteSpace(f.Name) ? "Anonymous" : f.Name)</b></div>
+                                <div class="text-muted" style="font-size:12px">@f.CreatedAt.ToLocalTime().ToString("g")</div>
+                                @if (!string.IsNullOrWhiteSpace(f.Comment))
+                                {
+                                    <div class="mt-2">@f.Comment</div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-12"><i>No feedback yet!</i></div>
+            }
+        </div>
+    </div>
+    <br />
     </body>
 </html>
 
