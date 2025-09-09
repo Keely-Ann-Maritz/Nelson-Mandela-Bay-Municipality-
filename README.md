@@ -51,7 +51,7 @@
 <br>
 
 ## Application Interface 
-<img width="940" height="1060" alt="image" src="https://github.com/user-attachments/assets/ea9baaa2-2bec-4f4b-ab3b-af582f90ab72" />
+<img width="1910" height="2225" alt="HOME" src="https://github.com/user-attachments/assets/f0e18de0-ea07-4169-9731-4513a3444dbd" />
 
 <img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/c0bcd820-8902-4cf0-bc51-1c8f5bf3ff75" />
 
