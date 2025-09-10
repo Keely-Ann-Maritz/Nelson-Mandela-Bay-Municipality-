@@ -71,8 +71,13 @@
 <img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/88ce201e-ba4d-4728-96e3-32963d05e368" />
 
 
+## Additional References 
 
+Tutorial Teacher,2024.ASP.NET MVC - TempData. [online] Available at:<https://dotnettutorials.net/lesson/linq-orderbydescending-method/> [Accessed 4 Sepember 2025].
 
+SsNewbiew,2014.Regular expression - val.replace(/^[^a-zA-Z0-9]*|[^a-zA-Z0-9]*$/g,"'').[online] Available at: <https://stackoverflow.com/questions/26857934/regular-expression-val-replace-a-za-z0-9a-za-z0-9-g> [Accessed 4 Sepember 2025].
+
+Dot Net Tutorials,2025.LINQ OrderByDescending Method in C#. [online] Available at:<https://www.tutorialsteacher.com/mvc/tempdata-in-aspnet-mvc> [Accessed 4 Sepember 2025].
 
 
 
