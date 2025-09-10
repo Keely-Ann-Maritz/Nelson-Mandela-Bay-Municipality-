@@ -209,7 +209,7 @@
     <div class="container mt-3">
         <form asp-action="ReportIssues" enctype="multipart/form-data" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <!--errpr message informaing the user they have not filled in all the required fields-->
+            <!--errpr message informaing the user they have not filled in all the required fields ((Dimitrov,2023))-->
             @if (ViewBag.Status != null)
             {
                 @if (ViewBag.Message != null)
@@ -224,7 +224,7 @@
                 <label asp-for="Location" class="control-label fw-bold">Location:</label>
                 <input asp-for="Location" class="form-control" />
                 <span asp-validation-for="Location" class="text-danger"></span>
-            </div>
+            </div><!--(Lopez,2023)-->
             <div class="form-input-group mb-3 mt-3">
                 <label asp-for="Category" class="control-label fw-bold">Category:</label>
                 <select asp-for="Category" class="form-control" asp-items="(SelectList)ViewBag.Categories">
@@ -254,7 +254,7 @@
         </form>
     </div>
 
-    <!--Logic for the selection of the selection of a location and error message if the location was not valid ()-->
+    <!--Logic for the selection of the selection of a location and error message if the location was not valid (Code2Night,2021)-->
     <script>
         function initAutocomplete() {
             const input = document.getElementById('Location');

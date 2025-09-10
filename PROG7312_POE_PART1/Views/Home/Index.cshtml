@@ -46,15 +46,20 @@
 
     .indexImage{
         position: relative;
-        width: 100%;
-        max-width: auto;
+        width: 100vw;
+        max-width: 100vw;
         padding: 0;
         overflow: hidden;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
     }/*(W3Schools, 2025)*/
 
     .indexImage img{
         width: 100%;
         height: auto;
+        display: block;
+        max-height: 600px;
+        object-fit: cover;
         display: block;
     }/*(W3Schools, 2025)*/
 
@@ -110,12 +115,12 @@
 
     <!--Large Home Page Image ()-->
     <div class="indexImage">
-        <img src="~/Images/Index.jpg" alt="Logo"/>
+        <img src="~/Images/IndexBanner.png" alt="Logo"/>
     </div>
 
     <br />
 
-    <!--Displaying a success message when a user has submitted their feedback survey response, with a closing button option-->
+    <!--Displaying a success message when a user has submitted their feedback survey response, with a closing button option (Dimitrov,2023)-->
     @if (TempData["Status"] != null && TempData["Message"] != null)
     {
         <div class="alert @(TempData["Status"]?.ToString() == "Success" ? "alert-success" : "alert-danger") alert-dismissible" role="alert">
@@ -149,7 +154,7 @@
     <!--Information about the Municipality (W3Schools, 2025)-->
     <div class="municipalityInfo mt-4">
         <div class="row">
-            <!--About Us Information ()-->
+            <!--About Us Information (ALGA, 2025)-->
             <div class="col-md-4 mb-3">
                 <h3><b>About Us</b></h3>
                 <p>
@@ -159,7 +164,7 @@
                 </p>
             </div>
 
-            <!--Mission and Vision Information ()-->
+            <!--Mission and Vision Information (ALGA, 2025)-->
             <div class="col-md-4 mb-3">
                 <h3><b>Mission and Vision</b></h3>
                 <p>
@@ -169,7 +174,7 @@
                 </p>
             </div>
 
-            <!--Roles and Responsibilities Information ()-->
+            <!--Roles and Responsibilities Information (ALGA, 2025)-->
             <div class="col-md-4 mb-3">
                 <h3><b>Roles and Responsibilities</b></h3>
                 <p>
