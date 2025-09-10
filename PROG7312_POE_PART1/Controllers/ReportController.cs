@@ -18,7 +18,7 @@ namespace PROG7312_POE_PART1.Controllers
             return View(feedback);
         }
 
-        // Displays the latest feedback from the users
+        // Displays the latest feedback from the users (Dot Net Tutorials,2025)
         public static IEnumerable<Feedback> GetFeedbacks(int count)
         {
             return feedbacks
@@ -34,7 +34,7 @@ namespace PROG7312_POE_PART1.Controllers
             return View(feedbacks);
         }
 
-        // Displaying the successful message of reporting the issue
+        // Displaying the successful message of reporting the issue (Tutorials Teacher,2024)
         [HttpGet]
         public IActionResult SuccessfulMessage(int id)
         {
@@ -54,7 +54,7 @@ namespace PROG7312_POE_PART1.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult FeedbackSubmission(Feedback model)
         {
-            // Error message will display on the Feedback form page, informing the user to select the stars
+            // Error message will display on the Feedback form page, informing the user to select the stars (Tutorials Teacher,2024)
             if (!ModelState.IsValid)
             {
                 ViewBag.ReportId = model.ReportId;
@@ -67,7 +67,7 @@ namespace PROG7312_POE_PART1.Controllers
             model.CreatedAt = DateTime.UtcNow;
             feedbacks.Add(model);
 
-            // Success message will display on the Index page, informing the user their feedback was submitted
+            // Success message will display on the Index page, informing the user their feedback was submitted (Tutorials Teacher,2024)
             TempData["Status"] = "Success";
             TempData["Message"] = "Thank you for providing your feedback!";
             return RedirectToAction("Index", "Home");
@@ -99,7 +99,7 @@ namespace PROG7312_POE_PART1.Controllers
                     ModelState.AddModelError("MediaFile", "Media file is required.");
                 }
 
-                // If the required form fields are not filled, the error message will display informing the user they need ot fill in the fields which are highlighted
+                // If the required form fields are not filled, the error message will display informing the user they need ot fill in the fields which are highlighted (Tutorials Teacher,2024)
                 if (!ModelState.IsValid)
                 {
                     ViewBag.Status = "Error";
@@ -121,7 +121,7 @@ namespace PROG7312_POE_PART1.Controllers
                     }
 
                     // Renaming the uploaded file to the following 'referenceNumber_Category_FileName'
-                    // The files are saved to a uploads folder, which is created
+                    // The files are saved to a uploads folder, which is created (SsNewbie,2024)
                     var safeFileName = Path.GetFileName(mediaFile.FileName);
                     var category = string.IsNullOrWhiteSpace(model.Category) ? "Uncategorized" : model.Category;
                     var sanitizedCategory = Regex.Replace(category, "[^A-Za-z0-9_-]+", "_");
@@ -146,7 +146,7 @@ namespace PROG7312_POE_PART1.Controllers
             }
             catch (Exception ex)
             {
-                // Error message
+                // Error message (Tutorials Teacher,2024)
                 ViewBag.Status = "Error";
                 ViewBag.Message = $"An unexpected error occurred: {ex.Message}";
                 ViewBag.Categories = new SelectList(new[] { "Animal Cruelty", "Animal & Pest Control", "Road Related", "Electicity Related", "Fraud/Theft", "Illegal Dumping", "Service Delivery Related", "Waste Related", "Water & Sewerage Related" });
