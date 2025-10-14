@@ -13,6 +13,7 @@
 ## YouTube Video 
 
 * [POE PART 1: Task 2](https://youtu.be/Qx6cqSrwLQI)
+* [POE PART 2]()
 
 <br>
 
