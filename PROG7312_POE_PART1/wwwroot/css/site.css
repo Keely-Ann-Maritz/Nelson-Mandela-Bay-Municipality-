@@ -1,46 +1,54 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    margin-bottom: 60px;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-/*Footer Styling*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
 footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
     z-index: 1;
     color: black;
-}/*(W3Schools,2025)*/
+    background-color: #0e7597;
+    padding: 10px 0;
+}
 
-/*Body styling*/
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    width: 100%;
-    overflow: auto;
-}/*(W3Schools,2025)*/
-
- /*Top Navigation Bar styling*/
 .navbar-custom {
     background-color: #0e7597;
     height: 80px;
@@ -48,26 +56,6 @@ body {
     display: flex;
     align-items: center;
 }
-/*(W3Schools, 2025)*/
-
-.navbar-nav .nav-item {
-    margin-right: 20px;
-}
-/*(W3Schools, 2025)*/
-
-.navbar-link {
-    text-decoration: none;
-    color: white;
-}/*(W3Schools, 2025)*/
- 
-.navbar-link:hover {
-        color: orange;
-}/*(W3Schools, 2025)*/
-
-.navbar-custom .navbar-nav .nav-link {
-    color: white;
-}
-/*(W3Schools, 2025)*/
 
 .navbar-nav {
     display: flex;
@@ -76,4 +64,132 @@ body {
     margin: 0;
     padding: 0;
     align-items: center;
-}/*(W3Schools, 2025)*/
+    flex-wrap: wrap;
+}
+
+    .navbar-nav .nav-item {
+        margin-right: 20px;
+    }
+
+.navbar-link,
+.navbar-custom .navbar-nav .nav-link {
+    color: white !important;
+    text-decoration: none;
+}
+
+    .navbar-link:hover {
+        color: orange !important;
+    }
+
+/* Login button styling */
+.login-btn {
+    background-color: transparent;
+    border-radius: 50px;
+    border: 2px solid orange;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white !important;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .login-btn:hover {
+        background-color: orange;
+        color: black;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
+
+/* Social icons styling */
+.icon {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    color: white;
+}
+
+/* Social icons styling */
+.social-icon {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+    .social-icon a:hover {
+        transform: scale(1.2);
+        color: white !important;
+    }
+
+    .social-icon a {
+        font-size: 40px;
+        color: white !important;
+        text-decoration: none;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+@media (max-width: 767px) {
+    .navbar-custom {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+        background-color: #0e7597;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 0;
+        width: 100%;
+    }
+
+
+    .navbar-nav .nav-link,
+    .login-btn {
+        color: white !important;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .login-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 0;
+        margin-top: 10px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px 0;
+    }
+
+    .footer-custom {
+        background-color: #e5e5e5;
+        color: white;
+    }
+
+    footer.footer-custom {
+        margin-top: auto; 
+    }
+
+    .footer-custom {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .footer-custom section {
+        margin-bottom: 0.5rem;
+    }
+
+    .social-icon a {
+        font-size: 30px;
+        color: white !important; 
+    }
+    
+}
+

@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PROG7312_POE_PART1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PROG7312_POE_PART1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .btn-social {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: orange;
+        color: white;
+        font-size: 1.2rem;
+        transition: transform 0.3s;
+        text-decoration: none;
+    }
+
+    .btn-social:hover {
+        transform: scale(1.1);
+        color: white;
+    }
+
+    .btn-social i {
+        color: white;
+    }
+</style>
+<body>
+    <header>
+        <!-- Top navigation bar -->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-custom">
+            <div class="container-fluid">
+
+                <!-- Logo -->
+                <a class="navbar-brand" asp-controller="Category" asp-action="ListCategory">
+                    <img src="~/Images/LogoNMB.png" alt="Logo" style="height:70px; width:auto;" />
+                </a>
+
+                <!-- Burger / Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" style="color:white; font-size: 1.5rem;"></i>
+                </button>
+
+                <!-- Navigation links -->
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Category" asp-action="ListCategory">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Events" asp-action="ListEvents">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Announcements" asp-action="ListAnnouncements">Announcements</a>
+                        </li>
+                    </ul>
+
+                    <!-- User / Login -->
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="text-light"><b>Logged in: @Context.Session.GetString("FullName")</b></span>
+                        <a class="nav-link login-btn text-light align-items-center justify-content-center" asp-controller="Admin" asp-action="Logout"><i class="fa fa-sign-out"></i><b>Logout</b></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container p-0">
+        <main role="main" class="pb-3">
+
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--Footer (W3SChools,2025)-->
+    <footer class="footer-custom text-white mt-5">
+        <div class="container py-2">
+            <!-- Social Media -->
+            <section class="mb-2">
+                <a class="btn-social mx-1" href="https://www.facebook.com/NMBayM/" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="btn-social mx-1" href="https://x.com/nmandelabaymuni" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="btn-social mx-1" href="https://www.bing.com/search?q=Nelson+Mandela+Bay+Metropolitan+Municipality" target="_blank">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a class="btn-social mx-1" href="https://www.instagram.com/nelsonmandelabay/" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </section>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-custom py-2">
+            © 2025 Copyright:
+            <a class="text-white fw-bold text-decoration-none" href="https://localhost:7153/">nelsonmandelabay.com</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

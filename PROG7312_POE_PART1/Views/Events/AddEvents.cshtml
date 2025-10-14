@@ -1,0 +1,209 @@
+﻿@model PROG7312_POE_PART1.Models.EventItem;
+
+@{
+    ViewData["Title"] = "Add Event";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    
+    List<string> categoryList = ViewBag.AvailableCategories as List<string> ?? new List<string>();
+    string currentDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+    <style>
+        .btn-add {
+            background-color: orange;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid orange;
+            display: inline-block;
+        }
+        .btn-back:hover {
+            background-color: transparent;
+            color: grey;
+            border: 2px solid grey;
+            text-decoration: none;
+        }
+
+        .btn-add:hover {
+            background-color: transparent;
+            color: orange;
+            border: 2px solid orange;
+            text-decoration: none;
+        }
+
+        .btn-back {
+            background-color: grey;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid grey;
+            display: inline-block;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+        }
+
+        .form-control {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .form-input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-input-group input:not([type="checkbox"]),
+        .form-input-group textarea,
+        .form-control,
+        .form-input-group select {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        .form-input-group {
+            display: block;
+            max-width: 700px;
+            gap: 10px;
+            margin: 10px auto;
+        }
+
+        .form-checkbox-group label {
+            margin-bottom: 0;
+        }
+
+        .form-checkbox-group {
+            display: flex;
+            align-items: center;
+            max-width: 700px;
+            margin: 10px auto 20px auto;
+            gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn-back, .btn-add {
+            flex: 1;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <br />
+
+    <h1 style="text-align: center">Add Event</h1>
+
+    <hr />
+
+    <br />
+
+    <div class="container mt-3">
+        <form asp-action="AddEvents" asp-controller="Events" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @if (ViewBag.Status != null)
+            {
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert @(ViewBag.Status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+                        <b>@(ViewBag.Status == "Success" ? "Success!" : "Error!")</b> @ViewBag.Message
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+            }
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Title" class="control-label fw-bold">Event Title:</label>
+                <input asp-for="Title" class="form-control" placeholder="Enter event title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Date" class="control-label fw-bold">Date and Time:</label>
+                <input asp-for="Date" type="datetime-local" class="form-control" value="@currentDateTime" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Location" class="control-label fw-bold">Location:</label>
+                <input asp-for="Location" class="form-control" placeholder="Enter event location" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Description" class="control-label fw-bold">Description:</label>
+                <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter a detailed event description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label class="control-label fw-bold">Category:</label>
+                <select name="Category" id="Category" class="form-control">
+                    <option value="" selected disabled>Select a category</option>
+                    @foreach (var category in categoryList)
+                    {
+                        <option value="@category">@category</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label class="control-label fw-bold">Upload Event Image:</label>
+                <input asp-for="UploadedImage" type="file" class="form-control" accept="image/*" />
+                <span asp-validation-for="UploadedImage" class="text-danger"></span>
+            </div>
+
+            <input asp-for="IsAnnouncement" type="hidden" value="false" />
+
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Add Event" class="btn-add" />
+                <a asp-controller="Events" asp-action="ListEvents" class="btn-back">Back</a>
+            </div>
+        </form>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</body>
+</html>

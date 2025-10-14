@@ -193,6 +193,29 @@
     .show {
         display: block;
     }/*(W3Schools,2025)*/
+
+    /*Progress bar*/
+    .progress-container {
+        width: 100%;
+        background-color: #f3f3f3;
+        border-radius: 20px;
+        height: 20px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }/*(W3Schools,2025)*/
+
+    .progress-bar {
+        height: 100%;
+        width: 0%;
+        background-color: orange;
+        text-align: center;
+        line-height: 20px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 20px 0 0 20px;
+        transition: width 0.3s ease-in-out;
+    }/*(W3Schools,2025)*/
 </style>
 <body>
 
@@ -202,6 +225,13 @@
     <h1 style="text-align: center">Report Any Issues</h1>
 
     <hr />
+
+    <br />
+
+    <!-- Progress Bar -->
+    <div class="progress-container" style="max-width:700px; margin:20px auto;">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
 
     <br />
 
@@ -275,6 +305,40 @@
         }
 
         google.maps.event.addDomListener(window, 'load', initAutocomplete);
+        
+        //Progress bar
+        const fields = [
+            document.querySelector('[name="Location"]'),
+            document.querySelector('[name="Category"]'),
+            document.querySelector('[name="Description"]'),
+            document.querySelector('[name="mediaFile"]')
+        ];
+
+        function updateProgressBar() {
+            let filled = 0;
+
+            fields.forEach(field => {
+                if (field.type === "file") {
+                    if (field.files.length > 0) filled++;
+                } else if (field.value.trim() !== "") {
+                    filled++;
+                }
+            });
+
+            let percent = (filled / fields.length) * 100;
+            const progressBar = document.getElementById("progressBar");
+            progressBar.style.width = percent + "%";
+            progressBar.textContent = Math.round(percent) + "%";
+        }
+
+        fields.forEach(field => {
+            field.addEventListener("input", updateProgressBar);
+            field.addEventListener("change", updateProgressBar);
+        });
+
+        // Recalculate progress immediately after page reload
+        window.addEventListener("DOMContentLoaded", updateProgressBar);
+
     </script>
 </body>
 </html>

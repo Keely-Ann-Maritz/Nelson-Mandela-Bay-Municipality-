@@ -1,0 +1,141 @@
+﻿@model PROG7312_POE_PART1.Models.AppUser;
+
+@{
+    ViewData["Title"] = "Admin Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    footer {
+       display: none;
+    }
+
+    .navbar-custom {
+        display: none;
+    }
+    /*(W3Schools,2025)*/
+
+    .login-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        font-size: 16px;
+    }
+
+    .card-header-enhanced {
+        background-color: #0e7597;
+        color: white;
+        padding: 20px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .form-control:focus {
+        border-color: #0e7597;
+        box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    }
+
+    .form-control-lg {
+        font-size: 16px;
+    }
+
+    .btn-primary:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background-color: orange;
+        border-color: orange;
+        padding: 10px 15px;
+        font-weight: 500;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-back {
+        background-color: grey;
+        border-color: grey;
+        color: white;
+        padding: 10px 15px;
+        font-weight: 500;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }
+
+    .btn-lg {
+        font-size: 16px;
+    }
+
+    .card-footer-hint {
+        background-color: #fafafa;
+        border-top: 1px solid #eeeeee;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    body{
+        align-items: center;
+        justify-content: center;
+        background-color: #f0faff;
+    }
+    html,body{
+        height:100px;
+    }
+</style>
+
+<!-- Admin Login Form-->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card login-card">
+                <div class="card-header-enhanced text-center">
+                    <h3><i class="fa fa-lock me-2"></i> Admin Login</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="AdminLogin" method="post">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Username" class="form-label">Username</label>
+                            <input asp-for="Username" class="form-control form-control-lg" placeholder="Enter username" value="@Model?.Username" /> <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Enter password" /> <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <!-- Login and Back button-->
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fa fa-sign-in-alt me-2"></i> Log In
+                            </button>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-back btn-lg">
+                                <i class="fa fa-sign-in-alt me-2"></i> Back
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,494 @@
+﻿@model PROG7312_POE_PART1.Models.EventListViewModel
+
+@{
+    ViewData["Title"] = "Events";
+    var recommendations = ((List<PROG7312_POE_PART1.Models.EventItem>)ViewBag.RecommendedEvents).Take(3).ToList();
+}
+
+<style>
+
+    h1{
+        text-align:center;
+        align-content: center;
+    }
+ 
+    /* Custom list cards (W3Schools, 2025)*/
+    .event-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+    }
+ 
+    .event-card{
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        padding: 16px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+ 
+    .event-card:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+    }
+ 
+    .event-title{
+        font-weight: 700;
+        margin: 0 0 8px 0;
+    }
+ 
+    .badge-announcement{
+        display: inline-block;
+        background: orange;
+        color: #000;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 999px;
+        margin-left: 8px;
+        font-size: .85rem;
+    }
+ 
+    .badge-event{
+        display: inline-block;
+        background: orange;
+        color: #fff;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 999px;
+        margin-left: 8px;
+        font-size: .85rem;
+    }
+ 
+    .muted{
+        color: #666
+        margin-bottom:0;
+    }
+ 
+    /* Simple pagination styling (W3Schools, 2025)*/
+    .pagination .page-item {
+        margin: 0; 
+    }
+
+    .pagination .page-link {
+        background: transparent;
+        border: none;
+        color: black;
+        padding: 0; 
+        min-width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .pagination .page-link:hover,
+    .pagination .page-link:focus {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: orange !important;
+        color: white !important;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    /* Search form styling */
+
+    .search-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-row {
+        display: flex;
+        gap: 15px;
+        align-items: end;
+        flex-wrap: wrap;
+    }
+
+    .search-field {
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        flex: 1;
+    }
+
+    .search-field label {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .search-field .form-control {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    .search-field .form-control:focus {
+        outline: none;
+        border-color: orange;
+        box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+    }
+
+    .search-buttons {
+        display: flex;
+        gap: 10px;
+        align-items: end;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.2s ease;
+    }
+
+    .btn-submit {
+        background: orange;
+        color: white;
+        border: 2px solid transparent;
+    }
+
+    .btn-submit:hover {
+        background-color: transparent;
+        color: orange;
+        border-color:  orange;
+        text-decoration: none;
+    }
+
+    .btn-back {
+        background: grey;
+        color: white;
+         border: 2px solid transparent;
+    }
+
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border-color: grey;
+        text-decoration: none;
+    }
+
+    /* Search results info */
+    .search-results-info {
+        background: #f0faff;
+        border: 1px solid #f0faff;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .search-results-info p {
+        margin: 0 0 10px 0;
+        color: black;
+    }
+
+    .search-filter {
+        display: inline-block;
+        background: orange;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin: 2px 5px 2px 0;
+        font-size: 12px;
+    }
+
+    /* Next-up compact card styling */
+    .next-up{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        flex-wrap:wrap;
+        background:#f0faff;
+        border:1px solid #f0faff;
+        border-radius:10px;
+        padding:14px 16px;
+        margin-bottom:16px;
+    }
+    .next-up .title{
+        font-weight:700;
+        margin-right:auto;
+    }
+    .pill{
+        display:inline-block;
+        background:orange;
+        color:#fff;
+        padding:4px 10px;
+        border-radius:999px;
+        font-size:12px;
+    }
+
+    /* Responsive design (W3Schools,2025) */
+    @@media (max-width: 768px) {
+        .search-row {
+            flex-direction: column;
+        }
+
+        .search-field {
+            min-width: 100%;
+        }
+
+        .search-buttons {
+            justify-content: center;
+        }
+    }
+</style>
+   <br /><br />
+ 
+   <!-- Buttons for toggling between the events and announcement pages -->
+    <div style="text-align:center; margin-bottom:20px;">
+    <a href="@Url.Action("Events", "Events")"
+               class="btn @(ViewData["Title"].ToString() == "Events" ? "btn-submit" : "btn-back")"
+               style="margin-right:10px;">
+               Events
+    </a>
+    <a href="@Url.Action("Announcements", "Announcements")"
+               class="btn @(ViewData["Title"].ToString() == "Announcements" ? "btn-submit" : "btn-back")">
+               Announcements
+    </a>
+    </div>
+    <br />
+
+ @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["Message"]
+        </div>
+    }
+
+    <br />
+
+    <!--Search bar-->
+    <div>
+        <form method="get" action="@Url.Action("Events")" class="search-form">
+            <div class="search-row">
+                <div class="search-field">
+                    <label for="title">Title Search:</label>
+                    <input type="text" name="title" id="title" class="form-control"
+                           value="@Model.SearchTitle" placeholder="Search event titles..." />
+                </div>
+
+                <div class="search-field">
+                    <label for="category">Category:</label>
+                    <select name="category" id="category" class="form-control">
+                        <option value="" selected="@(string.IsNullOrWhiteSpace(Model.SearchCategory) ? "selected" : null)">All categories</option>
+                        @foreach (var cat in Model.AvailableCategories)
+                        {
+                            var isSelected = string.Equals(Model.SearchCategory, cat, StringComparison.OrdinalIgnoreCase) ? "selected" : null;
+                            <option value="@cat" selected="@isSelected">@cat</option>
+                        }
+                    </select>
+                </div><!--(W3Schools,2025)-->
+
+                <div class="search-field">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" name="startDate" id="startDate" class="form-control"
+                           value="@(Model.SearchStartDate?.ToString("yyyy-MM-dd"))" />
+                </div><!--(W3Schools,2025)-->
+
+                <div class="search-field">
+                    <label for="endDate">End Date</label>
+                    <input type="date" name="endDate" id="endDate" class="form-control"
+                           value="@(Model.SearchEndDate?.ToString("yyyy-MM-dd"))" />
+                </div><!--(W3Schools,2025)-->
+
+                <div class="search-field">
+                    <label for="sortDir">Sort By</label>
+                    <select name="sortDir" id="sortDir" class="form-control">
+                        <option value="asc" selected="@(Model.SortDirection == "asc")">Oldest first</option>
+                        <option value="desc" selected="@(Model.SortDirection == "desc")">Newest first</option>
+                    </select>
+                </div><!--(W3Schools,2025)-->
+
+                <div class="search-buttons">
+                     <button type="submit" class="btn btn-submit">
+                          Search
+                     </button>
+                     <a href="@Url.Action("Events")" class="btn btn-back">
+                          Clear
+                     </a>
+                </div>
+                   
+            </div>
+
+            <input type="hidden" name="page" value="1" />
+            <input type="hidden" name="pageSize" value="@Model.PageSize" />
+        </form>
+    </div>
+
+    <br />
+
+    <!-- Displaying Search Information -->
+    @if (Model.IsSearchActive)
+    {
+        <div class="search-results-info">
+            <p><b>Search Results:</b> @Model.TotalCount event(s) found</p>
+
+            @if (Model.SearchStartDate.HasValue)
+            {
+                <span class="search-filter">From: <b>@Model.SearchStartDate.Value.ToString("dd MMM yyyy")</b></span>
+            }
+            @if (Model.SearchEndDate.HasValue)
+            {
+                <span class="search-filter">To: <b>@Model.SearchEndDate.Value.ToString("dd MMM yyyy")</b></span>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.SearchTitle))
+            {
+                <span class="search-filter">Title: <b>@Model.SearchTitle</b></span>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.SearchCategory))
+            {
+                <span class="search-filter">Category: <b>@Model.SearchCategory</b></span>
+            }
+        </div>
+    }
+
+    <br />
+
+    <!-- Displaying the cards of the searched event-->
+    <div class="event-list">
+        @if(Model != null && Model.Items != null && Model.Items.Any())
+        {
+            foreach(var item in Model.Items)
+            {
+                <div class="event-card">
+                    <img class="card-img-top"
+                     src="@( !string.IsNullOrEmpty(item.ImagePath)
+                             ? Url.Content(item.ImagePath)
+                             : Url.Content("~/Images/Events/default.jpg") )"
+                     alt="@item.Title"
+                     style="object-fit:cover; width:100%; height:250px;" />
+                     
+                    <div class="mt-3">
+                        <p class="fw-bold mb-2">
+                            @item.Title
+                        </p>
+                        <p></p>
+                        <p class="muted mb-1">
+                            <i class="fa fa-calendar me-1"></i>
+                            @item.Date.ToString("ddd, dd MMM yyyy HH:mm")
+                        </p>
+                        <p class="muted mb-3">
+                            <i class="fa fa-map-marker me-1"></i>
+                            @item.Location
+                        </p>
+                        <p class="mb-0">@item.Description</p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="muted">No events yet.</div>
+        }
+    </div>
+
+    <br />
+
+    @* Pagination controls (W3Schools, 2025) *@
+    @if(Model != null && Model.TotalPages > 1)
+{
+    <nav aria-label="Events page navigation">
+        <ul class="pagination justify-content-center">
+            <!-- Previous (w3Schools, 2025) -->
+            <li class="page-item @(Model.HasPrevious ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("Events", new {
+                    page = Model.HasPrevious ? Model.Page - 1 : 1,
+                    pageSize = Model.PageSize,
+                    category = Model.SearchCategory,
+                    startDate = Model.SearchStartDate?.ToString("yyyy-MM-dd"),
+                    endDate = Model.SearchEndDate?.ToString("yyyy-MM-dd"),
+                    title = Model.SearchTitle,
+                    sortDir = Model.SortDirection
+                })" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <!-- Page numbers (w3Schools, 2025) -->
+            @for (var p = 1; p <= Model.TotalPages; p++)
+            {
+                <li class="page-item @(p == Model.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Events", new {
+                        page = p,
+                        pageSize = Model.PageSize,
+                        category = Model.SearchCategory,
+                        startDate = Model.SearchStartDate?.ToString("yyyy-MM-dd"),
+                        endDate = Model.SearchEndDate?.ToString("yyyy-MM-dd"),
+                        title = Model.SearchTitle,
+                        sortDir = Model.SortDirection
+                    })">@p</a>
+                </li>
+            }
+
+            <!-- Next (w3Schools, 2025) -->
+            <li class="page-item @(Model.HasNext ? "" : "disabled")">
+                <a class="page-link" href="@Url.Action("Events", new {
+                    page = Model.HasNext ? Model.Page + 1 : Model.TotalPages,
+                    pageSize = Model.PageSize,
+                    category = Model.SearchCategory,
+                    startDate = Model.SearchStartDate?.ToString("yyyy-MM-dd"),
+                    endDate = Model.SearchEndDate?.ToString("yyyy-MM-dd"),
+                    title = Model.SearchTitle,
+                    sortDir = Model.SortDirection
+                })" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+}
+<br />
+
+<!-- Recommendations (w3Schools, 2025) -->
+<div class="recommendation">
+    <h3>Recommendations</h3>
+    <br />
+    @if (recommendations != null && recommendations.Any())
+    {
+        <div class="row">
+            @foreach (var rec in recommendations)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card shadow border-0 h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark">@rec.Title</h5>
+                            <p class="card-text text-muted mb-2"><i class="fa fa-calendar"></i> @rec.Date.ToString("ddd, dd MMM yyyy HH:mm")</p>
+                            <p class="card-text text-muted mb-2"><i class="fa fa-map-marker"></i> @rec.Location</p>
+                            <p class="card-text small">@rec.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-secondary text-center mt-3" role="alert">
+            No recommended events.
+        </div>
+    }
+</div>
+
+<br /><br>

@@ -1,0 +1,203 @@
+﻿@model PROG7312_POE_PART1.Models.EventListViewModel
+
+@{
+    ViewData["Title"] = "Announcements";
+}
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            border: 1px solid #0e7597;
+            border-radius: 12px;
+            padding: 16px;
+            background: #f0faff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .title {
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .muted {
+            color: #666;
+            margin-bottom:0;
+        }
+
+        /* Simple pagination styling (W3Schools, 2025)*/
+        .pagination .page-item {
+            margin: 0; 
+        }
+
+        .pagination .page-link {
+            background: transparent;
+            border: none;
+            color: black;
+            padding: 0; 
+            min-width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .pagination .page-link:hover,
+        .pagination .page-link:focus {
+            background: transparent !important;
+            color: black !important;
+            box-shadow: none !important;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: orange !important;
+            color: white !important;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+        }
+
+        footer {
+            background-color: #0e7597;
+            color: black;
+            padding: 10px 0;
+            position: relative;
+            text-align: center;
+        }
+        /*(W3Schools, 2025)*/
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
+        .btn-submit {
+            background: orange;
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-submit:hover {
+            background-color: transparent;
+            color: orange;
+            border-color:  orange;
+            text-decoration: none;
+        }
+
+        .btn-back {
+            background: grey;
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-back:hover {
+            background-color: transparent;
+            color: grey;
+            border-color: grey;
+            text-decoration: none;
+        }
+    </style>
+
+    <br /><br />
+ 
+    <div style="text-align:center; margin-bottom:20px;">
+    <a href="@Url.Action("Events", "Events")"
+               class="btn @(ViewData["Title"].ToString() == "Events" ? "btn-submit" : "btn-back")"
+               style="margin-right:10px;">
+               Events
+    </a>
+    <a href="@Url.Action("Announcements", "Announcements")"
+               class="btn @(ViewData["Title"].ToString() == "Announcements" ? "btn-submit" : "btn-back")">
+               Announcements
+    </a>
+    </div>
+    <br /> 
+
+    <div class="list">
+        @if (Model != null && Model.Items != null && Model.Items.Any())
+        {
+            foreach (var a in Model.Items)
+            {
+                <div class="card">
+                    <p class="title">@a.Title</p>
+                    <p class="muted" style="margin-top:15px;"><i class="fa fa-calendar"></i> @a.Date.ToString("ddd, dd MMM yyyy HH:mm")</p>
+                    <p class="muted"><i class="fa fa-map-marker"></i> @a.Location</p>
+                    <p style="margin-top:15px;">@a.Description</p>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="muted">No announcements yet.</div>
+        }
+    </div>
+
+    <br />
+
+    @* Pagination controls (W3Schools, 2025) *@
+    @if (Model != null && Model.TotalPages > 1)
+    {
+        <div class="pagination-container">
+            <nav aria-label="Announcements page navigation">
+                <ul class="pagination justify-content-center">
+                    @* Previous Button (W3Schools, 2025) *@
+                    <li class="page-item @(!Model.HasPrevious ? "disabled" : "")">
+                        <a class="page-link" href="@Url.Action("Announcements", new {
+                            page = Model.HasPrevious ? Model.Page - 1 : 1,
+                            pageSize = Model.PageSize,
+                            sortDir = Model.SortDirection
+                        })" aria-label="Previous">
+                             <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    @* Page Numbers (W3Schools, 2025) *@
+                    @for (var p = 1; p <= Model.TotalPages; p++)
+                    {
+                        <li class="page-item @(p == Model.Page ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("Announcements", new {
+                                page = p,
+                                pageSize = Model.PageSize,
+                                sortDir = Model.SortDirection
+                            })">@p</a>
+                        </li>
+                    }
+
+                    @* Next Button *@
+                    <li class="page-item @(!Model.HasNext ? "disabled" : "")">
+                        <a class="page-link" href="@Url.Action("Announcements", new {
+                            page = Model.HasNext ? Model.Page + 1 : Model.TotalPages,
+                            pageSize = Model.PageSize,
+                            sortDir = Model.SortDirection
+                        })" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    }
+
+    <br />

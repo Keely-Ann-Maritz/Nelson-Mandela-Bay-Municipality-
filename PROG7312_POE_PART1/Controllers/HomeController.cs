@@ -30,10 +30,6 @@ namespace PROG7312_POE_PART1.Controllers
             return View();
         }
 
-        public IActionResult Events()
-        {
-            return View();
-        }
 
         public IActionResult RequestStatus()
         {

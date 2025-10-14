@@ -1,0 +1,181 @@
+﻿@model PROG7312_POE_PART1.Models.EventItem
+
+@{
+    ViewData["Title"] = "AddAnnouncements";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string currentDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Announcement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+    <style>
+
+        /* Button Styling (W3Schools, 2025)*/
+        .btn-add {
+            background-color: orange;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid orange;
+            display: inline-block;
+        }
+
+        .btn-back:hover {
+            background-color: transparent;
+            color: grey;
+            border: 2px solid grey;
+            text-decoration: none;
+        }
+
+        .btn-add:hover {
+            background-color: transparent;
+            color: orange;
+            border: 2px solid orange;
+            text-decoration: none;
+        }
+
+        .btn-back {
+            background-color: grey;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid grey;
+            display: inline-block;
+        }
+
+        /* Form Styling (W3Schools, 2025) */
+        .form-control:focus {
+            outline: none;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+        }
+
+        .form-control {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .form-input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-input-group input:not([type="checkbox"]),
+        .form-input-group textarea,
+        .form-control,
+        .form-input-group select {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        .form-input-group {
+            display: block;
+            max-width: 700px;
+            gap: 10px;
+            margin: 10px auto;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn-back, .btn-add {
+            flex: 1;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Footer Styling (W3Schools, 2025) */
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <br />
+
+    <h1 style="text-align: center">Add Announcement</h1>
+
+    <hr />
+
+    <br />
+
+    <div class="container mt-3">
+        <form asp-controller="Announcements" asp-action="AddAnnouncements" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @if (ViewBag.Status != null)
+            {
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert @(ViewBag.Status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+                        <b>@(ViewBag.Status == "Success" ? "Success!" : "Error!")</b> @ViewBag.Message
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div><!--(W3Schools, 2025)-->
+                }
+            }
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Title" class="control-label fw-bold">Announcement Title:</label>
+                <input asp-for="Title" class="form-control" placeholder="Enter announcement title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Date" class="control-label fw-bold">Date and Time:</label>
+                <input asp-for="Date" type="datetime-local" class="form-control" value="@currentDateTime" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Location" class="control-label fw-bold">Location:</label>
+                <input asp-for="Location" class="form-control" placeholder="Enter location" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Description" class="control-label fw-bold">Description:</label>
+                <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter a detailed description of the announcement"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Publish Announcement" class="btn-add" />
+                <a asp-controller="Announcements" asp-action="ListAnnouncements" class="btn-back">Back</a>
+            </div>
+        </form>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>
+</html>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,258 @@
+﻿@model IEnumerable<PROG7312_POE_PART1.Models.EventItem>
+
+@{
+    ViewData["Title"] = "ListAnnouncements";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    // Retrieve ViewBag data for pagination
+    var currentPage = (int)(ViewBag.CurrentPage ?? 1);
+    var totalPages = (int)(ViewBag.TotalPages ?? 1);
+    var pageSize = (int)(ViewBag.PageSize ?? 5);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Announcements List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+
+    /* Button Styling (W3Schools,2025) */
+    .btn-add {
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid orange;
+        display: inline-block;
+    }
+
+    .btn-back {
+        background-color: grey;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid grey;
+        display: inline-block;
+    }
+
+    .btn-add:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
+        
+    .btn-delete:hover {
+        background-color: transparent;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+        text-decoration: none;
+    }
+
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 12px;
+        border: 1px solid #dc3545;
+    }
+
+    /* Card Styling (W3Schools,2025) */
+    .event-card {
+        border: 1px solid #f0faff;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px 0;
+        background-color: #f0faff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .event-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .event-title {
+        margin: 0;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .event-details p {
+        margin: 5px 0;
+        color: #666;
+    }
+
+    /* Simple pagination styling (W3Schools, 2025)*/
+    .pagination .page-item {
+        margin: 0; 
+    }
+
+    .pagination .page-link {
+        background: transparent;
+        border: none;
+        color: black;
+        padding: 0; 
+        min-width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .pagination .page-link:hover,
+    .pagination .page-link:focus {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: orange !important;
+        color: white !important;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+</style>
+<body>
+    <br />
+
+    <!-- Add Button -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+        <h1 style="text-align: center"><i class="fa fa-bullhorn"></i> Announcements Management</h1>
+        
+        <a asp-controller="Announcements" asp-action="AddAnnouncements" class="btn-add">
+            Add Announcement
+        </a>
+    </div>
+
+    <hr />
+    <br />
+
+    <!--Success and error message-->
+    @if (TempData["Status"] != null && TempData["Message"] != null)
+    {
+        var status = TempData["Status"]?.ToString();
+        <div class="alert @(status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+            <b>@(status == "Success" ? "Success!" : "Error!")</b> @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div><!--(W3Schools,2025)-->
+    }
+
+    <br />
+
+    <!-- Displaying details -->
+    <div class="container mt-3">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var eventItem in Model)
+            {
+                <div class="event-card">
+                    <div class="event-header">
+                        <h4 class="event-title text-dark mb-3">
+                            <b>@eventItem.Title</b>
+                        </h4>
+                        <div>
+                            <form asp-controller="Announcements" asp-action="RemoveAnnouncement" method="post" style="display: inline;"
+                                  onsubmit="return confirm('Are you sure you want to delete the announcement: @eventItem.Title?');">
+                                <input type="hidden" name="id" value="@eventItem.Id" />
+                                <button type="submit" class="btn-delete">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="event-details mt-2">
+                        <p><b class="text-dark"> Date/Time:</b> @eventItem.Date.ToString("dd MMM yyyy HH:mm")</p>
+                        <p><b class="text-dark"> Location:</b> @eventItem.Location</p>
+                        <p><b class="text-dark">Description:</b> @eventItem.Description</p>
+                    </div>
+                </div>
+            }
+
+            <br />
+
+            @* Pagination (W3Schools,2025) *@
+            @if (totalPages > 1)
+            {
+                <div class="pagination-container">
+                    <nav aria-label="Announcements page navigation">
+                        <ul class="pagination justify-content-center">
+                            @* Previous Button (W3Schools,2025) *@
+                            <li class="page-item @(currentPage <= 1 ? "disabled" : "")">
+                                <a class="page-link" asp-controller="Announcements" asp-action="ListAnnouncements"
+                                   asp-route-page="@(currentPage - 1)" asp-route-pageSize="@pageSize" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                            @* Page Numbers (W3Schools,2025) *@
+                            @for (int i = 1; i <= totalPages; i++)
+                            {
+                                <li class="page-item @(i == currentPage ? "active" : "")">
+                                    <a class="page-link" asp-controller="Announcements" asp-action="ListAnnouncements"
+                                       asp-route-page="@i" asp-route-pageSize="@pageSize">@i</a>
+                                </li>
+                            }
+
+                            @* Next Button (W3Schools,2025) *@
+                            <li class="page-item @(currentPage >= totalPages ? "disabled" : "")">
+                                <a class="page-link" asp-controller="Announcements" asp-action="ListAnnouncements"
+                                   asp-route-page="@(currentPage + 1)" asp-route-pageSize="@pageSize" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            }
+            
+        }
+        else
+        {
+            <!--Informing the admin there are no announcements and they should add-->
+            <div style="text-align: center; padding: 40px; color: #666;">
+                <i class="fa fa-bullhorn" style="font-size: 48px; margin-bottom: 20px;"></i>
+                <h3>No Announcements Found</h3>
+                <p>Start by adding a new announcement!</p>
+                <a asp-controller="Announcements" asp-action="AddAnnouncements" class="btn-add">
+                     Add First Announcement
+                </a>
+            </div>
+        }
+    </div>
+
+    <br />
+</body>
+</html>

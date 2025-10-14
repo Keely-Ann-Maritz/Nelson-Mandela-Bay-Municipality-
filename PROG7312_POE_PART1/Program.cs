@@ -6,10 +6,37 @@ namespace PROG7312_POE_PART1
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //Add MVC controllers and views
+            builder.Services.AddControllersWithViews();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Configuring the session behaviour
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             var app = builder.Build();
+
+            // Delete Temp images on app start
+            string tempFolder = Path.Combine(app.Environment.WebRootPath, "Images", "Events", "Temp");
+            if (Directory.Exists(tempFolder))
+            {
+                try
+                {
+                    Directory.Delete(tempFolder, true);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error deleting Temp folder: {ex.Message}");
+                }
+            }
+            // Recreate the folder so uploads can work
+            Directory.CreateDirectory(tempFolder);
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -23,6 +50,9 @@ namespace PROG7312_POE_PART1
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            // Sessions implementation
+            app.UseSession();
 
             app.UseAuthorization();
 

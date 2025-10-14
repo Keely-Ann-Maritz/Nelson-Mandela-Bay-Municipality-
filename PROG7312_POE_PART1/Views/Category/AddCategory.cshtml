@@ -1,0 +1,160 @@
+﻿@model PROG7312_POE_PART1.Models.Category
+
+@{
+    ViewData["Title"] = "Add Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Category</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+    .btn-add {
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid orange;
+        display: inline-block;
+    }
+        /*(W3Schools,2025)*/
+
+        .btn-add:hover {
+            background-color: transparent;
+            color: orange;
+            border: 2px solid orange;
+            text-decoration: none;
+        }
+    /*(W3Schools,2025)*/
+
+    .btn-back {
+        background-color: grey;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid grey;
+        display: inline-block;
+    }
+        /*(W3Schools,2025)*/
+
+        .btn-back:hover {
+            background-color: transparent;
+            color: grey;
+            border: 2px solid grey;
+            text-decoration: none;
+        }
+    /*(W3Schools,2025)*/
+
+    /*Styling the form*/
+    .form-control:focus {
+        border-color: orange;
+        box-shadow: 0 0 0 0.25rem orange;
+    }
+    /*(W3Schools,2025)*/
+
+    .form-input-group {
+        display: block;
+        max-width: 700px;
+        gap: 10px;
+        margin: 10px auto;
+    }
+        /*(W3Schools,2025)*/
+
+        .form-input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        /*(W3Schools,2025)*/
+
+        .form-input-group input, .form-input-group textarea, .form-control {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+    /*(W3Schools,2025)*/
+
+    .form-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    /*(W3Schools,2025)*/
+
+    .btn-back, .btn-add {
+        flex: 1;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    /*(W3Schools,2025)*/
+
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 15px 0;
+    }
+    /*(W3Schools,2025)*/
+</style>
+<body>
+
+    <br />
+
+    <!--Heading-->
+    <h1 style="text-align: center">Add Category</h1>
+
+    <hr />
+
+    <br />
+
+    <!--Form to add new category-->
+    <div class="container mt-3">
+        <form asp-action="AddCategory" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!--error message informing the user they have not filled in all the required fields-->
+            @if (ViewBag.Status != null)
+            {
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert @(ViewBag.Status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+                        <b>@(ViewBag.Status == "Success" ? "Success!" : "Error!")</b> @ViewBag.Message
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+            
+                    <!--(W3School,2025)-->
+                }
+            }
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Name" class="control-label fw-bold">Category Name:</label>
+                <input asp-for="Name" class="form-control" placeholder="Enter category name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Description" class="control-label fw-bold">Description:</label>
+                <textarea asp-for="Description" class="form-control" placeholder="Enter category description (optional)"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Add Category" class="btn-add" />
+                <a asp-controller="Category" asp-action="ListCategory" class="btn-back">Back</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
