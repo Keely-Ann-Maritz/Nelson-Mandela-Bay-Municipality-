@@ -53,38 +53,23 @@
 
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
-  
-<img width="1910" height="1067" alt="Report" src="https://github.com/user-attachments/assets/1fac30eb-50c5-4544-b851-35cf2334d671" />
 
-<img width="940" height="568" alt="image" src="https://github.com/user-attachments/assets/f22a3740-190a-4353-b26e-021b246562a0" />
+<img width="1910" height="1104" alt="Feedback" src="https://github.com/user-attachments/assets/dbeae0e2-86c0-474c-8ce8-b8f50c08d7b5" />
 
 <img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
 
-<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/d37214b8-6a70-41f0-880c-08b67809fb4a" />
 
 <br>
 
 ## Part 2 Implementation
 
+<img width="1910" height="2532" alt="Events" src="https://github.com/user-attachments/assets/b701d64e-745b-43e4-8e66-15a9fdc516f7" />
+
+<img width="1910" height="1651" alt="Recommendations" src="https://github.com/user-attachments/assets/7e78ebaf-93fd-4b1c-8f6a-423d1acd6349" />
+
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
-
-## User Interface
-
-<img width="1910" height="922" alt="Login" src="https://github.com/user-attachments/assets/30ab54c8-2fa4-4d74-9541-612cf6537f49" />
-
-<img width="1910" height="922" alt="Add Category" src="https://github.com/user-attachments/assets/f73673b5-3c30-4cb5-a97f-5bd448a027f0" />
-
-<img width="1910" height="1451" alt="Categories" src="https://github.com/user-attachments/assets/8130bcce-8f8b-4edd-8bba-dc0c8a0afa3c" />
-
-<img width="1910" height="1250" alt="Add Event" src="https://github.com/user-attachments/assets/d56e9019-2022-40f4-8193-a6cb2f6408de" />
-
-<img width="1910" height="1869" alt="Events Admin" src="https://github.com/user-attachments/assets/f9f655f3-6789-4e6b-9b86-9458cf389ad4" />
-
-<img width="1910" height="1056" alt="Add Announcement" src="https://github.com/user-attachments/assets/251dee3a-ef07-45dc-b157-dc47f8365a96" />
-
-<img width="1910" height="1678" alt="Announcements Admin" src="https://github.com/user-attachments/assets/9f369016-8211-4f0c-a1ca-617e8a8bed9d" />
-
+<br>
 
 ## References
 Full reference list is provided in the PDF document, submitted on ARC. 
