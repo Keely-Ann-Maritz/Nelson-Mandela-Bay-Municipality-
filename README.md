@@ -13,6 +13,7 @@
 ## YouTube Video 
 
 * [POE PART 1: Task 2](https://youtu.be/Qx6cqSrwLQI)
+* [POE PART 2]()
 
 <br>
 
@@ -27,8 +28,19 @@
 7. Select the View Feedback button on the Home page, to view the feedback and experiences of users.
 8. Select the Service Request Status button on the Home page, to view a feature, which is coming soom. Users can view the countdown on the page, indicating when the page will be launching
 9. Select the Services page to view a list of basic services the municipality provides and offers the community. Users can click on the <b>Report An Issue</b> link to redirect to the Report an Issue form. 
-10. Select the Events and Announcements navigation bar link to view a feature, which is coming soon. Users can view the countdown on the page, indicating when the page will be launching.
-11. Select the Contact navigation bar link to redirect to the contact us page, where users will be able to view gerneral information, emergency contact information and the head of departments and their emails, allowing users to click on the email button and email a specific department head.
+10. Select the Events and Announcements navigation bar link to view all the events and announcements.
+11. Select the <b>Announcement</b> button to toggle to the announcement view.
+12. Select the pagination to nagivate through the announcements.
+13. Select the <b>Events</b> button to toggle back to the events view.
+14. Users can search by event title, select a category from the dropdown, start and end date.
+15. Select the sorting to view the events by the oldest or newest, simply by selecting from the dropdown.
+16. View the recommended events based off of your searches.
+17. Select the Contact navigation bar link to redirect to the contact us page, where users will be able to view gerneral information, emergency contact information and the head of departments and their emails, allowing users to click on the email button and email a specific department head.
+18. Select the <b>Login</b> button to login as an administrator, in the navigation bar.
+19. Once you have logged in, the user will be able to add, delete and view categories.
+20. Select the events navigation tab to nagivate to the events, where the user will be able to add, delete and view the events.
+21. Select the announcement navigation tab to navigate to the announcements, where the user will be able to add, delete and view announcements.
+22. If the user wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
 
 <br>
 
@@ -39,8 +51,10 @@
 
 <br>
 
-## User Engagement Strategy 
+## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
+  
+<img width="1910" height="1067" alt="Report" src="https://github.com/user-attachments/assets/1fac30eb-50c5-4544-b851-35cf2334d671" />
 
 <img width="940" height="568" alt="image" src="https://github.com/user-attachments/assets/f22a3740-190a-4353-b26e-021b246562a0" />
 
@@ -50,25 +64,32 @@
 
 <br>
 
-## Application Interface 
+## Part 2 Implementation
 
-<img width="1910" height="2407" alt="HOMEPAGE" src="https://github.com/user-attachments/assets/691656b6-f044-461d-9fa8-2c1e3e75d066" />
+<img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
-<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/c0bcd820-8902-4cf0-bc51-1c8f5bf3ff75" />
 
-<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/bb2f972c-cd5c-43da-84ff-0fabb07b5ece" />
+## User Interface
 
-<img width="940" height="495" alt="image" src="https://github.com/user-attachments/assets/a3b268e1-7e94-4b69-a886-00db04bcf2de" />
+<img width="1910" height="922" alt="Login" src="https://github.com/user-attachments/assets/30ab54c8-2fa4-4d74-9541-612cf6537f49" />
 
-<img width="938" height="460" alt="image" src="https://github.com/user-attachments/assets/fc13c9a5-3ebc-4e29-96e6-f2a2d41ec347" />
+<img width="1910" height="922" alt="Add Category" src="https://github.com/user-attachments/assets/f73673b5-3c30-4cb5-a97f-5bd448a027f0" />
 
-<img width="938" height="453" alt="image" src="https://github.com/user-attachments/assets/38a5c731-935c-4baa-af37-e6d9a58d14ef" />
+<img width="1910" height="1451" alt="Categories" src="https://github.com/user-attachments/assets/8130bcce-8f8b-4edd-8bba-dc0c8a0afa3c" />
 
-<img width="940" height="638" alt="image" src="https://github.com/user-attachments/assets/c3b639a1-cb12-4d5b-89f2-54db3652a815" />
+<img width="1910" height="1250" alt="Add Event" src="https://github.com/user-attachments/assets/d56e9019-2022-40f4-8193-a6cb2f6408de" />
 
-<img width="940" height="1003" alt="image" src="https://github.com/user-attachments/assets/691832c3-24af-49d3-be36-aa407cada5af" />
+<img width="1910" height="1869" alt="Events Admin" src="https://github.com/user-attachments/assets/f9f655f3-6789-4e6b-9b86-9458cf389ad4" />
 
-<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/88ce201e-ba4d-4728-96e3-32963d05e368" />
+<img width="1910" height="1056" alt="Add Announcement" src="https://github.com/user-attachments/assets/251dee3a-ef07-45dc-b157-dc47f8365a96" />
+
+<img width="1910" height="1678" alt="Announcements Admin" src="https://github.com/user-attachments/assets/9f369016-8211-4f0c-a1ca-617e8a8bed9d" />
+
+
+## References
+Full reference list is provided in the PDF document, submitted on ARC. 
+
+
 
 
 
