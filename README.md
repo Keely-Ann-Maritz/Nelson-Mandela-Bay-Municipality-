@@ -71,10 +71,6 @@
 
 <br>
 
-## User Interface
-
-<br>
-
 ## References
 Full reference list is provided in the PDF document, submitted on ARC. 
 
