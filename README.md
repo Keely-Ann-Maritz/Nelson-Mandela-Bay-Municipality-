@@ -53,10 +53,6 @@
 
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
-  
-<img width="1910" height="1067" alt="Report" src="https://github.com/user-attachments/assets/1fac30eb-50c5-4544-b851-35cf2334d671" />
-
-<img width="1910" height="922" alt="Reported Issues" src="https://github.com/user-attachments/assets/ab771028-4aca-4c2e-8119-351068c809a5" />
 
 <img width="1910" height="1104" alt="Feedback" src="https://github.com/user-attachments/assets/dbeae0e2-86c0-474c-8ce8-b8f50c08d7b5" />
 
@@ -73,25 +69,9 @@
 
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
-
 <br>
 
-
 ## User Interface
-
-<img width="1910" height="922" alt="Login" src="https://github.com/user-attachments/assets/30ab54c8-2fa4-4d74-9541-612cf6537f49" />
-
-<img width="1910" height="922" alt="Add Category" src="https://github.com/user-attachments/assets/f73673b5-3c30-4cb5-a97f-5bd448a027f0" />
-
-<img width="1910" height="1380" alt="Categories" src="https://github.com/user-attachments/assets/af8d37e5-b68c-49c1-b50c-ddbd844fc977" />
-
-<img width="1910" height="1250" alt="Add Event" src="https://github.com/user-attachments/assets/d56e9019-2022-40f4-8193-a6cb2f6408de" />
-
-<img width="1910" height="1869" alt="Events Admin" src="https://github.com/user-attachments/assets/f9f655f3-6789-4e6b-9b86-9458cf389ad4" />
-
-<img width="1910" height="1056" alt="Add Announcement" src="https://github.com/user-attachments/assets/251dee3a-ef07-45dc-b157-dc47f8365a96" />
-
-<img width="1910" height="1678" alt="Announcements Admin" src="https://github.com/user-attachments/assets/9f369016-8211-4f0c-a1ca-617e8a8bed9d" />
 
 <br>
 
