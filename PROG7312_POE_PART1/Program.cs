@@ -12,7 +12,7 @@ namespace PROG7312_POE_PART1
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            // Configuring the session behaviour
+            // Configuring the session behaviour (Hewlett, 2015)
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -22,7 +22,7 @@ namespace PROG7312_POE_PART1
 
             var app = builder.Build();
 
-            // Delete Temp images on app start
+            // Delete Temp images on app start (Métoule,2019)
             string tempFolder = Path.Combine(app.Environment.WebRootPath, "Images", "Events", "Temp");
             if (Directory.Exists(tempFolder))
             {
