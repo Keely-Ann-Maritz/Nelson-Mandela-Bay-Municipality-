@@ -79,7 +79,7 @@
 
 <img width="1910" height="922" alt="Add Category" src="https://github.com/user-attachments/assets/f73673b5-3c30-4cb5-a97f-5bd448a027f0" />
 
-<img width="1910" height="1451" alt="Categories" src="https://github.com/user-attachments/assets/8130bcce-8f8b-4edd-8bba-dc0c8a0afa3c" />
+<img width="1910" height="1380" alt="Categories" src="https://github.com/user-attachments/assets/af8d37e5-b68c-49c1-b50c-ddbd844fc977" />
 
 <img width="1910" height="1250" alt="Add Event" src="https://github.com/user-attachments/assets/d56e9019-2022-40f4-8193-a6cb2f6408de" />
 
