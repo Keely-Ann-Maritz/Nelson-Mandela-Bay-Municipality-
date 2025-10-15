@@ -56,11 +56,12 @@
   
 <img width="1910" height="1067" alt="Report" src="https://github.com/user-attachments/assets/1fac30eb-50c5-4544-b851-35cf2334d671" />
 
-<img width="940" height="568" alt="image" src="https://github.com/user-attachments/assets/f22a3740-190a-4353-b26e-021b246562a0" />
+<img width="1910" height="922" alt="Reported Issues" src="https://github.com/user-attachments/assets/ab771028-4aca-4c2e-8119-351068c809a5" />
+
+<img width="1910" height="1104" alt="Feedback" src="https://github.com/user-attachments/assets/dbeae0e2-86c0-474c-8ce8-b8f50c08d7b5" />
 
 <img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
 
-<img width="940" height="455" alt="image" src="https://github.com/user-attachments/assets/d37214b8-6a70-41f0-880c-08b67809fb4a" />
 
 <br>
 
@@ -71,6 +72,9 @@
 <img width="1910" height="1651" alt="Recommendations" src="https://github.com/user-attachments/assets/7e78ebaf-93fd-4b1c-8f6a-423d1acd6349" />
 
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
+
+
+<br>
 
 
 ## User Interface
@@ -89,6 +93,7 @@
 
 <img width="1910" height="1678" alt="Announcements Admin" src="https://github.com/user-attachments/assets/9f369016-8211-4f0c-a1ca-617e8a8bed9d" />
 
+<br>
 
 ## References
 Full reference list is provided in the PDF document, submitted on ARC. 
