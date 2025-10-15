@@ -7,16 +7,26 @@
         // Recording the users search 
         public void RecordSearch(string term)
         {
-            if (string.IsNullOrWhiteSpace(term)) return;
+            if (string.IsNullOrWhiteSpace(term))
+            {
+                return;
+            }
 
-            if (searches.ContainsKey(term)) searches[term]++;
-            else searches[term] = 1;
+            if (searches.ContainsKey(term))
+            {
+                searches[term]++;
+            }
+            else
+            {
+                searches[term] = 1;
+            }
         }
 
         // Keeping track of what the user searches for 
         public int GetScore(string term)
         {
-            if (!searches.ContainsKey(term)) return 100;
+            if (!searches.ContainsKey(term)) 
+            return 100;
             int score = 100 - (searches[term] - 1) * 10;
             return Math.Max(score, 10);
         }
