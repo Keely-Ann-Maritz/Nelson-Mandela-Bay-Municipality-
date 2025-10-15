@@ -79,7 +79,7 @@
 
 <img width="1910" height="1250" alt="Add Event" src="https://github.com/user-attachments/assets/d56e9019-2022-40f4-8193-a6cb2f6408de" />
 
-<img width="1910" height="1869" alt="Events Admin" src="https://github.com/user-attachments/assets/68fca37c-7036-4e6a-9d9e-5df4d8bbcf45" />
+<img width="1910" height="1869" alt="Events Admin" src="https://github.com/user-attachments/assets/f9f655f3-6789-4e6b-9b86-9458cf389ad4" />
 
 <img width="1910" height="1056" alt="Add Announcement" src="https://github.com/user-attachments/assets/251dee3a-ef07-45dc-b157-dc47f8365a96" />
 
