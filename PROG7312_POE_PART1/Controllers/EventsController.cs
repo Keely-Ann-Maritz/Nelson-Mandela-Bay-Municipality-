@@ -12,17 +12,17 @@ namespace PROG7312_POE_PART1.Controllers
         // Static field to hold the single instance of EventSearchManager
         private static EventSearchManager _searchManager;
         private static EventRecommender _recommender;
-        // Images for event cards
+        // Images for event cards (Métoule,2019)
         private readonly IWebHostEnvironment _webHostEnvironment;
 
         // A static counter to generate unique IDs for new events
         // Starting after the hardcoded events, which are ID numbers 1-16
         private static int _nextEventId = 17;
 
-        // Helper method to prevent page caching (Hewlett, 2015)
+        // Helper method to prevent page caching 
         private void PreventPageCaching()
         {
-            // Set headers to prevent the browser from caching the page
+            // Set headers to prevent the browser from caching the page (Hewlett, 2015)
             Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
             Response.Headers["Pragma"] = "no-cache";
             Response.Headers["Expires"] = "0";
@@ -31,7 +31,7 @@ namespace PROG7312_POE_PART1.Controllers
         //Constructor initializes the search manager and loads hard coded events if not already done
         public EventsController(IWebHostEnvironment webHostEnvironment)
         {
-            // Images for Event cards
+            // Images for Event cards (Métoule,2019)
             _webHostEnvironment = webHostEnvironment;
 
             if (_searchManager == null)
@@ -49,11 +49,10 @@ namespace PROG7312_POE_PART1.Controllers
         }
 
         // Events - handles the main events page, including a search bar and pagination
-        public IActionResult Events(int page = 1, int pageSize = 12, string category = null,
-            DateTime? startDate = null, DateTime? endDate = null, string location = null, string title = null,
+        public IActionResult Events(int page = 1, int pageSize = 12, string category = null,DateTime? startDate = null, DateTime? endDate = null, string location = null, string title = null,
             string sortDir = "asc")
         {
-            // Perform search using the EventSearchManager, excluding announcements
+            // Perform search using the EventSearchManager, excluding announcements (Dot Net Tutorials,2025)
             var searchResults = _searchManager
                  .Search(category, startDate, endDate, location, title, sortDir)
                  .Where(e => !e.IsAnnouncement)
@@ -68,11 +67,11 @@ namespace PROG7312_POE_PART1.Controllers
             //Count total events returned by search
             var total = searchResults.Count;
 
-            //Ensure valid page and pageSize values
+            //Ensure valid page and pageSize values (W3Schools, 2025)
             if (page < 1) page = 1;
             if (pageSize < 1) pageSize = 12;
 
-            //Select only the events for the current page
+            //Select only the events for the current page (W3Schools, 2025)
             var pagedItems = searchResults
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
@@ -183,7 +182,7 @@ namespace PROG7312_POE_PART1.Controllers
             {
                 Console.WriteLine($"Uploaded image: {eventItem.UploadedImage.FileName}");
 
-                // Getting root path
+                // Getting root path (Raddevus,2024)
                 string root = _webHostEnvironment.WebRootPath; 
                 string tempFolder = Path.Combine(root, "Images", "Events", "Temp"); 
 
@@ -194,13 +193,13 @@ namespace PROG7312_POE_PART1.Controllers
                 string fileName = Guid.NewGuid().ToString() + Path.GetExtension(eventItem.UploadedImage.FileName);
                 string filePath = Path.Combine(tempFolder, fileName);
 
-                // Save file to disk
+                // Save file to disk (Raddevus,2024)
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     eventItem.UploadedImage.CopyTo(stream);
                 }
 
-                // Store relative path for displaying in the view
+                // Store relative path for displaying in the view (Raddevus,2024)
                 eventItem.ImagePath = "/Images/Events/Temp/" + fileName;
                 Console.WriteLine($"Stored relative path: {eventItem.ImagePath}");
             }
@@ -263,7 +262,7 @@ namespace PROG7312_POE_PART1.Controllers
             return RedirectToAction("ListEvents");
         }
 
-        // Administrative list of all events (excluding announcements)
+        // Administrative list of all events (excluding announcements) (W3Schools, 2025)
         public IActionResult ListEvents(int page=1, int pageSize=5)
         {
             // Checking if user is logged in

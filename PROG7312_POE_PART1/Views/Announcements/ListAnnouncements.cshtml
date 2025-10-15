@@ -4,7 +4,7 @@
     ViewData["Title"] = "ListAnnouncements";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 
-    // Retrieve ViewBag data for pagination
+    // Retrieve ViewBag data for pagination (W3Schools, 2025)
     var currentPage = (int)(ViewBag.CurrentPage ?? 1);
     var totalPages = (int)(ViewBag.TotalPages ?? 1);
     var pageSize = (int)(ViewBag.PageSize ?? 5);
@@ -104,7 +104,7 @@
         color: #666;
     }
 
-    /* Simple pagination styling (W3Schools, 2025)*/
+    /* Pagination styling (W3Schools, 2025)*/
     .pagination .page-item {
         margin: 0; 
     }
@@ -159,19 +159,19 @@
     <hr />
     <br />
 
-    <!--Success and error message-->
+    <!--Success and error message (Bootstrap, 2025)-->
     @if (TempData["Status"] != null && TempData["Message"] != null)
     {
         var status = TempData["Status"]?.ToString();
         <div class="alert @(status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
             <b>@(status == "Success" ? "Success!" : "Error!")</b> @TempData["Message"]
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div><!--(W3Schools,2025)-->
+        </div>
     }
 
     <br />
 
-    <!-- Displaying details -->
+    <!-- Displaying details (W3Schools, 2025)-->
     <div class="container mt-3">
         @if (Model != null && Model.Any())
         {
@@ -239,9 +239,10 @@
             }
             
         }
+        <!--Informing the admin there are no announcements and they should add-->
         else
         {
-            <!--Informing the admin there are no announcements and they should add-->
+            
             <div style="text-align: center; padding: 40px; color: #666;">
                 <i class="fa fa-bullhorn" style="font-size: 48px; margin-bottom: 20px;"></i>
                 <h3>No Announcements Found</h3>

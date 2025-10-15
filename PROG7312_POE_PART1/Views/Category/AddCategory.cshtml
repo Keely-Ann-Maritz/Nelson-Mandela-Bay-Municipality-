@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/html/site.css">
 </head>
 <style>
+    /* Button styling (W3Schools, 2025)*/
     .btn-add {
         background-color: orange;
         color: white;
@@ -24,15 +25,13 @@
         border: 2px solid orange;
         display: inline-block;
     }
-        /*(W3Schools,2025)*/
 
-        .btn-add:hover {
-            background-color: transparent;
-            color: orange;
-            border: 2px solid orange;
-            text-decoration: none;
-        }
-    /*(W3Schools,2025)*/
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }
 
     .btn-back {
         background-color: grey;
@@ -44,22 +43,30 @@
         border: 2px solid grey;
         display: inline-block;
     }
-        /*(W3Schools,2025)*/
 
-        .btn-back:hover {
-            background-color: transparent;
-            color: grey;
-            border: 2px solid grey;
-            text-decoration: none;
-        }
-    /*(W3Schools,2025)*/
+    .btn-add:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
 
-    /*Styling the form*/
+    /*Styling the form (W3Schools,2025)*/
     .form-control:focus {
         border-color: orange;
         box-shadow: 0 0 0 0.25rem orange;
     }
-    /*(W3Schools,2025)*/
+
+    .form-input-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-input-group input, .form-input-group textarea, .form-control {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
 
     .form-input-group {
         display: block;
@@ -67,20 +74,6 @@
         gap: 10px;
         margin: 10px auto;
     }
-        /*(W3Schools,2025)*/
-
-        .form-input-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        /*(W3Schools,2025)*/
-
-        .form-input-group input, .form-input-group textarea, .form-control {
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-        }
-    /*(W3Schools,2025)*/
 
     .form-group {
         display: flex;
@@ -89,15 +82,15 @@
         max-width: 700px;
         margin: 0 auto;
     }
-    /*(W3Schools,2025)*/
 
+    /* Button styling (W3Schools, 2025)*/
     .btn-back, .btn-add {
         flex: 1;
         text-align: center;
         box-sizing: border-box;
     }
-    /*(W3Schools,2025)*/
 
+    /* Footer styling (W3Schools, 2025)*/
     footer {
         position: fixed;
         left: 0;
@@ -105,7 +98,6 @@
         width: 100%;
         padding: 15px 0;
     }
-    /*(W3Schools,2025)*/
 </style>
 <body>
 
@@ -122,7 +114,7 @@
     <div class="container mt-3">
         <form asp-action="AddCategory" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <!--error message informing the user they have not filled in all the required fields-->
+            <!--error message informing the user they have not filled in all the required fields (Bootstrap, 2025)-->
             @if (ViewBag.Status != null)
             {
                 @if (ViewBag.Message != null)

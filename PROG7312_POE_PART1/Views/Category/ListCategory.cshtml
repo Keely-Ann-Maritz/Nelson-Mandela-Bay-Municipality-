@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/html/site.css">
 </head>
 <style>
-    /*Button styling*/
+    /*Button styling (W3Schools, 2025)*/
     .btn-add {
         background-color: orange;
         color: white;
@@ -74,7 +74,7 @@
         border: 1px solid #dc3545;
     }
 
-    /*Card styling*/
+    /*Card styling (W3Schools, 2025)*/
     .category-card {
         border: 1px solid #f0faff;
         border-radius: 8px;
@@ -91,7 +91,7 @@
         margin-bottom: 10px;
     }
 
-    /* Simple pagination styling (W3Schools, 2025)*/
+    /* Pagination styling (W3Schools, 2025)*/
     .pagination .page-item {
         margin: 0; 
     }
@@ -145,6 +145,7 @@
     <hr />
     <br />
 
+    <!-- Success and error messages (Bootstrap, 2025)-->
     @if (TempData["Status"] != null && TempData["Message"] != null)
     {
         var status = TempData["Status"]?.ToString();
@@ -152,12 +153,11 @@
             <b>@(status == "Success" ? "Success!" : "Error!")</b> @TempData["Message"]
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    
-        <!--(W3School,2025)-->
     }
 
     <br />
 
+    <!-- Categories (W3Schools, 2025)-->
     <div class="container mt-3">
         @if (Model != null && Model.Any())
         {
@@ -233,7 +233,7 @@
                 <h3>No Categories Found</h3>
                 <p>Start by adding your first category!</p>
                 <a asp-controller="Category" asp-action="AddCategory" class="btn-add">
-                    <i class="fa fa-plus"></i> Add First Category
+                    <i class="fa fa-plus"></i> Add  Category
                 </a>
             </div>
         }

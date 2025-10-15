@@ -15,10 +15,10 @@ namespace PROG7312_POE_PART1.Controllers
         // Start after the hardcoded announcements ID 1-16
         private static int _nextAnnouncementId = 17; 
 
-        // Helper method to prevent page caching(Hewlett, 2015)
+        // Helper method to prevent page caching 
         private void PreventPageCaching()
         {
-            // Set headers to prevent the browser from caching the page
+            // Set headers to prevent the browser from caching the page (Hewlett, 2015)
             Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
             Response.Headers["Pragma"] = "no-cache";
             Response.Headers["Expires"] = "0";
@@ -31,7 +31,8 @@ namespace PROG7312_POE_PART1.Controllers
             {
                 // Creating new manager including announcements
                 _announcementsManager = new EventSearchManager(includeAnnouncements: true);
-                InitializeAnnouncements(); //Load hardcoded announcements
+                //Load hardcoded announcements
+                InitializeAnnouncements(); 
             }
         }
 
@@ -47,11 +48,11 @@ namespace PROG7312_POE_PART1.Controllers
             // Count total announcements
             var total = all.Count;
 
-            // Ensure valid page and pageSize
+            // Ensure valid page and pageSize (W3Schools,2025)
             if (page < 1) page = 1;
             if (pageSize < 1) pageSize = 12;
 
-            // Apply paging
+            // Apply paging (W3Schools,2025)
             var paged = all
                 .Skip((page - 1) * pageSize) 
                 .Take(pageSize)
@@ -148,7 +149,7 @@ namespace PROG7312_POE_PART1.Controllers
             return RedirectToAction("ListAnnouncements");
         }
 
-        // Displaying announcements - Administrative list of all announcements
+        // Displaying announcements - Administrative list of all announcements (W3Schools,2025)
         public IActionResult ListAnnouncements(int page = 1, int pageSize = 5) 
         {
             // Checking if user is logged in
@@ -167,14 +168,15 @@ namespace PROG7312_POE_PART1.Controllers
 
             var total = announcementsOnly.Count;
 
+            // Pagination (W3Schools,2025)
             if (page < 1) page = 1;
             if (pageSize < 1) pageSize = 5;
 
-            // Calculate total pages
+            // Calculate total pages (W3Schools,2025)
             int totalPages = (int)Math.Ceiling((double)total / pageSize);
 
-            // Apply paging to the collection
-            var pagedItems = announcementsOnly
+            // Apply paging to the collection (W3Schools,2025)
+            var pagedItems = announcementsOnly 
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();

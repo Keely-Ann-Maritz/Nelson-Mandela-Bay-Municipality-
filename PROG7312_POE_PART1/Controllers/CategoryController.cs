@@ -23,7 +23,7 @@ namespace PROG7312_POE_PART1.Controllers
         // Helper method to prevent page caching(Hewlett, 2015)
         private void PreventPageCaching()
         {
-            // Setting headers to prevent the browser from caching the page
+            // Setting headers to prevent the browser from caching the page (Hewlett, 2015)
             Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
             Response.Headers["Pragma"] = "no-cache";
             Response.Headers["Expires"] = "0";
@@ -119,7 +119,6 @@ namespace PROG7312_POE_PART1.Controllers
         }
 
         // Displays the list of all categories
-        // Displays the list of all categories
         // Add parameters and default values
         public IActionResult ListCategory(int page = 1, int pageSize = 5) 
         {
@@ -139,25 +138,25 @@ namespace PROG7312_POE_PART1.Controllers
 
             var total = categories.Count;
 
-            // Validate page and pageSize parameters
+            // Validate page and pageSize parameters (W3Schools,2025)
             if (page < 1) page = 1;
             if (pageSize < 1) pageSize = 5;
 
-            // Calculate total pages
+            // Calculate total pages (W3Schools,2025)
             int totalPages = (int)Math.Ceiling((double)total / pageSize);
 
-            // Ensure the requested page is not greater than the total pages
+            // Ensure the requested page is not greater than the total pages (W3Schools,2025)
             if (page > totalPages && totalPages > 0)
             {
                 page = totalPages;
             }
-            // Handle case with no items
+            // Handle case with no items (W3Schools,2025)
             else if (totalPages == 0)
             {
                 page = 1; 
             }
 
-            // Apply paging to the collection
+            // Apply paging to the collection (W3Schools,2025)
             var pagedItems = categories
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)

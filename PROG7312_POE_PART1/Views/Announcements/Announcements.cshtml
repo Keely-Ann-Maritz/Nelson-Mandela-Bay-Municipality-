@@ -5,16 +5,20 @@
 }
 
     <style>
+
+        /* Test styling (W3Schools, 2025)*/
         h1 {
             text-align: center;
         }
 
+        /*Card styling (W3Schools, 2025)*/
         .list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 16px;
         }
 
+        /*Card styling (W3Schools, 2025)*/
         .card {
             border: 1px solid #0e7597;
             border-radius: 12px;
@@ -28,12 +32,13 @@
             margin: 0 0 8px 0;
         }
 
+        /*Text styling (W3Schools, 2025)*/
         .muted {
             color: #666;
             margin-bottom:0;
         }
 
-        /* Simple pagination styling (W3Schools, 2025)*/
+        /* Pagination styling (W3Schools, 2025)*/
         .pagination .page-item {
             margin: 0; 
         }
@@ -72,6 +77,7 @@
             box-shadow: none;
         }
 
+        /* Footer Styling (W3Schools, 2025)*/
         footer {
             background-color: #0e7597;
             color: black;
@@ -79,8 +85,8 @@
             position: relative;
             text-align: center;
         }
-        /*(W3Schools, 2025)*/
-
+        
+        /* Button Styling (W3Schools, 2025)*/
         .btn {
             padding: 8px 16px;
             border: none;
@@ -122,6 +128,7 @@
 
     <br /><br />
  
+    <!-- Events and Announcement toggle buttons (W3Schools, 2025)-->
     <div style="text-align:center; margin-bottom:20px;">
     <a href="@Url.Action("Events", "Events")"
                class="btn @(ViewData["Title"].ToString() == "Events" ? "btn-submit" : "btn-back")"
@@ -135,6 +142,7 @@
     </div>
     <br /> 
 
+    <!-- Event Card (W3Schools, 2025)-->
     <div class="list">
         @if (Model != null && Model.Items != null && Model.Items.Any())
         {

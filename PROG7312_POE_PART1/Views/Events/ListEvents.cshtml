@@ -195,7 +195,7 @@
                         <p><b class="text-dark"> Date/Time:</b> @eventItem.Date.ToString("dd MMM yyyy HH:mm")</p>
                         <p><b class="text-dark"> Location:</b> @eventItem.Location</p>
                         <p><b class="text-dark"> Categories:</b> @(eventItem.Categories != null ? string.Join(", ", eventItem.Categories) : "N/A")</p>
-                        <p style="margin-top: 10px;"><b>Description:</b> @eventItem.Description</p>
+                        <p style="margin-top: 10px;"><b class="text-dark">Description:</b> @eventItem.Description</p>
                     </div>
                 </div>
             }

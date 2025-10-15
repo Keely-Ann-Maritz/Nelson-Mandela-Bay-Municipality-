@@ -6,6 +6,7 @@
 }
 
 <style>
+    /* Hiding the footer and navigation bar (W3Schools, 2025)*/
     footer {
        display: none;
     }
@@ -13,8 +14,8 @@
     .navbar-custom {
         display: none;
     }
-    /*(W3Schools,2025)*/
 
+    /* Login card styling (W3Schools, 2025)*/
     .login-card {
         border: none;
         border-radius: 12px;
@@ -35,6 +36,7 @@
         padding: 30px;
     }
 
+    /* Form styling (W3Schools, 2025)*/
     .form-control:focus {
         border-color: #0e7597;
         box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
@@ -44,6 +46,7 @@
         font-size: 16px;
     }
 
+    /* Button styling (W3Schools, 2025)*/
     .btn-primary:hover {
         background-color: transparent;
         color: orange;
@@ -79,24 +82,19 @@
         font-size: 16px;
     }
 
-    .card-footer-hint {
-        background-color: #fafafa;
-        border-top: 1px solid #eeeeee;
-        padding: 15px;
-        font-size: 16px;
-    }
-
+    /* Body styling (W3Schools, 2025)*/
     body{
         align-items: center;
         justify-content: center;
         background-color: #f0faff;
     }
+
     html,body{
         height:100px;
     }
 </style>
 
-<!-- Admin Login Form-->
+<!-- Admin Login Form (Bootstrap, 2025)-->
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-5">
@@ -118,7 +116,7 @@
                             <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Enter password" /> <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
 
-                        <!-- Login and Back button-->
+                        <!-- Login and Back button (W3Schools, 2025)-->
                         <div class="d-grid gap-2 mt-4">
                             <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="fa fa-sign-in-alt me-2"></i> Log In

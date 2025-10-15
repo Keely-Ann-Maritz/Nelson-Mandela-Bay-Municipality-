@@ -104,7 +104,6 @@
 
         /* Footer Styling (W3Schools, 2025) */
         footer {
-            position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
@@ -124,7 +123,7 @@
     <div class="container mt-3">
         <form asp-controller="Announcements" asp-action="AddAnnouncements" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+            <!--Success and error message (Bootstrap, 2025)-->
             @if (ViewBag.Status != null)
             {
                 @if (ViewBag.Message != null)
@@ -132,10 +131,11 @@
                     <div class="alert @(ViewBag.Status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
                         <b>@(ViewBag.Status == "Success" ? "Success!" : "Error!")</b> @ViewBag.Message
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div><!--(W3Schools, 2025)-->
+                    </div>
                 }
             }
 
+            <!--Form content-->
             <div class="form-input-group mb-3 mt-3">
                 <label asp-for="Title" class="control-label fw-bold">Announcement Title:</label>
                 <input asp-for="Title" class="form-control" placeholder="Enter announcement title" />
@@ -168,10 +168,6 @@
         </form>
     </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
     <br />
 </body>
 </html>

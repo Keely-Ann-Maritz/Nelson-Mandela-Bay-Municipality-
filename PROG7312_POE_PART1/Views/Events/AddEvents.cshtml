@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/html/site.css">
     <style>
+        /*Button styling (W3Schools, 2025)*/
         .btn-add {
             background-color: orange;
             color: white;
@@ -53,6 +54,7 @@
             display: inline-block;
         }
 
+        /*Form styling (W3Schools, 2025)*/
         .form-control:focus {
             outline: none;
             border-color: #0d6efd;
@@ -108,14 +110,15 @@
             margin: 0 auto;
         }
 
+        /* Button styling (2025)*/
         .btn-back, .btn-add {
             flex: 1;
             text-align: center;
             box-sizing: border-box;
         }
 
+        /*Footer Styling (W3Schools, 2025)*/
         footer {
-            position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
@@ -133,6 +136,7 @@
 
     <br />
 
+    <!-- Success and error messages (Bootstrap, 2025)-->
     <div class="container mt-3">
         <form asp-action="AddEvents" asp-controller="Events" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -199,10 +203,6 @@
         </form>
     </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
     <br />
 
 </body>

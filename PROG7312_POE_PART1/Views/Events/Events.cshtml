@@ -38,6 +38,7 @@
         margin: 0 0 8px 0;
     }
  
+    /*Badge styling (W3Schools, 2025)*/
     .badge-announcement{
         display: inline-block;
         background: orange;
@@ -65,7 +66,7 @@
         margin-bottom:0;
     }
  
-    /* Simple pagination styling (W3Schools, 2025)*/
+    /* Pagination styling (W3Schools, 2025)*/
     .pagination .page-item {
         margin: 0; 
     }
@@ -104,7 +105,7 @@
         box-shadow: none;
     }
 
-    /* Search form styling */
+    /* Search form styling (W3Schools, 2025)*/
 
     .search-form {
         display: flex;
@@ -151,6 +152,7 @@
         align-items: end;
     }
 
+    /* Button styling (W3Schools, 2025)*/
     .btn {
         padding: 8px 16px;
         border: none;
@@ -190,7 +192,7 @@
         text-decoration: none;
     }
 
-    /* Search results info */
+    /* Search results info (W3Schools, 2025)*/
     .search-results-info {
         background: #f0faff;
         border: 1px solid #f0faff;
@@ -214,7 +216,7 @@
         font-size: 12px;
     }
 
-    /* Next-up compact card styling */
+    /* Card styling (W3Schools, 2025)*/
     .next-up{
         display:flex;
         align-items:center;
@@ -230,6 +232,7 @@
         font-weight:700;
         margin-right:auto;
     }
+    
     .pill{
         display:inline-block;
         background:orange;
@@ -256,7 +259,7 @@
 </style>
    <br /><br />
  
-   <!-- Buttons for toggling between the events and announcement pages -->
+   <!-- Buttons for toggling between the events and announcement pages (Bootstrap, 2025)-->
     <div style="text-align:center; margin-bottom:20px;">
     <a href="@Url.Action("Events", "Events")"
                class="btn @(ViewData["Title"].ToString() == "Events" ? "btn-submit" : "btn-back")"
@@ -279,18 +282,18 @@
 
     <br />
 
-    <!--Search bar-->
+    <!--Search bar (W3Schools, 2025)-->
     <div>
         <form method="get" action="@Url.Action("Events")" class="search-form">
             <div class="search-row">
                 <div class="search-field">
-                    <label for="title">Title Search:</label>
+                    <label for="title">Title Search</label>
                     <input type="text" name="title" id="title" class="form-control"
                            value="@Model.SearchTitle" placeholder="Search event titles..." />
                 </div>
 
                 <div class="search-field">
-                    <label for="category">Category:</label>
+                    <label for="category">Category</label>
                     <select name="category" id="category" class="form-control">
                         <option value="" selected="@(string.IsNullOrWhiteSpace(Model.SearchCategory) ? "selected" : null)">All categories</option>
                         @foreach (var cat in Model.AvailableCategories)
@@ -339,7 +342,7 @@
 
     <br />
 
-    <!-- Displaying Search Information -->
+    <!-- Displaying Search Information (W3Schools, 2025) -->
     @if (Model.IsSearchActive)
     {
         <div class="search-results-info">
@@ -366,7 +369,8 @@
 
     <br />
 
-    <!-- Displaying the cards of the searched event-->
+    <!-- Displaying the cards of the searched event (W3Schools, 2025)-->
+    <!-- Styling (Bootstrap, 2025)-->
     <div class="event-list">
         @if(Model != null && Model.Items != null && Model.Items.Any())
         {

@@ -10,10 +10,10 @@ namespace PROG7312_POE_PART1.Controllers
         private const string adminPassword = "admin123";
         private const string adminFullname = "Administrator";
 
-        // Helper method to prevent page caching(Hewlett, 2015)
+        // Helper method to prevent page caching
         private void PreventPageCaching()
         {
-            // Set headers to prevent the broswer from caching the page
+            // Set headers to prevent the broswer from caching the page (Hewlett, 2015)
             Response.Headers["Cache-Control"] = "no-cache, no-store,must-revalidate";
             Response.Headers["Pragma"] = "no-cache";
             Response.Headers["Expires"] = "0";
