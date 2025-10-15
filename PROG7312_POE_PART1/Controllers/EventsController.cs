@@ -34,7 +34,7 @@ namespace PROG7312_POE_PART1.Controllers
             // Images for Event cards (Métoule,2019)
             _webHostEnvironment = webHostEnvironment;
 
-            if (_searchManager == null)
+            if(_searchManager == null)
             {
                 // Creating a new instance
                 // Loading hardcoded events into the manager
@@ -42,7 +42,7 @@ namespace PROG7312_POE_PART1.Controllers
                 InitializeEvents();
             }
 
-            if (_recommender == null)
+            if(_recommender == null)
             {
                 _recommender = new EventRecommender(_searchManager);
             }
@@ -58,11 +58,18 @@ namespace PROG7312_POE_PART1.Controllers
                  .Where(e => !e.IsAnnouncement)
                  .ToList();
 
-            // Priority Queue - Event recommendations
+            // Priority Queue - keeping track of user search and updating the recommendations based on user search
             _recommender.RecordSearchAndQueue(category, title);
-            var recommendations = new List<EventItem>();
-            // Passing the recommendations through a viewbag
-            ViewBag.RecommendedEvents = _recommender.GetRecommendations();
+            List<EventItem> recommendations = new();
+
+            // Only recommending recommendations after 3 searches
+            if(_recommender.TotalSearches >= 3)
+            {
+                recommendations = _recommender.GetRecommendations();
+            }
+
+            // Passing the recommendations to the view using a viewbag
+            ViewBag.RecommendedEvents = recommendations;
 
             //Count total events returned by search
             var total = searchResults.Count;

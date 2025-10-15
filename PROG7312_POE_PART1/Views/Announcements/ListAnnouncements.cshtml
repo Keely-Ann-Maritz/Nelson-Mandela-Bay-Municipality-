@@ -203,14 +203,16 @@
 
             <br />
 
+            <br />
+
             @* Pagination (W3Schools,2025) *@
             @if (totalPages > 1)
             {
                 <div class="pagination-container">
-                    <nav aria-label="Announcements page navigation">
+                    <nav aria-label="Categories page navigation">
                         <ul class="pagination justify-content-center">
                             @* Previous Button (W3Schools,2025) *@
-                            <li class="page-item @(currentPage <= 1 ? "disabled" : "")">
+                            <li class="page-item @(currentPage <= 1 ? "" : "disabled")">
                                 <a class="page-link" asp-controller="Announcements" asp-action="ListAnnouncements"
                                    asp-route-page="@(currentPage - 1)" asp-route-pageSize="@pageSize" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
@@ -237,9 +239,8 @@
                     </nav>
                 </div>
             }
-            
+           
         }
-        <!--Informing the admin there are no announcements and they should add-->
         else
         {
             
@@ -253,7 +254,5 @@
             </div>
         }
     </div>
-
-    <br />
 </body>
 </html>

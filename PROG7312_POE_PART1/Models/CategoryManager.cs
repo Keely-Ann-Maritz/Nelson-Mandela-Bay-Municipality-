@@ -15,7 +15,8 @@
             "Market",
             "Education",
             "Food & Entertainment",
-            "Arts & Culture"
+            "Arts & Culture",
+            "Sports"
         };
 
         // Construcor : Initializing a new CategoryManager with a name and preset categories

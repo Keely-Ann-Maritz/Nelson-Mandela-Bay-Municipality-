@@ -1,5 +1,6 @@
 ﻿@model PROG7312_POE_PART1.Models.EventListViewModel
 
+<!--(Web Dev Tutor, 2024)-->
 @{
     ViewData["Title"] = "Events";
     var recommendations = ((List<PROG7312_POE_PART1.Models.EventItem>)ViewBag.RecommendedEvents).Take(3).ToList();
@@ -7,19 +8,19 @@
 
 <style>
 
-    h1{
+    h1 {
         text-align:center;
         align-content: center;
     }
  
     /* Custom list cards (W3Schools, 2025)*/
-    .event-list{
+    .event-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 16px;
     }
  
-    .event-card{
+    .event-card {
         border: 1px solid #e5e5e5;
         border-radius: 12px;
         padding: 16px;
@@ -28,18 +29,18 @@
         transition: transform .15s ease, box-shadow .15s ease;
     }
  
-    .event-card:hover{
+    .event-card:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 16px rgba(0,0,0,0.10);
     }
  
-    .event-title{
+    .event-title {
         font-weight: 700;
         margin: 0 0 8px 0;
     }
  
     /*Badge styling (W3Schools, 2025)*/
-    .badge-announcement{
+    .badge-announcement {
         display: inline-block;
         background: orange;
         color: #000;
@@ -50,7 +51,7 @@
         font-size: .85rem;
     }
  
-    .badge-event{
+    .badge-event {
         display: inline-block;
         background: orange;
         color: #fff;
@@ -61,8 +62,8 @@
         font-size: .85rem;
     }
  
-    .muted{
-        color: #666
+    .muted {
+        color: #666;
         margin-bottom:0;
     }
  
@@ -217,7 +218,7 @@
     }
 
     /* Card styling (W3Schools, 2025)*/
-    .next-up{
+    .next-up {
         display:flex;
         align-items:center;
         gap:12px;
@@ -228,12 +229,12 @@
         padding:14px 16px;
         margin-bottom:16px;
     }
-    .next-up .title{
+    .next-up .title {
         font-weight:700;
         margin-right:auto;
     }
     
-    .pill{
+    .pill {
         display:inline-block;
         background:orange;
         color:#fff;
@@ -257,19 +258,17 @@
         }
     }
 </style>
+
    <br /><br />
  
    <!-- Buttons for toggling between the events and announcement pages (Bootstrap, 2025)-->
     <div style="text-align:center; margin-bottom:20px;">
-    <a href="@Url.Action("Events", "Events")"
-               class="btn @(ViewData["Title"].ToString() == "Events" ? "btn-submit" : "btn-back")"
-               style="margin-right:10px;">
-               Events
-    </a>
-    <a href="@Url.Action("Announcements", "Announcements")"
-               class="btn @(ViewData["Title"].ToString() == "Announcements" ? "btn-submit" : "btn-back")">
+        <a href='@Url.Action("Events", "Events")' class="btn @(ViewData["Title"].ToString() == "Events" ? "btn-submit" : "btn-back")" style="margin-right:10px;">
+                Events
+        </a>
+        <a href='@Url.Action("Announcements", "Announcements")' class="btn @(ViewData["Title"].ToString() == "Announcements" ? "btn-submit" : "btn-back")">
                Announcements
-    </a>
+        </a>
     </div>
     <br />
 
@@ -342,7 +341,7 @@
 
     <br />
 
-    <!-- Displaying Search Information (W3Schools, 2025) -->
+    @*Displaying Search Information (W3Schools, 2025)*@  
     @if (Model.IsSearchActive)
     {
         <div class="search-results-info">
@@ -412,11 +411,11 @@
 
     @* Pagination controls (W3Schools, 2025) *@
     @if(Model != null && Model.TotalPages > 1)
-{
+   {
     <nav aria-label="Events page navigation">
         <ul class="pagination justify-content-center">
             <!-- Previous (w3Schools, 2025) -->
-            <li class="page-item @(Model.HasPrevious ? "disabled" : "")">
+            <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
                 <a class="page-link" href="@Url.Action("Events", new {
                     page = Model.HasPrevious ? Model.Page - 1 : 1,
                     pageSize = Model.PageSize,
@@ -465,7 +464,7 @@
 }
 <br />
 
-<!-- Recommendations (w3Schools, 2025) -->
+@*Recommendations (w3Schools, 2025)*@
 <div class="recommendation">
     <h3>Recommendations</h3>
     <br />
@@ -495,4 +494,4 @@
     }
 </div>
 
-<br /><br>
+<br /><br/>

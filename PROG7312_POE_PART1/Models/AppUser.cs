@@ -5,6 +5,7 @@ namespace PROG7312_POE_PART1.Models
 {
     public class AppUser
     {
+        // Gets and sets 
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Username is required")]

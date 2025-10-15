@@ -5,6 +5,8 @@ namespace PROG7312_POE_PART1.Models
     public class EventListViewModel
     {
         public IEnumerable<EventItem> Items { get; set; } = new List<EventItem>();
+
+        // Pagination (W3Schools, 2025)
         public int Page { get; set; }
         public int PageSize { get; set; }
         public int TotalCount { get; set; }
@@ -25,10 +27,10 @@ namespace PROG7312_POE_PART1.Models
         // Available options for dropdowns
         public List<string> AvailableCategories { get; set; } = new List<string>();
 
-        // Search results info
+        // Search results info 
         public bool IsSearchActive => !string.IsNullOrWhiteSpace(SearchCategory) || SearchStartDate.HasValue || SearchEndDate.HasValue || !string.IsNullOrWhiteSpace(SearchTitle);
 
-        // Queue-related: surface next upcoming and count for UI
+        // Queue-related: surface next upcoming and count 
         public EventItem? NextUpcomingEvent { get; set; }
         public int UpcomingCount { get; set; }
 

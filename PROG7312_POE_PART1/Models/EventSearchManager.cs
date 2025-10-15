@@ -39,11 +39,11 @@ namespace PROG7312_POE_PART1.Models
             }
             else
             {
-                // Update existing
+                // Update the existing event
                 eventsById[eventItem.Id] = eventItem; 
             }
 
-            //Add categories (supports multiple). If none specified, assign "General".
+            //Add categories (supports multiple). If none specified, assign "General" (Microsoft, 2023)
             var categories = (eventItem.Categories != null && eventItem.Categories.Any())
                 ? eventItem.Categories
                 : new List<string> { "General" };
@@ -155,9 +155,8 @@ namespace PROG7312_POE_PART1.Models
             return results;
         }
 
-        // Combined search with multiple criteria
-        public List<EventItem> Search(string category = null, DateTime? startDate = null,
-            DateTime? endDate = null, string location = null, string title = null, string sortDir = "asc")
+        // Combined search with multiple criteria (Microsoft, 2023)
+        public List<EventItem> Search(string category = null, DateTime? startDate = null, DateTime? endDate = null, string location = null, string title = null, string sortDir = "asc")
         {
             var allEvents = GetAllEvents();
             var results = allEvents.AsEnumerable();
@@ -191,7 +190,7 @@ namespace PROG7312_POE_PART1.Models
                 results = results.Where(e => e.Title.ToLower().Contains(titleSearch));
             }
 
-            // Sorting
+            // Sorting (Microsoft, 2023)
             bool descending = string.Equals(sortDir, "desc", StringComparison.OrdinalIgnoreCase);
             results = descending
                 ? results.OrderByDescending(e => e.Date).ThenBy(e => e.Title)
