@@ -65,7 +65,7 @@
 
 <img width="1910" height="2532" alt="Events" src="https://github.com/user-attachments/assets/b701d64e-745b-43e4-8e66-15a9fdc516f7" />
 
-<img width="1910" height="1651" alt="Recommendations" src="https://github.com/user-attachments/assets/7e78ebaf-93fd-4b1c-8f6a-423d1acd6349" />
+<img width="1910" height="1992" alt="image" src="https://github.com/user-attachments/assets/a016d840-e248-4ced-b614-33dc7cc11906" />
 
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
