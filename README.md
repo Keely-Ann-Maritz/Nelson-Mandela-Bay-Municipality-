@@ -68,7 +68,7 @@
 
 <br>
 
-## Part 2 Implementation
+## Part 2: Implementation
 
 <img width="1910" height="2532" alt="Events" src="https://github.com/user-attachments/assets/b701d64e-745b-43e4-8e66-15a9fdc516f7" />
 
