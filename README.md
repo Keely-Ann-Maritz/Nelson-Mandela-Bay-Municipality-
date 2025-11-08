@@ -13,7 +13,8 @@
 ## YouTube Video 
 
 * [POE PART 1: Task 2](https://youtu.be/Qx6cqSrwLQI)
-* [POE PART 2]()
+* [POE PART 2](https://youtu.be/rploC3EzzX8)
+* [POE PART 3]()
 
 <br>
 
@@ -51,6 +52,13 @@
 
 <br>
 
+## Change Log 
+- The recommendations were moved to the top of the events page.
+- A progress bar was added to the Report Issue Form
+- When clicking on the event, a modal pops up displaying the events information.
+
+<br>
+
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
 
@@ -61,11 +69,13 @@
 
 <br>
 
-## Part 2 Implementation
+## Part 2: Implementation
 
-<img width="1910" height="2532" alt="Events" src="https://github.com/user-attachments/assets/b701d64e-745b-43e4-8e66-15a9fdc516f7" />
+<img width="1910" height="2579" alt="image" src="https://github.com/user-attachments/assets/7ff0eb9b-1f97-4257-b45f-8e053e32953c" />
 
-<img width="1910" height="1651" alt="Recommendations" src="https://github.com/user-attachments/assets/7e78ebaf-93fd-4b1c-8f6a-423d1acd6349" />
+<img width="1910" height="1992" alt="image" src="https://github.com/user-attachments/assets/a016d840-e248-4ced-b614-33dc7cc11906" />
+
+<img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
 
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
