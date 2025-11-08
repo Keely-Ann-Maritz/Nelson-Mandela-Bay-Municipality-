@@ -315,7 +315,7 @@ namespace PROG7312_POE_PART1.Controllers
         private void InitializeEvents()
         {
             // Hard coded list of events with preset categories and data
-            // All images are from FreePik
+            // Images (FreePik,2025)
             var items = new List<EventItem>
             {
                 new EventItem { Id = 1, Title = "Community Clean-up Day", Date = DateTime.Today.AddDays(3).AddHours(9), Location = "Van Stadens River Park", Description = "Join neighbors to clean litter along the river and park pathways.", IsAnnouncement = false, Categories = new List<string> { "Environmental" },ImagePath = "/Images/Events/Community_Clean-up_Day.jpg" },

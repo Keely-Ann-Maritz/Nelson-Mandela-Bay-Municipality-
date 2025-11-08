@@ -257,6 +257,82 @@
             justify-content: center;
         }
     }
+
+    /* Styling the popup modal (GeeksforGeeks, 2024) */
+    .modal-overlay {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1050; 
+    }
+
+    .modal-wrapper {
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.20);
+        padding: 16px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-wrapper .close-modal-btn {
+        background: none;
+        color: #333;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        border: none;
+        align-self: flex-end; 
+    }
+
+    /* Styling the button (W3Schools,2025) */
+    .modal-wrapper .close-modal-btn:hover {
+        color: orange;
+    }
+
+    .close-btn-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 8px;
+    }
+
+    .modal-event-img {
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+    }
+
+    /* Styling the Information (W3Schools,2025) */
+    .modal-title-detail {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .modal-description-detail {
+        margin-top: 15px;
+    }
+
+    .hide {
+        display: none;
+    }
 </style>
 
    <br /><br />
@@ -368,21 +444,102 @@
 
     <br />
 
-    <!-- Displaying the cards of the searched event (W3Schools, 2025)-->
+    @*Recommendations (w3Schools, 2025)*@
+    <div class="recommendation">
+        <h3>Recommendations</h3>
+        <br />
+        @if (recommendations != null && recommendations.Any())
+        {
+            <div class="event-list">
+                @foreach (var rec in recommendations)
+                {
+                    <div class="event-card" onclick="openModalById('rec-modal-@rec.Id')">
+                        <img class="card-img-top"
+                             src="@( !string.IsNullOrEmpty(rec.ImagePath)
+                                       ? Url.Content(rec.ImagePath)
+                                       : Url.Content("~/Images/Events/default.jpg") )"
+                             alt="@rec.Title"
+                             style="object-fit:cover; width:100%; height:250px;" />
+
+                        <div class="mt-3">
+                            <p class="fw-bold mb-2">
+                                @rec.Title
+                            </p>
+                            <p class="muted mb-1">
+                                <i class="fa fa-calendar me-1"></i>
+                                @rec.Date.ToString("ddd, dd MMM yyyy HH:mm")
+                            </p>
+                            <p class="muted mb-3">
+                                <i class="fa fa-map-marker me-1"></i>
+                                @rec.Location
+                            </p>
+                            <p class="mb-0">@rec.Description</p>
+                        </div>
+                    </div>
+
+                    <!--Hidden popup modal (GeeksforGeeks,2024)-->
+                    <div id="rec-modal-@rec.Id" class="modal-overlay hide">
+                        <div class="modal-wrapper">
+                            <div class="close-btn-wrapper">
+                                <button class="close-modal-btn" type="button" onclick="closeModalById('rec-modal-@rec.Id')">
+                                    &times; 
+                                </button>
+                            </div>
+                    
+                            <img class="modal-event-img"
+                                 src="@(!string.IsNullOrEmpty(rec.ImagePath) ? Url.Content(rec.ImagePath) : Url.Content("~/Images/Events/default.jpg"))"
+                                 alt="@rec.Title" />
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <p class="modal-title-detail mb-0">
+                                    @rec.Title
+                                </p>
+                            </div>
+
+                            <p class="muted mb-1">
+                                <i class="fa fa-calendar me-1"></i>
+                                @rec.Date.ToString("ddd, dd MMM yyyy HH:mm")
+                            </p>
+                            <p class="muted mb-3">
+                                <i class="fa fa-map-marker me-1"></i>
+                                @rec.Location
+                            </p>
+                    
+                            <p class="modal-description-detail">@rec.Description</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-secondary text-center mt-3" role="alert">
+                No recommended events.
+            </div>
+        }
+    </div>
+
+<br/>
+
+    
     <!-- Styling (Bootstrap, 2025)-->
+    <h3>Events</h3>
+    <br />
+    <!-- Displaying the cards of the searched event (W3Schools, 2025)-->
     <div class="event-list">
+        
         @if(Model != null && Model.Items != null && Model.Items.Any())
         {
             foreach(var item in Model.Items)
             {
-                <div class="event-card">
-                    <img class="card-img-top"
-                     src="@( !string.IsNullOrEmpty(item.ImagePath)
-                             ? Url.Content(item.ImagePath)
-                             : Url.Content("~/Images/Events/default.jpg") )"
-                     alt="@item.Title"
-                     style="object-fit:cover; width:100%; height:250px;" />
-                     
+                <div class="event-card" onclick="openModalById('modal-@item.Id')">
+                     <img class="card-img-top"
+                         src="@( !string.IsNullOrEmpty(item.ImagePath)
+                                       ? Url.Content(item.ImagePath)
+                                       : Url.Content("~/Images/Events/default.jpg") )"
+                         alt="@item.Title"
+                         style="object-fit:cover; width:100%; height:250px;" />
+                                 
                     <div class="mt-3">
                         <p class="fw-bold mb-2">
                             @item.Title
@@ -399,6 +556,38 @@
                         <p class="mb-0">@item.Description</p>
                     </div>
                 </div>
+
+                <!--Hidden popup modal (GeeksforGeeks,2024)-->
+                <div id="modal-@item.Id" class="modal-overlay hide">
+                    <div class="modal-wrapper">
+                        <div class="close-btn-wrapper">
+                            <button class="close-modal-btn" type="button" onclick="closeModalById('modal-@item.Id')">
+                                &times; 
+                            </button>
+                        </div>
+                
+                        <img class="modal-event-img"
+                             src="@(!string.IsNullOrEmpty(item.ImagePath) ? Url.Content(item.ImagePath) : Url.Content("~/Images/Events/default.jpg"))"
+                             alt="@item.Title" />
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <p class="modal-title-detail mb-0">
+                                @item.Title
+                            </p>
+                        </div>
+
+                        <p class="muted mb-1">
+                            <i class="fa fa-calendar me-1"></i>
+                            @item.Date.ToString("ddd, dd MMM yyyy HH:mm")
+                        </p>
+                        <p class="muted mb-3">
+                            <i class="fa fa-map-marker me-1"></i>
+                            @item.Location
+                        </p>
+                
+                        <p class="modal-description-detail">@item.Description</p>
+                    </div>
+                </div>
             }
         }
         else
@@ -408,6 +597,35 @@
     </div>
 
     <br />
+
+    <div id="eventModal" class="modal-overlay hide">
+    <div class="modal-wrapper">
+        <div class="close-btn-wrapper">
+            <button class="close-modal-btn" type="button">
+                &times; </button>
+        </div>
+        
+        <div class="modal-event-content">
+            <img id="modal-image" class="modal-event-img" src="" alt="Event Image" />
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <p id="modal-title" class="fw-bold mb-0"></p>
+                <span id="modal-category-badge" class="badge-event"></span>
+            </div>
+
+            <p id="modal-date" class="muted mb-1">
+                <i class="fa fa-calendar me-1"></i>
+                <span></span>
+            </p>
+            <p id="modal-location" class="muted mb-3">
+                <i class="fa fa-map-marker me-1"></i>
+                <span></span>
+            </p>
+
+            <p id="modal-description" class="mb-0"></p>
+        </div>
+    </div>
+</div>
 
     @* Pagination controls (W3Schools, 2025) *@
     @if(Model != null && Model.TotalPages > 1)
@@ -464,34 +682,31 @@
 }
 <br />
 
-@*Recommendations (w3Schools, 2025)*@
-<div class="recommendation">
-    <h3>Recommendations</h3>
-    <br />
-    @if (recommendations != null && recommendations.Any())
-    {
-        <div class="row">
-            @foreach (var rec in recommendations)
-            {
-                <div class="col-md-4 mb-3">
-                    <div class="card shadow border-0 h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold text-dark">@rec.Title</h5>
-                            <p class="card-text text-muted mb-2"><i class="fa fa-calendar"></i> @rec.Date.ToString("ddd, dd MMM yyyy HH:mm")</p>
-                            <p class="card-text text-muted mb-2"><i class="fa fa-map-marker"></i> @rec.Location</p>
-                            <p class="card-text small">@rec.Description</p>
-                        </div>
-                    </div>
-                </div>
+@section Scripts {
+    <script>
+        // Opening a modal based on ID (GeeksforGeeks, 2024)
+        function openModalById(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove("hide");
             }
-        </div>
-    }
-    else
-    {
-        <div class="alert alert-secondary text-center mt-3" role="alert">
-            No recommended events.
-        </div>
-    }
-</div>
+        }
 
-<br /><br/>
+        // Closing a modal based on ID (GeeksforGeeks, 2024)
+        function closeModalById(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add("hide");
+            }
+        }
+        
+        // Closing functionality of the modal (GeeksforGeeks, 2024)
+        document.addEventListener("click", function(e) {
+            if (e.target.classList.contains("modal-overlay") && !e.target.classList.contains("hide")) {
+                // Getting the ID of the modal which as clicked (GeeksforGeeks, 2024)
+                const modalId = e.target.id;
+                closeModalById(modalId);
+            }
+        });
+    </script>
+}
