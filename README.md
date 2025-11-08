@@ -51,6 +51,13 @@
 
 <br>
 
+## Change Log 
+- The recommendations were moved to the top of the events page.
+- A progress bar was added to the Report Issue Form
+- When clicking on the event, a modal pops up displaying the events information.
+
+<br>
+
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
 
