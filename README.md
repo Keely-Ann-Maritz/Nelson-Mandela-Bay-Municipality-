@@ -71,8 +71,9 @@ The following are implemented into the PROG7312 POE
 
 ## Change Log 
 - The recommendations were moved to the top of the events page.
-- A progress bar was added to the Report Issue Form
+- A progress bar was added to the Report Issue Form.
 - When clicking on the event, a modal pops up displaying the events information.
+- Changed Part 1 to use a Binary Search Tree.
 
 <hr>
 
