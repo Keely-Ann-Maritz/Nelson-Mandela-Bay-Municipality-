@@ -75,6 +75,29 @@ Instructions for running the application
 <br>
 <hr>
 
+## Part 1: Implementation 
+- User side 
+<img width="1878" height="916" alt="image" src="https://github.com/user-attachments/assets/2d938e6d-c1d1-4f59-a48d-5c456b16a6d9" />
+
+<img width="1872" height="907" alt="image" src="https://github.com/user-attachments/assets/7625656a-968f-48ce-87b1-d742b83e9be0" />
+
+
+- Admin side
+<img width="1896" height="910" alt="image" src="https://github.com/user-attachments/assets/7bf5e4df-7118-432e-bd91-52b34482775f" />
+
+<img width="1910" height="1353" alt="image" src="https://github.com/user-attachments/assets/9f1a3fa6-1888-4378-b39d-14f3ba9c4c06" />
+
+<img width="1910" height="1250" alt="image" src="https://github.com/user-attachments/assets/dbece9e7-ef80-4103-a226-b52135e6d4ca" />
+
+<img width="1910" height="1842" alt="image" src="https://github.com/user-attachments/assets/b4f4813a-6922-4c34-8557-de9e959c39f3" />
+
+<img width="1910" height="1056" alt="image" src="https://github.com/user-attachments/assets/7a9825b5-1968-47e2-82fe-11c83afc4106" />
+
+<img width="1910" height="1678" alt="image" src="https://github.com/user-attachments/assets/b551cf29-45ed-4592-8f12-128920f6a4ed" />
+
+<br>
+<hr>
+
 ## Part 2: Implementation
 
 <img width="1910" height="2579" alt="image" src="https://github.com/user-attachments/assets/7ff0eb9b-1f97-4257-b45f-8e053e32953c" />
