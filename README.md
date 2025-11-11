@@ -51,6 +51,7 @@ Instructions for running the application
 -     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
 - Performance Testing
 
+<hr>
 <br>
 
 ## Change Log 
@@ -58,6 +59,7 @@ Instructions for running the application
 - A progress bar was added to the Report Issue Form
 - When clicking on the event, a modal pops up displaying the events information.
 
+<hr>
 <br>
 
 ## Part 1: User Engagement Strategy 
@@ -76,13 +78,15 @@ Instructions for running the application
 
 <img width="1910" height="1992" alt="image" src="https://github.com/user-attachments/assets/a016d840-e248-4ced-b614-33dc7cc11906" />
 
-<img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
-
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
+<hr>
 <br>
 
 ## Part 3: Implementation
+
+<img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
+
 
 <br>
 
