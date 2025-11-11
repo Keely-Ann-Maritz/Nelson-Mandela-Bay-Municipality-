@@ -27,6 +27,7 @@ The following are implemented into the PROG7312 POE
 - Priority Queues (Recommendations)
 - Binary Search Trees
 - Graphs
+- Heaps
 
 <br>
 
