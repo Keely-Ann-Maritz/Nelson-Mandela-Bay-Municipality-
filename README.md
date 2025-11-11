@@ -93,6 +93,8 @@ The following are implemented into the PROG7312 POE
 
 
 - Admin side
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/30f737c5-5984-4e02-9c4c-6f4a01923a0f" />
+
 <img width="1896" height="910" alt="image" src="https://github.com/user-attachments/assets/7bf5e4df-7118-432e-bd91-52b34482775f" />
 
 <img width="1910" height="1353" alt="image" src="https://github.com/user-attachments/assets/9f1a3fa6-1888-4378-b39d-14f3ba9c4c06" />
