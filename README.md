@@ -97,7 +97,7 @@ The following are implemented into the PROG7312 POE
 
 <img width="1896" height="910" alt="image" src="https://github.com/user-attachments/assets/7bf5e4df-7118-432e-bd91-52b34482775f" />
 
-<img width="1910" height="1353" alt="image" src="https://github.com/user-attachments/assets/9f1a3fa6-1888-4378-b39d-14f3ba9c4c06" />
+<img width="1910" height="1353" alt="image" src="https://github.com/user-attachments/assets/f84a060c-7266-42ee-ba70-398222d7ee80" />
 
 <img width="1910" height="1250" alt="image" src="https://github.com/user-attachments/assets/dbece9e7-ef80-4103-a226-b52135e6d4ca" />
 
