@@ -82,6 +82,10 @@ Instructions for running the application
 
 <br>
 
+## Part 3: Implementation
+
+<br>
+
 ## References
 Full reference list is provided in the PDF document, submitted on ARC. 
 
