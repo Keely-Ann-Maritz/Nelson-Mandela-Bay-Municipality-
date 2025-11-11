@@ -112,11 +112,8 @@
 <br>
 <hr>
 
-## Reports
-The Completion Report and Technical Recommendations is provided in the PDF document, submitted on ARC. 
-
 ## References
-Full reference list is provided in the PDF document, submitted on ARC. 
+Full reference list, Completion Report and Technical Recommendations are provided in the PDF document, submitted on ARC. 
 
 
 
