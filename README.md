@@ -20,7 +20,7 @@
 
 # Implementation Report 
 The following are implemented into the PROG7312 POE 
-- Maps JavaScript API and Places API (
+- Maps JavaScript API and Places API
 - Sets (Unique Categories)
 - Dictionaries (Events)
 - Queues (Events)
