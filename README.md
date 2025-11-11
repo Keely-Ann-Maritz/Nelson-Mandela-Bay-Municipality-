@@ -46,7 +46,6 @@ Instructions for running the application
 
 <br>
 <hr>
-<br>
 
 ## Testing 
 - Usability Testing
@@ -55,7 +54,6 @@ Instructions for running the application
 
 <br>
 <hr>
-<br>
 
 ## Change Log 
 - The recommendations were moved to the top of the events page.
@@ -64,7 +62,6 @@ Instructions for running the application
 
 <br>
 <hr>
-<br>
 
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
@@ -87,7 +84,6 @@ Instructions for running the application
 
 <br>
 <hr>
-<br>
 
 ## Part 3: Implementation
 
@@ -95,7 +91,6 @@ Instructions for running the application
 
 <br>
 <hr>
-<br>
 
 ## References
 Full reference list is provided in the PDF document, submitted on ARC. 
