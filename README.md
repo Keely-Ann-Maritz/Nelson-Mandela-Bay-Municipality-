@@ -45,12 +45,15 @@ Instructions for running the application
 22. If the user wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
 
 <br>
+<hr>
+<br>
 
 ## Testing 
 - Usability Testing
 -     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
 - Performance Testing
 
+<br>
 <hr>
 <br>
 
@@ -59,6 +62,7 @@ Instructions for running the application
 - A progress bar was added to the Report Issue Form
 - When clicking on the event, a modal pops up displaying the events information.
 
+<br>
 <hr>
 <br>
 
@@ -69,7 +73,8 @@ Instructions for running the application
 
 <img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
 
-
+<br>
+<hr>
 <br>
 
 ## Part 2: Implementation
@@ -80,6 +85,7 @@ Instructions for running the application
 
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
+<br>
 <hr>
 <br>
 
@@ -87,7 +93,8 @@ Instructions for running the application
 
 <img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
 
-
+<br>
+<hr>
 <br>
 
 ## References
