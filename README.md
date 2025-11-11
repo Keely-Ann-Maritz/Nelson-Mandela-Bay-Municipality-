@@ -20,8 +20,8 @@
 <br>
 <hr>
 
-## Implementation Report 
-Instructions for running the application
+# Implementation Report 
+## Instructions for running the application
 1. Install Visual Studio 2022.
 -       Download link: https://visualstudio.microsoft.com/downloads/
 2. Open Visual Studio 2022.
@@ -45,6 +45,9 @@ Instructions for running the application
 20. Select the events navigation tab to nagivate to the events, where the user will be able to add, delete and view the events.
 21. Select the announcement navigation tab to navigate to the announcements, where the user will be able to add, delete and view announcements.
 22. If the user wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
+
+## Data Structures 
+
 
 <br>
 <hr>
