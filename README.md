@@ -55,6 +55,8 @@ The following are implemented into the PROG7312 POE
 21. Select the announcement navigation tab to navigate to the announcements, where the user will be able to add, delete and view announcements.
 22. If the user wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
 
+<br>
+
 ## Data Structures 
 
 <hr>
