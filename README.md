@@ -9,6 +9,7 @@
 * [Keely-Ann Maritz](https://github.com/Keely-Ann/)
 
 <br>
+<hr>
 
 ## YouTube Video 
 
@@ -17,6 +18,7 @@
 * [POE PART 3]()
 
 <br>
+<hr>
 
 ## Implementation Report 
 Instructions for running the application
@@ -72,7 +74,6 @@ Instructions for running the application
 
 <br>
 <hr>
-<br>
 
 ## Part 2: Implementation
 
