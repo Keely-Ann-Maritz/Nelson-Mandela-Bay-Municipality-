@@ -8,7 +8,6 @@
 
 * [Keely-Ann Maritz](https://github.com/Keely-Ann/)
 
-<br>
 <hr>
 
 ## YouTube Video 
@@ -17,7 +16,6 @@
 * [POE PART 2](https://youtu.be/rploC3EzzX8)
 * [POE PART 3]()
 
-<br>
 <hr>
 
 # Implementation Report 
@@ -48,8 +46,6 @@
 
 ## Data Structures 
 
-
-<br>
 <hr>
 
 ## Testing 
@@ -57,7 +53,6 @@
 -     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
 - Performance Testing
 
-<br>
 <hr>
 
 ## Change Log 
@@ -65,7 +60,6 @@
 - A progress bar was added to the Report Issue Form
 - When clicking on the event, a modal pops up displaying the events information.
 
-<br>
 <hr>
 
 ## Part 1: User Engagement Strategy 
@@ -98,7 +92,6 @@
 
 <img width="1910" height="1678" alt="image" src="https://github.com/user-attachments/assets/b551cf29-45ed-4592-8f12-128920f6a4ed" />
 
-<br>
 <hr>
 
 ## Part 2: Implementation
