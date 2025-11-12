@@ -22,30 +22,41 @@
 
 ## Implementation Report 
 
-### Instructions for running the application
+### Instructions for setting up the Environment Development
 1. Install Visual Studio 2022.
 -       Download link: https://visualstudio.microsoft.com/downloads/
 2. Open Visual Studio 2022.
 3. Download the GitHub repository or clone the repository.
 4. Select the run button in the top navigation bar of Visual Studio 2022.
-5. Once the application has opened, the user will be welcomed by the Home page, displaying information about the municipality, feedback from the users and buttons to navigate to different pages.
-6. Select the View Report Issues button on the Home page, to view a list of issues reported by a user.
-7. Select the View Feedback button on the Home page, to view the feedback and experiences of users.
-8. Select the Service Request Status button on the Home page, to view a feature, which is coming soom. Users can view the countdown on the page, indicating when the page will be launching
-9. Select the Services page to view a list of basic services the municipality provides and offers the community. Users can click on the <b>Report An Issue</b> link to redirect to the Report an Issue form. 
-10. Select the Events and Announcements navigation bar link to view all the events and announcements.
-11. Select the <b>Announcement</b> button to toggle to the announcement view.
-12. Select the pagination to nagivate through the announcements.
-13. Select the <b>Events</b> button to toggle back to the events view.
-14. Users can search by event title, select a category from the dropdown, start and end date.
-15. Select the sorting to view the events by the oldest or newest, simply by selecting from the dropdown.
-16. View the recommended events based off of your searches.
-17. Select the Contact navigation bar link to redirect to the contact us page, where users will be able to view gerneral information, emergency contact information and the head of departments and their emails, allowing users to click on the email button and email a specific department head.
-18. Select the <b>Login</b> button to login as an administrator, in the navigation bar.
-19. Once you have logged in, the user will be able to add, delete and view categories.
-20. Select the events navigation tab to nagivate to the events, where the user will be able to add, delete and view the events.
-21. Select the announcement navigation tab to navigate to the announcements, where the user will be able to add, delete and view announcements.
-22. If the user wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
+
+### Instructions on how to run the application
+
+#### User 
+1. Once the application has opened, the user will be welcomed by the Home page, displaying information about the municipality, feedback from the users and buttons to navigate to different pages.
+2. Select the View Report Issues button on the Home page, to view a list of issues reported by a user.
+3. Select the View Feedback button on the Home page, to view the feedback and experiences of users.
+4. Select the Service Request Status button on the Home page to view the status of the service the user has requested.
+5. Select the Services page to view a list of basic services the municipality provides and offers the community. Users can click on the <b>Report An Issue</b> link to redirect to the Report an Issue form.
+6. Select the Events and Announcements navigation bar link to view all the events and announcements.
+7. Select the <b>Announcement</b> button to toggle to the announcement view.
+8. Select the pagination to nagivate through the announcements.
+9. Select the <b>Events</b> button to toggle back to the events view.
+10. Users can search by event title, select a category from the dropdown, start and end date.
+11. Select the sorting to view the events by the oldest or newest, simply by selecting from the dropdown.
+12. View the recommended events based off of your searches.
+13. Select the Contact navigation bar link to redirect to the contact us page, where users will be able to view gerneral information, emergency contact information and the head of departments and their emails, allowing users to click on the email button and email a specific department head.
+
+#### Admin Portal 
+1. Select the <b>Login</b> button to login as an administrator, in the navigation bar.
+2. Once you have logged in, the admin will be able to add, delete and view categories.
+3. Select the events navigation tab to nagivate to the events, where the admin will be able to add, delete and view the events.
+4. Select the announcement navigation tab to navigate to the announcements, where the admin will be able to add, delete and view announcements.
+5. Select the assign jobs navigation tab to navigate to the service request job management, admins can view assigned service requests.
+6. Select the dropdown for a service request and update the status of the report issue according to the progress.
+7. Once, the admin has changed the status, select the <b>Update</b> button to update the status for the user.
+8. Select the <b>Assign New Job</b> button to assign a report issue to a technician.
+9. Select the <b>Back</b> button to navigate back to the Job Management page, to view all assigned service requests.
+10. If the admin wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
 
 <br>
 
