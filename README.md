@@ -20,9 +20,9 @@
 
 <hr>
 
-# Implementation Report 
+## Implementation Report 
 
-## Instructions for running the application
+### Instructions for running the application
 1. Install Visual Studio 2022.
 -       Download link: https://visualstudio.microsoft.com/downloads/
 2. Open Visual Studio 2022.
@@ -49,7 +49,7 @@
 
 <br>
 
-## Data Structures 
+### Data Structures 
 - Maps JavaScript API and Places API
 - Sets (Unique Categories)
 - Dictionaries (Events)
