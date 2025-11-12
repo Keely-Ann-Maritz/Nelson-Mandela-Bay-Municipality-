@@ -65,7 +65,7 @@ The Maps JavaScript API and Places API was implemented to assist users, when rep
 
 ## Testing 
 - Usability Testing
--     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
+  Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
 - Performance Testing
 
 <br>
