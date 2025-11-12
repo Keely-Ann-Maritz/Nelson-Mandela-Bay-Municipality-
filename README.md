@@ -10,7 +10,7 @@
 
 <br>
 
-## YouTube Video 
+## Demonstration Videos
 
 * [POE PART 1: Task 2](https://youtu.be/Qx6cqSrwLQI)
 * [POE PART 2](https://youtu.be/rploC3EzzX8)
@@ -18,56 +18,56 @@
 
 <br>
 
-<hr>
+## Implementation Report 
 
-# Implementation Report 
+### Instructions for setting up the Environment Development
+1. Install Visual Studio 2022. Download link: https://visualstudio.microsoft.com/downloads/
+3. Open Visual Studio 2022.
+4. Download the GitHub repository or clone the repository.
+5. Select the run button in the top navigation bar of Visual Studio 2022.
 
-## Instructions for running the application
-1. Install Visual Studio 2022.
--       Download link: https://visualstudio.microsoft.com/downloads/
-2. Open Visual Studio 2022.
-3. Download the GitHub repository or clone the repository.
-4. Select the run button in the top navigation bar of Visual Studio 2022.
-5. Once the application has opened, the user will be welcomed by the Home page, displaying information about the municipality, feedback from the users and buttons to navigate to different pages.
-6. Select the View Report Issues button on the Home page, to view a list of issues reported by a user.
-7. Select the View Feedback button on the Home page, to view the feedback and experiences of users.
-8. Select the Service Request Status button on the Home page, to view a feature, which is coming soom. Users can view the countdown on the page, indicating when the page will be launching
-9. Select the Services page to view a list of basic services the municipality provides and offers the community. Users can click on the <b>Report An Issue</b> link to redirect to the Report an Issue form. 
-10. Select the Events and Announcements navigation bar link to view all the events and announcements.
-11. Select the <b>Announcement</b> button to toggle to the announcement view.
-12. Select the pagination to nagivate through the announcements.
-13. Select the <b>Events</b> button to toggle back to the events view.
-14. Users can search by event title, select a category from the dropdown, start and end date.
-15. Select the sorting to view the events by the oldest or newest, simply by selecting from the dropdown.
-16. View the recommended events based off of your searches.
-17. Select the Contact navigation bar link to redirect to the contact us page, where users will be able to view gerneral information, emergency contact information and the head of departments and their emails, allowing users to click on the email button and email a specific department head.
-18. Select the <b>Login</b> button to login as an administrator, in the navigation bar.
-19. Once you have logged in, the user will be able to add, delete and view categories.
-20. Select the events navigation tab to nagivate to the events, where the user will be able to add, delete and view the events.
-21. Select the announcement navigation tab to navigate to the announcements, where the user will be able to add, delete and view announcements.
-22. If the user wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
+### Instructions on how to run the application
+
+#### User 
+1. Once the application has opened, the user will be welcomed by the Home page, displaying information about the municipality, feedback from the users and buttons to navigate to different pages.
+2. Select the View Report Issues button on the Home page, to view a list of issues reported by a user.
+3. Select the View Feedback button on the Home page, to view the feedback and experiences of users.
+4. Select the Service Request Status button on the Home page to view the status of the service the user has requested.
+5. Select the Services page to view a list of basic services the municipality provides and offers the community. Users can click on the <b>Report An Issue</b> link to redirect to the Report an Issue form.
+6. Select the Events and Announcements navigation bar link to view all the events and announcements.
+7. Select the <b>Announcement</b> button to toggle to the announcement view.
+8. Select the pagination to nagivate through the announcements.
+9. Select the <b>Events</b> button to toggle back to the events view.
+10. Users can search by event title, select a category from the dropdown, start and end date.
+11. Select the sorting to view the events by the oldest or newest, simply by selecting from the dropdown.
+12. View the recommended events based off of your searches.
+13. Select the Contact navigation bar link to redirect to the contact us page, where users will be able to view gerneral information, emergency contact information and the head of departments and their emails, allowing users to click on the email button and email a specific department head.
+
+#### Admin Portal 
+1. Select the <b>Login</b> button to login as an administrator, in the navigation bar.
+2. Once you have logged in, the admin will be able to add, delete and view categories.
+3. Select the events navigation tab to nagivate to the events, where the admin will be able to add, delete and view the events.
+4. Select the announcement navigation tab to navigate to the announcements, where the admin will be able to add, delete and view announcements.
+5. Select the assign jobs navigation tab to navigate to the service request job management, admins can view assigned service requests.
+6. Select the dropdown for a service request and update the status of the report issue according to the progress.
+7. Once, the admin has changed the status, select the <b>Update</b> button to update the status for the user.
+8. Select the <b>Assign New Job</b> button to assign a report issue to a technician.
+9. Select the <b>Back</b> button to navigate back to the Job Management page, to view all assigned service requests.
+10. If the admin wishes to exit the admin portal, simply click on the <b>Logout</b> button in the navigation bar.
 
 <br>
 
-## Data Structures 
-- Maps JavaScript API and Places API
-- Sets (Unique Categories)
-- Dictionaries (Events)
-- Queues (Events)
-- Priority Queues (Recommendations)
-- Binary Search Trees (Organising and sorting the Service Requests)
-- Graphs (Relationships, connections and finding the shortest route)
-- Heaps (Priority Service Requests)
+### Data Structures 
+The Maps JavaScript API and Places API was implemented to assist users, when reporting an issue, as the user enters a location, a dropdown of locations will display based on the user’s input, autocompleting their search and allowing the user to select the location. Sets were implemented to store the unique categories of the events and announcements. It prevents duplicate categories. For example, the admin wants to add two categories, they add a category with a lowercase “road related” and a category with an uppercase “Road related”. The system does not allow the admin to create the second category as the category already exists with a lowercase. Dictionaries were used to store the information of the events and the announcements. The event and announcement information were accessible, and the system could retrieve the information and display the information for the user to view. Queues were implemented to manage all the recent and upcoming events and announcements in the community. The events could be searched by using keywords, location, category, start and end date, and filtered to display by the newest or oldest events. A Priority Queue was implemented for the recommendations. Once users search for an event with the same category, the top three recommendations will display, allowing the user to view similar events. Users can click on the event card to view the event details. A Binary Search Tree was implemented to organise and sort the service requests. It allowed the user to search for a specific service request by its ID, with ease. A Graph was used to show the connection of the service requests and to find the shortest route. The data structure assisted with the relationship between the locations and the categories to determine if the request is linked to a priority service request (urgent). Heaps were used to determine the lowest and highest priority, to retrieve the information and to display the priority service request (urgent) for the user to view. This allows the service requests to be managed and for the admin to handle the most important requests first. The highest priority will take preference due to it displaying automatically on the top of the heap for the admin to complete. 
 
-  
-<hr>
+
+ <br>
 
 ## Testing 
-- Usability Testing
--     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
+- Usability Testing: [Survey Monkey](https://www.surveymonkey.com/r/KVPGPGN)
 - Performance Testing
 
-<hr>
+<br>
 
 ## Change Log 
 - The recommendations were moved to the top of the events page.
@@ -76,7 +76,7 @@
 - Changed Part 1 to use a Binary Search Tree.
 - Changed the View button text colour to white to match all buttons, for consistency. 
 
-<hr>
+<br>
 
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
@@ -86,7 +86,6 @@
 <img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
 
 <br>
-<hr>
 
 ## Part 1: Implementation 
 
@@ -97,6 +96,7 @@
 
 <img width="1872" height="907" alt="image" src="https://github.com/user-attachments/assets/7625656a-968f-48ce-87b1-d742b83e9be0" />
 
+<br>
 
 ### Admin side
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/30f737c5-5984-4e02-9c4c-6f4a01923a0f" />
@@ -113,7 +113,7 @@
 
 <img width="1910" height="1678" alt="image" src="https://github.com/user-attachments/assets/b551cf29-45ed-4592-8f12-128920f6a4ed" />
 
-<hr>
+<br>
 
 ## Part 2: Implementation
 
@@ -124,7 +124,6 @@
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
 <br>
-<hr>
 
 ## Part 3: Implementation
 
@@ -135,6 +134,7 @@
 
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/6cdb6814-bbb3-4511-ada2-72cf46f1896c" />
 
+<br>
 
 ### Admin side
 <img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/43fa755f-0a15-41d9-b1e9-c4a67977b197" />
@@ -151,6 +151,8 @@
 
 <img width="1507" height="512" alt="image" src="https://github.com/user-attachments/assets/f95aa068-5877-4505-8f25-cf3e684a229a" />
 
+<br>
+
 ### Error Handling
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/02276891-e60d-42b9-977d-112163ccb1a0" />
 
@@ -158,10 +160,7 @@
 
 <img width="1910" height="992" alt="image" src="https://github.com/user-attachments/assets/f866b979-7c0f-47cc-9d87-dc8f769a0244" />
 
-
 <br>
-<hr>
-
 
 ## ARC Document
 The Completion Report, Technical Recommendations and a Full Reference list is provided in the PDF document, submitted on ARC. 
