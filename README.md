@@ -18,6 +18,10 @@
 
 <br>
 
+<hr>
+
+# Implementation Report 
+
 ## Instructions for running the application
 1. Install Visual Studio 2022.
 -       Download link: https://visualstudio.microsoft.com/downloads/
@@ -45,19 +49,34 @@
 
 <br>
 
+## Data Structures 
+- Maps JavaScript API and Places API
+- Sets (Unique Categories)
+- Dictionaries (Events)
+- Queues (Events)
+- Priority Queues (Recommendations)
+- Binary Search Trees (Organising and sorting the Service Requests)
+- Graphs (Relationships, connections and finding the shortest route)
+- Heaps (Priority Service Requests)
+
+  
+<hr>
+
 ## Testing 
 - Usability Testing
 -     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
 - Performance Testing
 
-<br>
+<hr>
 
 ## Change Log 
 - The recommendations were moved to the top of the events page.
-- A progress bar was added to the Report Issue Form
+- A progress bar was added to the Report Issue Form.
 - When clicking on the event, a modal pops up displaying the events information.
+- Changed Part 1 to use a Binary Search Tree.
+- Changed the View button text colour to white to match all buttons, for consistency. 
 
-<br>
+<hr>
 
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
@@ -66,8 +85,35 @@
 
 <img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
 
-
 <br>
+<hr>
+
+## Part 1: Implementation 
+
+### User side 
+<img width="1910" height="2230" alt="image" src="https://github.com/user-attachments/assets/11ca41ff-5345-4eba-aed0-c611fe916381" />
+
+<img width="1878" height="916" alt="image" src="https://github.com/user-attachments/assets/2d938e6d-c1d1-4f59-a48d-5c456b16a6d9" />
+
+<img width="1872" height="907" alt="image" src="https://github.com/user-attachments/assets/7625656a-968f-48ce-87b1-d742b83e9be0" />
+
+
+### Admin side
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/30f737c5-5984-4e02-9c4c-6f4a01923a0f" />
+
+<img width="1896" height="910" alt="image" src="https://github.com/user-attachments/assets/7bf5e4df-7118-432e-bd91-52b34482775f" />
+
+<img width="1910" height="1353" alt="image" src="https://github.com/user-attachments/assets/f84a060c-7266-42ee-ba70-398222d7ee80" />
+
+<img width="1910" height="1250" alt="image" src="https://github.com/user-attachments/assets/dbece9e7-ef80-4103-a226-b52135e6d4ca" />
+
+<img width="1910" height="1842" alt="image" src="https://github.com/user-attachments/assets/b4f4813a-6922-4c34-8557-de9e959c39f3" />
+
+<img width="1910" height="1056" alt="image" src="https://github.com/user-attachments/assets/7a9825b5-1968-47e2-82fe-11c83afc4106" />
+
+<img width="1910" height="1678" alt="image" src="https://github.com/user-attachments/assets/b551cf29-45ed-4592-8f12-128920f6a4ed" />
+
+<hr>
 
 ## Part 2: Implementation
 
@@ -75,14 +121,50 @@
 
 <img width="1910" height="1992" alt="image" src="https://github.com/user-attachments/assets/a016d840-e248-4ced-b614-33dc7cc11906" />
 
-<img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
-
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
 <br>
+<hr>
 
-## References
-Full reference list is provided in the PDF document, submitted on ARC. 
+## Part 3: Implementation
+
+### User side
+<img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
+
+<img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/666224d7-ba5c-4c73-90ba-238e7a7f06b1" />
+
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/6cdb6814-bbb3-4511-ada2-72cf46f1896c" />
+
+
+### Admin side
+<img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/43fa755f-0a15-41d9-b1e9-c4a67977b197" />
+
+<img width="1883" height="913" alt="image" src="https://github.com/user-attachments/assets/2faaf7dc-60c9-41e9-9e83-cbb9400bf240" />
+
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/957918c2-2698-4024-a0f7-311f28bfcda4" />
+
+<img width="1902" height="912" alt="image" src="https://github.com/user-attachments/assets/638343b3-c5ff-4c2f-82f8-bb2096cc3a5e" />
+
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/c35c0795-79f8-4f6d-9bba-b939f53deb2b" />
+
+<img width="1910" height="1820" alt="image" src="https://github.com/user-attachments/assets/a0a81237-fe04-445d-b636-7291ea0aa927" />
+
+<img width="1507" height="512" alt="image" src="https://github.com/user-attachments/assets/f95aa068-5877-4505-8f25-cf3e684a229a" />
+
+### Error Handling
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/02276891-e60d-42b9-977d-112163ccb1a0" />
+
+<img width="1910" height="1191" alt="image" src="https://github.com/user-attachments/assets/c910b59a-1db6-4ad6-ad9a-b3c43ddb8651" />
+
+<img width="1910" height="992" alt="image" src="https://github.com/user-attachments/assets/f866b979-7c0f-47cc-9d87-dc8f769a0244" />
+
+
+<br>
+<hr>
+
+
+## ARC Document
+The Completion Report, Technical Recommendations and a Full Reference list is provided in the PDF document, submitted on ARC. 
 
 
 
