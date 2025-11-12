@@ -89,13 +89,14 @@
 <hr>
 
 ## Part 1: Implementation 
-- User side 
+
+### User side 
 <img width="1878" height="916" alt="image" src="https://github.com/user-attachments/assets/2d938e6d-c1d1-4f59-a48d-5c456b16a6d9" />
 
 <img width="1872" height="907" alt="image" src="https://github.com/user-attachments/assets/7625656a-968f-48ce-87b1-d742b83e9be0" />
 
 
-- Admin side
+### Admin side
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/30f737c5-5984-4e02-9c4c-6f4a01923a0f" />
 
 <img width="1896" height="910" alt="image" src="https://github.com/user-attachments/assets/7bf5e4df-7118-432e-bd91-52b34482775f" />
@@ -124,7 +125,8 @@
 <hr>
 
 ## Part 3: Implementation
-- User side
+
+### User side
 <img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
 
 <img width="1910" height="1223" alt="image" src="https://github.com/user-attachments/assets/fefb61e0-5c2f-4beb-baed-95e1aae5a83d" />
@@ -132,8 +134,7 @@
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/bc3410b4-95af-4221-b05b-9323135dd6bb" />
 
 
-
-- Admin side
+### Admin side
 <img width="1900" height="918" alt="Screenshot 2025-11-12 082238" src="https://github.com/user-attachments/assets/ad88eac3-fbff-4ea4-b334-4a73acea2567" />
 
 <img width="1883" height="918" alt="image" src="https://github.com/user-attachments/assets/71445778-9f11-4784-bc2b-f4cdc65cfc93" />
@@ -148,8 +149,15 @@
 
 <img width="1522" height="868" alt="image" src="https://github.com/user-attachments/assets/deb8d9e8-beae-42dc-a2c6-56e4641a8111" />
 
+### Error Handling
+<img width="1510" height="336" alt="image" src="https://github.com/user-attachments/assets/738fdf4b-9f11-4005-bde4-0de9e64dcf1e" />
+
+<img width="1910" height="992" alt="image" src="https://github.com/user-attachments/assets/f866b979-7c0f-47cc-9d87-dc8f769a0244" />
+
+
 <br>
 <hr>
+
 
 ## ARC Document
 The Completion Report, Technical Recommendations and a Full Reference list is provided in the PDF document, submitted on ARC. 
