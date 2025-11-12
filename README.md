@@ -141,7 +141,7 @@
 
 <img width="1900" height="918" alt="Screenshot 2025-11-12 082238" src="https://github.com/user-attachments/assets/ad88eac3-fbff-4ea4-b334-4a73acea2567" />
 
-<img width="1883" height="918" alt="image" src="https://github.com/user-attachments/assets/71445778-9f11-4784-bc2b-f4cdc65cfc93" />
+<img width="1883" height="913" alt="image" src="https://github.com/user-attachments/assets/2faaf7dc-60c9-41e9-9e83-cbb9400bf240" />
 
 <img width="1910" height="948" alt="image" src="https://github.com/user-attachments/assets/9ba0634e-4e59-49d6-90da-41c2d505b4cc" />
 
