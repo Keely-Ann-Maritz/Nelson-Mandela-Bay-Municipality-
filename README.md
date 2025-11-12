@@ -18,8 +18,6 @@
 
 <br>
 
-<hr>
-
 ## Implementation Report 
 
 ### Instructions for setting up the Environment Development
@@ -70,8 +68,7 @@
 - Graphs (Relationships, connections and finding the shortest route)
 - Heaps (Priority Service Requests)
 
-  
-<hr>
+ <br>
 
 ## Testing 
 - Usability Testing
@@ -97,7 +94,6 @@
 <img width="940" height="203" alt="image" src="https://github.com/user-attachments/assets/105a3f4b-6239-423c-b9ae-ccefcd58fe34" />
 
 <br>
-<hr>
 
 ## Part 1: Implementation 
 
@@ -108,6 +104,7 @@
 
 <img width="1872" height="907" alt="image" src="https://github.com/user-attachments/assets/7625656a-968f-48ce-87b1-d742b83e9be0" />
 
+<br>
 
 ### Admin side
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/30f737c5-5984-4e02-9c4c-6f4a01923a0f" />
@@ -124,7 +121,7 @@
 
 <img width="1910" height="1678" alt="image" src="https://github.com/user-attachments/assets/b551cf29-45ed-4592-8f12-128920f6a4ed" />
 
-<hr>
+<br>
 
 ## Part 2: Implementation
 
@@ -135,7 +132,6 @@
 <img width="1910" height="1363" alt="Announcements" src="https://github.com/user-attachments/assets/a2f769d3-bd0f-484a-ab1b-004868cfcb11" />
 
 <br>
-<hr>
 
 ## Part 3: Implementation
 
@@ -146,6 +142,7 @@
 
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/6cdb6814-bbb3-4511-ada2-72cf46f1896c" />
 
+<br>
 
 ### Admin side
 <img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/43fa755f-0a15-41d9-b1e9-c4a67977b197" />
@@ -162,6 +159,8 @@
 
 <img width="1507" height="512" alt="image" src="https://github.com/user-attachments/assets/f95aa068-5877-4505-8f25-cf3e684a229a" />
 
+<br>
+
 ### Error Handling
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/02276891-e60d-42b9-977d-112163ccb1a0" />
 
@@ -169,10 +168,7 @@
 
 <img width="1910" height="992" alt="image" src="https://github.com/user-attachments/assets/f866b979-7c0f-47cc-9d87-dc8f769a0244" />
 
-
 <br>
-<hr>
-
 
 ## ARC Document
 The Completion Report, Technical Recommendations and a Full Reference list is provided in the PDF document, submitted on ARC. 
