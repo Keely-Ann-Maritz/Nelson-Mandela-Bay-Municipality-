@@ -44,7 +44,7 @@ namespace PROG7312_POE_PART1.Controllers
             var graph = new IssueGraph();
             graph.Build(allIssuesList);
 
-            // Build a min-heap to prioritize issues by status and age
+            // Build a min-heap to prioritize issues by status and age (Oumghar,2025)
             var pq = new PriorityQueue<ReportIssue>();
             foreach (var issue in allIssuesList)
             {
@@ -89,7 +89,7 @@ namespace PROG7312_POE_PART1.Controllers
                 }
             }
 
-            // MST over similarity graph to form clusters/groups
+            // MST over similarity graph to form clusters/groups (Ray, 2025)
             var mstEdges = graph.MinimumSpanningTree();
             var mstDetails = mstEdges.Select(edge =>
             {
@@ -124,7 +124,7 @@ namespace PROG7312_POE_PART1.Controllers
                 };
             }).ToList();
 
-            // Grouped MST rows (compact display)
+            // Grouped MST rows (compact display) (Ray, 2025)
             var grouped = mstDetails
                 .GroupBy(e => e.FromId)
                 .Select(g =>
@@ -145,6 +145,7 @@ namespace PROG7312_POE_PART1.Controllers
                 .OrderBy(r => r.FromId)
                 .ToList();
 
+            // Displaying the priority service request (Ray, 2025)
             var vm = new RequestStatusViewModel
             {
                 AllIssues = allIssuesList.OrderByDescending(i => i.SubmittedDate).ToList(),
