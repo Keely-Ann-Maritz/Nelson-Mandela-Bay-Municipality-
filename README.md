@@ -133,7 +133,7 @@
 
 <img width="1910" height="1223" alt="image" src="https://github.com/user-attachments/assets/fefb61e0-5c2f-4beb-baed-95e1aae5a83d" />
 
-<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/bc3410b4-95af-4221-b05b-9323135dd6bb" />
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/6cdb6814-bbb3-4511-ada2-72cf46f1896c" />
 
 
 ### Admin side
