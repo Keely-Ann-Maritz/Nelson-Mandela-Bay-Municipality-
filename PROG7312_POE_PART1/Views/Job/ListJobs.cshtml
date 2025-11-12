@@ -1,0 +1,183 @@
+﻿@model List<PROG7312_POE_PART1.Models.JobCard>
+@{
+    ViewData["Title"] = "Jobs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+    /*Button styling (W3Schools, 2025)*/
+    .btn-add {
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid orange;
+        display: inline-block;
+    }
+
+    .btn-back {
+        background-color: grey;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid grey;
+        display: inline-block;
+    }
+
+    .btn-add:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
+
+    .btn-delete:hover {
+        background-color: transparent;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+        text-decoration: none;
+    }
+
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }
+
+    .btn-update{
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .btn-update:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
+
+    /*Card styling (W3Schools, 2025)*/
+    .category-card {
+        border: 1px solid #f0faff;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px 0;
+        background-color: #f0faff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* table styling (W3Schools, 2025)*/
+    .table th, .table td {
+        padding: 12px 15px;
+    }
+    .table{
+        width: 100%;
+    }
+
+    .table th{
+        background-color: black;
+        color: white;
+    }
+
+    /*Styling the footer (W3Schools, 2025)*/
+    footer {
+        position: fixed;
+    }
+</style>
+<body>
+
+<br />
+
+<!-- Add Button (Bootstrap, 2025)-->
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+    <h1 style="text-align: center"><i class="bi bi-clipboard"></i> Job Management</h1>
+
+    <a asp-controller="Job" asp-action="AssignJob" class="btn-add">Assign New Job</a>
+</div>
+
+<hr />
+<br />
+
+@* Displaying error and success messages (Bootstrap,2025) *@
+@if (TempData["AdminStatus"] != null && TempData["AdminMessage"] != null)
+{
+    var status = TempData["AdminStatus"]?.ToString();
+    <div class="alert @(status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+        <b>@(status == "Success" ? "Success!" : "Error!")</b> @TempData["AdminMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@* Displaying the list of assigned jobs (Microsoft Ignite,2025) *@
+@if (Model != null && Model.Any())
+{
+    <div class="table-responsive ">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Job</th>
+                    <th>Issue</th>
+                    <th>Assigned To</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Assigned</th>
+                    <th>Due</th>
+                    <th>Related Issues</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var j in Model)
+                {
+                    <tr>
+                        <td>@j.JobId</td>
+                        <td>@j.IssueReportId</td>
+                        <td>@j.AssignedTo</td>
+                        <td>@j.Priority</td>
+                        <td>@j.Status</td>
+                        <td>@j.AssignedAt.ToLocalTime().ToString("MMM dd, yyyy HH:mm")</td>
+                        <td>@(j.DueDate.HasValue? j.DueDate.Value.ToLocalTime().ToString("MMM dd, yyyy") : "-")</td>
+                        <td>@(j.RelatedIssueIds != null && j.RelatedIssueIds.Any() ? string.Join(", ", j.RelatedIssueIds.Select(id => id)) : "-")</td>
+                        <td>
+                            <form asp-action="UpdateJobStatus" method="post" class="d-inline">
+                                <input type="hidden" name="jobId" value="@j.JobId" />
+                                <select name="status" class="form-select form-select-sm d-inline" style="width:auto; display:inline-block;">
+                                    <option value="Assigned" selected="@(j.Status == "Assigned")">Assigned</option>
+                                    <option value="In Progress" selected="@(j.Status == "In Progress")">In Progress</option>
+                                    <option value="Resolved" selected="@(j.Status == "Resolved")">Resolved</option>
+                                    <option value="Closed" selected="@(j.Status == "Closed")">Closed</option>
+                                </select>
+                                <button type="submit" class="btn btn-sm btn-update">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <!-- If there are no jobs assigned, the following message will display (Bootstrap, 2025) -->
+    <div class="alert alert-secondary text-center mt-3" role="alert">No jobs assigned yet.</div>
+}
+</body>
+</html>
+

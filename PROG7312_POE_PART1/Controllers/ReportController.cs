@@ -87,6 +87,18 @@ namespace PROG7312_POE_PART1.Controllers
             return View(issues);
         }
 
+        // Retreiving all the issues for tracking the report
+        public static IEnumerable<ReportIssue> GetAllIssues()
+        {
+            return issues.ToList();
+        }
+
+        // Retrieving a specific issue by ReportId
+        public static ReportIssue? GetIssueById(int reportId)
+        {
+            return issues.FirstOrDefault(i => i.ReportId == reportId);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult ReportIssues(ReportIssue model, IFormFile mediaFile)
@@ -110,6 +122,10 @@ namespace PROG7312_POE_PART1.Controllers
 
                 // Assigning a new ID to the report ID
                 model.ReportId = issues.Count == 0 ? 1 : issues.Max(i => i.ReportId) + 1;
+
+                // Setting status and submission data (Microsoft Ignite,2025)
+                model.Status = "Submitted";
+                model.SubmittedDate = DateTime.UtcNow;
 
                 // File upload option
                 if (mediaFile != null && mediaFile.Length > 0)

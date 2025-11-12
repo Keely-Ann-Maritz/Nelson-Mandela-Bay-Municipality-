@@ -13,6 +13,21 @@
     <link rel="stylesheet" href="/html/site.css">
 </head>
 <style>
+    /* Styling the heading (W3Schools, 2025)*/
+    h1{
+        text-align:center;
+        align-content: center;
+    }
+
+    /* Styling the button (W3Schools, 2025)*/
+    .btn-view{
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
     .btn-back{
         background-color: grey;
         color: white;
@@ -24,57 +39,45 @@
         display:inline-block;
         outline: none !important;
         box-shadow: none !important;
-    }/*(W3Schools, 2025)*/
+    }
 
     .btn-back:hover{
         background-color: transparent;
         color: grey;
         border: 2px solid grey;
         text-decoration: none;
-    }/*(W3Schools, 2025)*/
-
-    h1{
-        text-align:center;
-        align-content: center;
-    }/*(W3Schools, 2025)*/
-
-    .table{
-        width: 100%;
-    }/*(W3Schools, 2025)*/
-
-    .table th{
-        background-color: black;
-        color: white;
-    }/*(W3Schools, 2025)*/
-
-    .btn-view{
-        background-color: orange;
-        color: black;
-        padding: 8px 16px;
-        text-decoration: none;
-        border-radius: 4px;
-    }/*(W3Schools, 2025)*/
+    }
 
     .btn-view:hover {
         background-color: transparent;
         color: orange;
         border: 2px solid orange;
         text-decoration: none;
-    }/*(W3Schools, 2025)*/
+    }
 
+    /* Styling the table (W3Schools, 2025)*/
     .table th, .table td{
         padding: 12px 15px;
-    }/*(W3Schools, 2025)*/
+    }
+
+    .table{
+        width: 100%;
+    }
+
+    .table th{
+        background-color: black;
+        color: white;
+    }
 
     .form-control:focus {
         border-color: orange;
         box-shadow: 0 0 0 0.25rem orange;
-    }/*(W3Schools, 2025)*/
+    }
     
+    /* Styling the footer (W3Schools, 2025)*/
     footer {
         position: fixed;
     }
-    /*(W3Schools,2025)*/
 </style>
 <body>
 
@@ -139,6 +142,7 @@
             }
             else
             {
+                <!--Error message informing the user there are no reports (Bootstrap, 2025)-->
                 <tr>
                     <td colspan="5" class="text-center">No issues were reported yet.</td>
                 </tr>

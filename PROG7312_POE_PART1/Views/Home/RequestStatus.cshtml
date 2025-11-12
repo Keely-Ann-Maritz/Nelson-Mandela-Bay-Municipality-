@@ -1,96 +1,392 @@
-﻿
+﻿@model PROG7312_POE_PART1.Models.RequestStatusViewModel
+
 @{
-    ViewData["Title"] = "RequestStatus";
+    ViewData["Title"] = "Request Status";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Request Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/html/site.css">
 </head>
 <style>
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        z-index: 1;
-        color: black;
-    }/*(W3Schools,2025)*/
-
-    /* Background image container (Shennyl,2011)*/
-    .background-image {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('@Url.Content("~/Images/BackgroundImage.jpg")');
-        background-size: cover;
-        background-position: center;
-        opacity: 0.6;
-        z-index: -1;
-    }/*(W3Schools,2025)*/
-
-    .centered-content {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: black;
-    }/*(W3Schools,2025)*/
+    /* Styling the headings (W3Schools, 2025)*/
+    h3, h5 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
 
     h1 {
-        margin: 0;
-        font-size: 60px;
-        text-shadow: 2px 2px 8px white;
-    }/*(W3Schools,2025)*/
+        text-align: center;
+        align-content: center;
+    }
 
-    hr {
-        margin: 15px auto;
-        width: 40%;
-    }/*(W3Schools,2025)*/
+    /* Styling the status to different colours based on progress (W3Schools, 20225)*/
+    .status-badge {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        display: inline-block;
+        text-align: center;
+        min-width: 100px;
+    }
 
-    #demo {
-        font-size: 30px;
-        margin-top: 10px;
-    }/*(W3Schools,2025)*/
+    .status-submitted {
+        background-color: #ffc107;
+        color: #000;
+    }
+
+    .status-in-progress {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    .status-resolved {
+        background-color: #198754;
+        color: #fff;
+    }
+
+    .status-closed {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    /* Styling the search bar (W3Schools, 2025)*/
+    .search-container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .search-form {
+        display: flex;
+        gap: 10px;
+        align-items: end;
+    }
+
+    .search-input-group {
+        flex: 1;
+    }
+
+    /* Button styling (W3Schools, 2025)*/
+    .btn-view:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
+
+    .btn-back {
+        background-color: grey;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid grey;
+        display: inline-block;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }
+
+    .btn-search {
+        background-color: orange;
+        color: white;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 4px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .btn-view {
+        background-color: orange;
+        color: white;
+        padding: 6px 12px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+    .btn-search:hover {
+        background-color: #e68900;
+        color: white;
+    }
+
+    /* Styling the table (W3Schools, 2025)*/
+    .table th {
+        background-color: black;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .table {
+        margin-top: 15px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .form-control:focus {
+        border-color: orange;
+        box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.25);
+    }
+
+    .description-cell {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .no-requests {
+        text-align: center;
+        padding: 40px;
+        color: #6c757d;
+    }
+
+    .search-result-highlight {
+        background-color: #fff3cd !important;
+        border-left: 4px solid #6c757d;
+    }
+
+    .small-muted {
+        color: #6c757d;
+        font-size: .9rem;
+    }
+
+    .explanation-list li {
+        margin-bottom: 4px;
+    }
+
+    /* Styling the error and success message spacing (W3Schools, 2025)*/
+    .alert-spacing {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 </style>
 <body>
-    <!--Background image element (W3Schools,2025)-->
-    <div class="background-image"></div>
+    <br />
 
-    <!--Text and timer (W3Schools,2025)-->
-    <div class="centered-content">
-        <h1 class="fw-bold">COMING SOON</h1>
-        <hr>
-        <p id="demo" style="font-size:30px"></p>
+    <!-- Back button to navigate back to the home page-->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-back">Back</a>
     </div>
 
-    <!--Timer (W3Schools,2025)-->
-    <script>
-        var countDownDate = new Date("12 November, 2025 15:37:25").getTime();
+    <!-- Heading-->
+    <h1>Service Request Status</h1>
+    <hr />
+    <br />
 
-        var countdownfunction = setInterval(function() {
-          var now = new Date().getTime();
-          var distance = countDownDate - now;
+    <!-- Search bar for users to search for the specific service request in the table (W3Schools, 2025)-->
+    <form asp-controller="Home" asp-action="RequestStatus" method="get" class="search-form">
+        <div class="search-input-group">
+            <label for="searchId" class="form-label"><b>Request ID</b></label>
+            <input type="number" id="searchId" name="searchId" class="form-control" placeholder="Enter your unique Request ID" value="@Model.SearchId" min="1" />
+        </div>
+        <div>
+            <button type="submit" class="btn btn-search">Search</button>
+        </div>
+    </form>
 
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    @*Error message informing the user the service request does not exist (Bootstrap, 2025)*@
+    @if (Model.SearchFound == false && Model.SearchId.HasValue)
+    {
+        <div class="alert alert-danger  alert-spacing" role="alert">
+            No service request found with the provided ID.
+        </div>
+    }
 
-          document.getElementById("demo").innerHTML =
-              days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    <br />
 
-          if (distance < 0) {
-            clearInterval(countdownfunction);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-          }
-        }, 1000);
-    </script>
+    <!-- Tree and Graph -->
+    <!-- Displaying all Service Requests with their statuses, which change according to the process of completion -->
+    <h3>All Service Requests</h3>
+
+    <!--Updating the status (Microsoft Ignite, 2025)-->
+    <!--Adding embedded code to display and view the updated service requests (Microsoft Ignite, 2025)-->
+    @if (Model.AllIssues != null && Model.AllIssues.Any())
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Status</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                        <th>Submitted Date</th>
+                        <th>Assigned To</th>
+                        <th>Priority</th>
+                        <th>Due</th>
+                        <th>Attachment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var issue in Model.AllIssues)
+                    {
+                        var isSearched = Model.SearchResult != null && Model.SearchResult.ReportId == issue.ReportId;
+                        var rowClass = isSearched ? "search-result-highlight" : "";
+                        <tr class="@rowClass">
+                            <td><b>@issue.ReportId</b></td>
+                            <td>
+                                @{
+                                    var statusClass = issue.Status switch
+                                    {
+                                        "In Progress" => "status-in-progress",
+                                        "Resolved" => "status-resolved",
+                                        "Closed" => "status-closed",
+                                        _ => "status-submitted"
+                                    };
+                                }
+                                <span class="status-badge @statusClass">@issue.Status</span>
+                            </td>
+                            <td>@issue.Category</td>
+                            <td>@issue.Location</td>
+                            <td class="description-cell" title="@issue.Description">@issue.Description</td>
+                            <td>@issue.SubmittedDate.ToLocalTime().ToString("MMM dd, yyyy HH:mm")</td>
+                            @{
+                                PROG7312_POE_PART1.Models.JobCard job = null;
+                                if (Model.JobByIssueId != null && Model.JobByIssueId.TryGetValue(issue.ReportId, out var foundJob))
+                                {
+                                    job = foundJob;
+                                }
+                            }
+                            <td>@(job != null ? job.AssignedTo : "-")</td>
+                            <td>@(job != null ? job.Priority : "-")</td>
+                            <td>@(job?.DueDate?.ToLocalTime().ToString("MMM dd, yyyy") ?? "-")</td>
+                            <td>
+                                @if (!string.IsNullOrWhiteSpace(issue.MediaAttachment))
+                                {
+                                    <!--View button for the Media Attachment-->
+                                    <a href="@issue.MediaAttachment" target="_blank" class="btn-view">View</a>
+                                }
+                                else
+                                {
+                                    <!--Displaing the following if the reported issue is not linked to a priority request and is stand alone (W3Schools, 2025)-->
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <!--Error message informing the user there are no service requests submitted yet.-->
+        <div class="alert alert-secondary text-center" role="alert">
+            There are no service requests submitted yet.
+        </div>
+    }
+
+    <!-- Tree and Graph -->
+    <!-- Priority Requested Isses Reported (W3Schools, 2025)-->
+    <h5>Top Requests To Address</h5>
+
+    @if (Model.TopPriorityIssues != null && Model.TopPriorityIssues.Any())
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Status</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <th>Submitted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var issue in Model.TopPriorityIssues)
+                    {
+                        <tr>
+                            <td><b>@issue.ReportId</b></td>
+                            <td>@issue.Status</td>
+                            <td>@issue.Category</td>
+                            <td>@issue.Location</td>
+                            <td>@issue.SubmittedDate.ToLocalTime().ToString("MMM dd, yyyy HH:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <!-- Error message informing the user there are no service requests with the highest priority (Bootstrap, 2025)-->
+        <div class="alert alert-secondary text-center" role="alert">
+            There are no urgent requests.
+        </div>
+    }
+
+    <!-- Tree and Graph -->
+    <!--Displaying the linked service requests which are linked to the assigned Priority service request -->
+    <h5>Related Service Requests</h5>
+
+    @if (Model.GroupedMst != null && Model.GroupedMst.Any())
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Request</th>
+                        <th>Connected To</th>
+                        <th>Shared Insight</th>
+                        <th>Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model.GroupedMst)
+                    {
+                        <tr>
+                            <td>
+                                <b>@row.FromId</b><br />
+                                <span class="small-muted">@row.FromCategory<br />@row.FromLocation</span>
+                            </td>
+                            <td>@string.Join(", ", row.ToIds.Select(id => id.ToString()))</td>
+                            <td>@row.SharedSummary</td>
+                            <td>@row.WeightSummary</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <!--Error message informing the user there are no requests linked to each other (Bootstrap, 2025)-->
+        <div class="alert alert-secondary text-center" role="alert">
+            There are no requests linked to each other.
+        </div>
+    }
+
 </body>
 </html>
-

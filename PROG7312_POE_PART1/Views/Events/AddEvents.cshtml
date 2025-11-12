@@ -3,12 +3,9 @@
 @{
     ViewData["Title"] = "Add Event";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-
-    
     List<string> categoryList = ViewBag.AvailableCategories as List<string> ?? new List<string>();
     string currentDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
 }
-
 
 <!DOCTYPE html>
 <html>

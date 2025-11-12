@@ -1,0 +1,229 @@
+﻿@model PROG7312_POE_PART1.Models.JobCard
+@{
+    ViewData["Title"] = "Assign Job";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var issues = ViewBag.Issues as List<PROG7312_POE_PART1.Models.ReportIssue>;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Category</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/html/site.css">
+</head>
+<style>
+    /*Button styling (W3Schools, 2025)*/
+    .btn-add {
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid orange;
+        display: inline-block;
+    }
+
+    .btn-back:hover {
+        background-color: transparent;
+        color: grey;
+        border: 2px solid grey;
+        text-decoration: none;
+    }
+
+    .btn-add:hover {
+        background-color: transparent;
+        color: orange;
+        border: 2px solid orange;
+        text-decoration: none;
+    }
+
+    .btn-back {
+        background-color: grey;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid grey;
+        display: inline-block;
+    }
+
+    /*Form styling (W3Schools, 2025)*/
+    .form-control:focus {
+        outline: none;
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+    }
+
+    .form-control {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .form-input-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .form-input-group input:not([type="checkbox"]),
+    .form-input-group textarea,
+    .form-control,
+    .form-input-group select {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+
+    .form-input-group {
+        display: block;
+        max-width: 700px;
+        gap: 10px;
+        margin: 10px auto;
+    }
+
+    .form-checkbox-group label {
+        margin-bottom: 0;
+    }
+
+    .form-checkbox-group {
+        display: flex;
+        align-items: center;
+        max-width: 700px;
+        margin: 10px auto 20px auto;
+        gap: 10px;
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* Button styling (2025)*/
+    .btn-back, .btn-add {
+        flex: 1;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /*Footer Styling (W3Schools, 2025)*/
+    footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 15px 0;
+    }
+</style>
+<body>
+
+    <br />
+
+    <!--Heading-->
+    <h1 style="text-align: center">Assign a Job</h1>
+
+    <hr />
+
+    <br />
+
+    <!--Assigning a report/service request to a technician (Bootstrap, 2025)-->
+    <div class="container mt-3">
+        <form asp-action="AssignJob" method="post">
+            @if (TempData["AdminStatus"] != null && TempData["AdminMessage"] != null)
+            {
+                var status = TempData["AdminStatus"]?.ToString();
+                <div class="alert @(status == "Success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+                    <b>@(status == "Success" ? "Success!" : "Error!")</b> @TempData["AdminMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <!--Dropdown to select an issue (W3Schools, 2025)-->
+            <div class="form-input-group mb-3 mt-3">
+                <label class="form-label fw-bold">Issue:</label>
+                <select asp-for="IssueReportId" class="form-select form-control" id="IssueReportId">
+                    <option value="" selected disabled>Select an issue</option>
+                    @if (issues != null)
+                    {
+                        foreach (var i in issues)
+                        {
+                            <option value="@i.ReportId">@i.ReportId - @i.Category (@i.Location)</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="IssueReportId" class="text-danger"></span>
+            </div>
+
+            @{
+                var related = ViewBag.RelatedIssues as List<PROG7312_POE_PART1.Models.ReportIssue>;
+            }
+            @if (related != null && related.Any())
+            {
+                <div class="form-input-group mt-3">
+                    <label class="form-label fw-bold">Related Requests:</label>
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" class="form-check-input" id="includeRelated" name="includeRelated" value="true" />
+                        <label class="form-check-label" for="includeRelated">
+                            Also include @related.Count matching request(s) (same category and location)
+                        </label>
+                    </div>
+                    <small class="text-muted">Matches: @string.Join(", ", related.Select(r => r.ReportId))</small>
+                </div>
+            }
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="AssignedTo" class="form-label fw-bold">Assign To:</label>
+                <input asp-for="AssignedTo" class="form-control" placeholder="Enter a technician name" />
+                <span asp-validation-for="AssignedTo" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="Priority" class="form-label fw-bold">Priority:</label>
+                <select asp-for="Priority" class="form-select form-control">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                    <option>Urgent</option>
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+
+            <div class="form-input-group mb-3 mt-3">
+                <label asp-for="DueDate" class="form-label fw-bold">Due Date:</label>
+                <input asp-for="DueDate" class="form-control" type="date" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+            </div>
+
+            <br />
+
+            <!--Add and back buttons-->
+            <div class="form-group">
+                <input type="submit" value="Assign" class="btn-add" />
+                <a asp-controller="Job" asp-action="ListJobs" class="btn-back">Back</a>
+            </div>
+        </form>
+    </div>
+
+    <!--Redirecting the AssignJob with the selected report Issue ID when the user changes the dropdown value (W3Schools, 2025)-->
+    <script>
+        (function () {
+            var sel = document.getElementById('IssueReportId');
+            if (sel) {
+                sel.addEventListener('change', function () {
+                    var val = this.value;
+                    if (val) {
+                        window.location.href = '@Url.Action("AssignJob", "Job")' + '?issueReportId=' + encodeURIComponent(val);
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
