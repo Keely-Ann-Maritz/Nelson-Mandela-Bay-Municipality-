@@ -14,7 +14,7 @@
 
 * [POE PART 1: Task 2](https://youtu.be/Qx6cqSrwLQI)
 * [POE PART 2](https://youtu.be/rploC3EzzX8)
-* [POE PART 3]()
+* [POE PART 3](https://youtu.be/k5vbziy10Ms)
 
 <br>
 
