@@ -137,9 +137,7 @@
 
 
 ### Admin side
-<img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/2fed1813-a7d7-47f4-a97d-69f02197f37f" />
-
-<img width="1900" height="918" alt="Screenshot 2025-11-12 082238" src="https://github.com/user-attachments/assets/ad88eac3-fbff-4ea4-b334-4a73acea2567" />
+<img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/43fa755f-0a15-41d9-b1e9-c4a67977b197" />
 
 <img width="1883" height="913" alt="image" src="https://github.com/user-attachments/assets/2faaf7dc-60c9-41e9-9e83-cbb9400bf240" />
 
