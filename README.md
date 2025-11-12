@@ -137,6 +137,9 @@
 
 
 ### Admin side
+
+<img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/dd8f6caf-e8d3-4c9a-aecf-b6308348bc4f" />
+
 <img width="1900" height="918" alt="Screenshot 2025-11-12 082238" src="https://github.com/user-attachments/assets/ad88eac3-fbff-4ea4-b334-4a73acea2567" />
 
 <img width="1883" height="918" alt="image" src="https://github.com/user-attachments/assets/71445778-9f11-4784-bc2b-f4cdc65cfc93" />
