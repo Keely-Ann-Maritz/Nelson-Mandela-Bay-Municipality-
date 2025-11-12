@@ -150,7 +150,7 @@
 <img width="1522" height="868" alt="image" src="https://github.com/user-attachments/assets/deb8d9e8-beae-42dc-a2c6-56e4641a8111" />
 
 ### Error Handling
-<img width="1510" height="336" alt="image" src="https://github.com/user-attachments/assets/738fdf4b-9f11-4005-bde4-0de9e64dcf1e" />
+<img width="1910" height="1334" alt="image" src="https://github.com/user-attachments/assets/3a74f8e7-062d-456a-a43c-c494166657de" />
 
 <img width="1910" height="992" alt="image" src="https://github.com/user-attachments/assets/f866b979-7c0f-47cc-9d87-dc8f769a0244" />
 
