@@ -131,7 +131,7 @@
 ### User side
 <img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
 
-<img width="1910" height="1223" alt="image" src="https://github.com/user-attachments/assets/fefb61e0-5c2f-4beb-baed-95e1aae5a83d" />
+<img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/666224d7-ba5c-4c73-90ba-238e7a7f06b1" />
 
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/6cdb6814-bbb3-4511-ada2-72cf46f1896c" />
 
