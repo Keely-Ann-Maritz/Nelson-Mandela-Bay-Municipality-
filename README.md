@@ -26,6 +26,8 @@
 4. Download the GitHub repository or clone the repository.
 5. Select the run button in the top navigation bar of Visual Studio 2022.
 
+<br>
+
 ### Instructions on how to run the application
 
 #### User 
