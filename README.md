@@ -8,7 +8,6 @@
 
 * [Keely-Ann Maritz](https://github.com/Keely-Ann/)
 
-<hr>
 
 ## YouTube Video 
 
