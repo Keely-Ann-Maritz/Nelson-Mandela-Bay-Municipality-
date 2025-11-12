@@ -21,17 +21,6 @@
 <hr>
 
 # Implementation Report 
-The following are implemented into the PROG7312 POE 
-- Maps JavaScript API and Places API
-- Sets (Unique Categories)
-- Dictionaries (Events)
-- Queues (Events)
-- Priority Queues (Recommendations)
-- Binary Search Trees
-- Graphs
-- Heaps
-
-<br>
 
 ## Instructions for running the application
 1. Install Visual Studio 2022.
@@ -61,7 +50,16 @@ The following are implemented into the PROG7312 POE
 <br>
 
 ## Data Structures 
+- Maps JavaScript API and Places API
+- Sets (Unique Categories)
+- Dictionaries (Events)
+- Queues (Events)
+- Priority Queues (Recommendations)
+- Binary Search Trees
+- Graphs
+- Heaps
 
+  
 <hr>
 
 ## Testing 
