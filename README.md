@@ -55,9 +55,9 @@
 - Dictionaries (Events)
 - Queues (Events)
 - Priority Queues (Recommendations)
-- Binary Search Trees
-- Graphs
-- Heaps
+- Binary Search Trees (Organising and sorting the Service Requests)
+- Graphs (Relationships, connections and finding the shortest route)
+- Heaps (Priority Service Requests)
 
   
 <hr>
