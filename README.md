@@ -145,6 +145,8 @@ The following are implemented into the PROG7312 POE
 
 <img width="1910" height="2424" alt="image" src="https://github.com/user-attachments/assets/d0c9d037-2f0a-42e9-85e6-813ba8c1ffd4" />
 
+<img width="1522" height="868" alt="image" src="https://github.com/user-attachments/assets/deb8d9e8-beae-42dc-a2c6-56e4641a8111" />
+
 <br>
 <hr>
 
