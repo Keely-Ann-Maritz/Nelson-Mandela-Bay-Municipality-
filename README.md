@@ -126,12 +126,24 @@ The following are implemented into the PROG7312 POE
 - User side
 <img width="1867" height="898" alt="image" src="https://github.com/user-attachments/assets/c1b534ee-97f2-42f6-a7a7-415984d0ffb2" />
 
+<img width="1910" height="1223" alt="image" src="https://github.com/user-attachments/assets/fefb61e0-5c2f-4beb-baed-95e1aae5a83d" />
+
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/bc3410b4-95af-4221-b05b-9323135dd6bb" />
+
+
+
 - Admin side
 <img width="1900" height="918" alt="Screenshot 2025-11-12 082238" src="https://github.com/user-attachments/assets/ad88eac3-fbff-4ea4-b334-4a73acea2567" />
 
-<img width="1877" height="915" alt="image" src="https://github.com/user-attachments/assets/1c3f4ca6-653a-4ea0-aa27-8ec7a20249ca" />
+<img width="1883" height="918" alt="image" src="https://github.com/user-attachments/assets/71445778-9f11-4784-bc2b-f4cdc65cfc93" />
 
-<img width="1910" height="948" alt="image" src="https://github.com/user-attachments/assets/5539f057-37eb-43df-b2c9-071cb2bd94cb" />
+<img width="1910" height="948" alt="image" src="https://github.com/user-attachments/assets/9ba0634e-4e59-49d6-90da-41c2d505b4cc" />
+
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/621167e6-8724-49ca-a997-418bd84435a0" />
+
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/70646106-6ed7-4d70-9c46-1085bce090bd" />
+
+<img width="1910" height="2424" alt="image" src="https://github.com/user-attachments/assets/d0c9d037-2f0a-42e9-85e6-813ba8c1ffd4" />
 
 <br>
 <hr>
