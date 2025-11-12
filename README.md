@@ -75,7 +75,7 @@
 -     Survey Monkey:  https://www.surveymonkey.com/r/KVPGPGN
 - Performance Testing
 
-<hr>
+<br>
 
 ## Change Log 
 - The recommendations were moved to the top of the events page.
@@ -84,7 +84,7 @@
 - Changed Part 1 to use a Binary Search Tree.
 - Changed the View button text colour to white to match all buttons, for consistency. 
 
-<hr>
+<br>
 
 ## Part 1: User Engagement Strategy 
 - Customer Feedback and Rating
