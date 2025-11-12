@@ -21,11 +21,10 @@
 ## Implementation Report 
 
 ### Instructions for setting up the Environment Development
-1. Install Visual Studio 2022.
--       Download link: https://visualstudio.microsoft.com/downloads/
-2. Open Visual Studio 2022.
-3. Download the GitHub repository or clone the repository.
-4. Select the run button in the top navigation bar of Visual Studio 2022.
+1. Install Visual Studio 2022. Download link: https://visualstudio.microsoft.com/downloads/
+3. Open Visual Studio 2022.
+4. Download the GitHub repository or clone the repository.
+5. Select the run button in the top navigation bar of Visual Studio 2022.
 
 ### Instructions on how to run the application
 
