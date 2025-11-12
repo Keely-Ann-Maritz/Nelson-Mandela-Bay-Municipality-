@@ -74,6 +74,7 @@ The following are implemented into the PROG7312 POE
 - A progress bar was added to the Report Issue Form.
 - When clicking on the event, a modal pops up displaying the events information.
 - Changed Part 1 to use a Binary Search Tree.
+- Changed the View button text colour to white to match all buttons, for consistency. 
 
 <hr>
 
