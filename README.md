@@ -156,7 +156,7 @@
 ### Error Handling
 <img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/02276891-e60d-42b9-977d-112163ccb1a0" />
 
-<img width="1910" height="1334" alt="image" src="https://github.com/user-attachments/assets/3a74f8e7-062d-456a-a43c-c494166657de" />
+<img width="1910" height="1191" alt="image" src="https://github.com/user-attachments/assets/c910b59a-1db6-4ad6-ad9a-b3c43ddb8651" />
 
 <img width="1910" height="992" alt="image" src="https://github.com/user-attachments/assets/f866b979-7c0f-47cc-9d87-dc8f769a0244" />
 
