@@ -91,6 +91,8 @@
 ## Part 1: Implementation 
 
 ### User side 
+<img width="1910" height="2230" alt="image" src="https://github.com/user-attachments/assets/11ca41ff-5345-4eba-aed0-c611fe916381" />
+
 <img width="1878" height="916" alt="image" src="https://github.com/user-attachments/assets/2d938e6d-c1d1-4f59-a48d-5c456b16a6d9" />
 
 <img width="1872" height="907" alt="image" src="https://github.com/user-attachments/assets/7625656a-968f-48ce-87b1-d742b83e9be0" />
