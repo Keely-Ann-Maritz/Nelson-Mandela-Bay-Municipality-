@@ -59,14 +59,8 @@
 <br>
 
 ### Data Structures 
-- Maps JavaScript API and Places API
-- Sets (Unique Categories)
-- Dictionaries (Events)
-- Queues (Events)
-- Priority Queues (Recommendations)
-- Binary Search Trees (Organising and sorting the Service Requests)
-- Graphs (Relationships, connections and finding the shortest route)
-- Heaps (Priority Service Requests)
+The Maps JavaScript API and Places API was implemented to assist users, when reporting an issue, as the user enters a location, a dropdown of locations will display based on the user’s input, autocompleting their search and allowing the user to select the location. Sets were implemented to store the unique categories of the events and announcements. It prevents duplicate categories. For example, the admin wants to add two categories, they add a category with a lowercase “road related” and a category with an uppercase “Road related”. The system does not allow the admin to create the second category as the category already exists with a lowercase. Dictionaries were used to store the information of the events and the announcements. The event and announcement information were accessible, and the system could retrieve the information and display the information for the user to view. Queues were implemented to manage all the recent and upcoming events and announcements in the community. The events could be searched by using keywords, location, category, start and end date, and filtered to display by the newest or oldest events. A Priority Queue was implemented for the recommendations. Once users search for an event with the same category, the top three recommendations will display, allowing the user to view similar events. Users can click on the event card to view the event details. A Binary Search Tree was implemented to organise and sort the service requests. It allowed the user to search for a specific service request by its ID, with ease. A Graph was used to show the connection of the service requests and to find the shortest route. The data structure assisted with the relationship between the locations and the categories to determine if the request is linked to a priority service request (urgent). Heaps were used to determine the lowest and highest priority, to retrieve the information and to display the priority service request (urgent) for the user to view. This allows the service requests to be managed and for the admin to handle the most important requests first. The highest priority will take preference due to it displaying automatically on the top of the heap for the admin to complete. 
+
 
  <br>
 
